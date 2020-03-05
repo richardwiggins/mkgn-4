@@ -1,0 +1,20 @@
+<section class="content // {% if block.removeTopPadding %}content--pad--bot{% else %}content--pad{% endif %} // {{ block.backgroundColour }}">
+	<div class="grid">
+		{% if block.heading %}
+			<h2{% if block.headingAlignment in ['center',] %} class="center"{% endif %}>{{ block.heading }}</h2>
+		{% endif %}
+		
+		{% set image = block.image.first() %}		
+		{% if block.imageAlignment in ['center',] %}
+			<figure class="content__simple // center // content__image">
+				{% set transformedImages = craft.imager.transformImage(image, [{ width: 1200 }, { width: 925 }, { width: 715 }, { width: 660 }, { width: 300}], { mode: 'fit' }) %}
+				<img src="{{ craft.imager.transformImage(image, { width: 925, mode: 'fit' }) }}" srcset="{{ craft.imager.srcset(transformedImages) }}" sizes="100vw" alt="{{ image.title }}"/>
+			</figure>
+		{% else %}
+			<figure class="center // content__image">
+				{% set transformedImages = craft.imager.transformImage(image, [{ width: 2000 }, { width: 1300 }, { width: 925 }, { width: 715 }, { width: 660 }, { width: 300}], { mode: 'fit' }) %}
+				<img src="{{ craft.imager.transformImage(image, { width: 1300, mode: 'fit' }) }}" srcset="{{ craft.imager.srcset(transformedImages) }}" sizes="100vw" alt="{{ image.title }}"/>
+			</figure>
+		{% endif %}
+	</div>
+</section>

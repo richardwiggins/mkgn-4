@@ -1,0 +1,11 @@
+<section class="content // {% if block.removeTopPadding %}content--pad--bot{% else %}content--pad{% endif %} // {{ block.backgroundColour }}">
+	<div class="grid">
+		{% if block.heading %}
+			<h2{% if block.headlingAlignment in ['center',] %} class="center"{% endif %}>{{ block.heading }}</h2>
+		{% endif %}
+		
+		<article class="center">
+			{{ block.codeContent }}
+		</article>
+	</div>
+</section>

@@ -1,0 +1,274 @@
+{% extends "_layout" %}
+{% if entry.seoTitle %}
+	{% set title = entry.seoTitle %}
+{% else %}
+	{% set title = entry.title %}
+{% endif %}
+{% if entry.seoDescription %}
+	{% set seoDescription = entry.seoDescription %}
+{% endif %}
+{% if entry.seoKeywords %}
+	{% set seoKeywords = entry.seoKeywords %}
+{% endif %}
+
+{% set nextEvent = craft.entries({
+	section: 'events',
+	with: [
+		'entry.title',
+		'entry.url',
+		'entry.eventDate'
+	],
+	limit: 4
+}) %}
+{% if nextEvent | length %}{% set nextEventLive = nextEvent %}{% endif %}
+
+{% block content %}
+
+
+<section class="masthead">
+	<h1 class="headline // push">
+		The event for
+		<div class="words__wrapper waiting">
+			<b class="is-visible">Creatives</b>
+			<b>Dev</b>
+			<b>Geeks</b>
+		</div>
+		in Milton Keynes
+	</h1>
+</section>
+
+<section class="content // content--pad // content--dark-purple // content--above // diag-t-rh">
+	<div class="grid">
+		<h2 class="margin--double--mq">{{ entry.heading }}</h2>
+		
+		<article class="content__simple">
+			{{ entry.body }}
+		</article>
+	</div>
+</section>
+
+<section class="content // content--pad // content--black // content--below // diag-b-lh // overlay--aqua // bgimg-gallery2">
+	<div class="grid">
+		<h2 class="margin--double--mq">The Audience</h2>
+		
+		<article class="content__simple">
+			{{ entry.audienceCopy }}
+		</article>
+	</div>
+</section>
+
+{% for entry in nextEventLive.eventDate('>=' ~ (now)).order('eventDate ASC').limit(1) %}
+<section class="content // content--pad // content--dark-purple // content--above // diag-t-rh // diag-b-lh" id="speakers">
+	{% set headlineTalks = craft.entries.section('talks').relatedTo({
+		sourceElement: entry,
+		field: 'talks'
+	}).headlineTalk('1') %}
+	{% set talks = craft.entries.section('talks').relatedTo({
+		sourceElement: entry,
+		field: 'talks'
+	}).headlineTalk('not 1') %}
+	
+	{% set eventLink = entry.url %}
+	
+	<div class="grid">
+		<time class="block // center">{{ entry.eventDate | date('M j, Y') }}</time>
+		<h2>Our Next Event</h2>
+		
+		<span class="content__simple // margin--double--mq">{{ entry.speakerIntro}}</span>
+	</div>
+	
+	<div class="grid">
+		{% for entry in headlineTalks %}
+	
+			{% set speakeritem = craft.entries.section('speakers').relatedTo({
+				targetElement: entry,
+				limit: 1
+			}) %}
+			{% for entry in speakeritem %}
+			<figure class="content__split__med // speaker__headline">
+				<a href="{{ eventLink }}/#{{ entry.firstName }}" class="no--underline // img--overlap-speaker // animateIn // fadeInUp">
+					{% for image in entry.profilePhoto %}
+						{% if entry.profilePhoto %}
+						<img src="{{ image.getUrl('profile') }}" alt="{{ entry.title }}">
+						{% endif %}
+					{% endfor %}
+					<figcaption class="speaker__label">
+						<div class="btn"><b>{{ entry.firstName }}<br>{{ entry.lastName }}</b></div>
+					</figcaption>
+				</a>
+			</figure>
+			{% endfor %}
+		
+		{% endfor %}
+	</div>
+	
+	<div class="grid // grid__wide">
+		{% for entry in talks %}
+	
+			{% set speakeritem = craft.entries.section('speakers').relatedTo({
+				targetElement: entry,
+				limit: 1
+			}) %}
+			{% for entry in speakeritem %}
+			<figure class="content__split__thirds // speaker__5">
+				<a href="{{ eventLink }}/#{{ entry.firstName }}" class="no--underline // img--overlap-speaker // animateIn // fadeInUp">
+					{% for image in entry.profilePhoto %}
+						{% if entry.profilePhoto %}
+						<img src="{{ image.getUrl() }}" alt="{{ entry.title }}">
+						{% endif %}
+					{% endfor %}
+					<figcaption class="speaker__label">
+						<div class="btn"><b>{{ entry.firstName }}<br>{{ entry.lastName }}</b></div>
+					</figcaption>
+				</a>
+			</figure>
+			{% endfor %}
+		
+		{% endfor %}
+	</div>
+</section>
+
+<section class="content // content--pad // content--below // bg--gallery">
+	<div class="grid">
+{% endfor %}
+		<h2>The Venue</h2>
+		<article {# class="content__dominant" #} class="content__simple">
+			
+			<figure class="img--overlap">
+			{% for image in entry.squareImageOverlays %}
+				<img src="{{ image.getUrl('profile') }}" alt="{{ image.title }}">
+			{% endfor %}
+			</figure>
+			
+			{{ entry.venue }}
+		</article>
+	</div>
+</section>
+
+<section class="content // content--pad // content--deep-purple // content--above // diag-t-rh // diag-b-lh">
+	<div class="grid">
+		<h2 class="margin--double--mq">Sponsorship Opportunities</h2>
+		
+		<article class="content__simple">
+			<p>MK Geek Night presents a fantastic opportunity to publicise and promote your company, products and brand to an audience of up to 100 digital creatives on the night, and thousands more via social media.</p>
+			
+			<p>We offer two levels of sponsorship:</p>
+		</article>
+		
+		<table class="content__simple">
+			<thead>
+				<tr>
+					<th>Lead Sponsor<br>
+						£1250<br>
+						<small>(1 place available)</small>
+					</th>
+					<th>Gold Sponsor<br>
+						£500<br>
+						<small>(10 places available)</small>
+					</th>
+				</tr>
+			</thead>
+			<tbody class="text--deci">
+				<tr>
+					<td>Opportunity to run a competition*</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>Single dedicated email about services/ offering/ organisation</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>Top sponsor logo placement on slides</td>
+					<td>Logo on slides</td>
+				</tr>
+				<tr>
+					<td>Top (linked) logo placement and description on website. Also marked ‘Lead‘.</td>
+					<td>Linked logo on website</td>
+				</tr>
+				<tr>
+					<td>Logo on ticket site</td>
+					<td>Logo on ticket site</td>
+				</tr>
+				<tr>
+					<td>Projected logo at event</td>
+					<td>Projected logo at event</td>
+				</tr>
+				<tr>
+					<td>4 tickets to the event</td>
+					<td>2 tickets to the event</td>
+				</tr>
+				<tr>
+					<td>Announcements via email</td>
+					<td>Announcements via email</td>
+				</tr>
+				<tr>
+					<td>Announcement at the event</td>
+					<td>Announcement at the event</td>
+				</tr>
+				<tr>
+					<td>Opportunity to do a one minute pitch/talk</td>
+					<td>Opportunity to do a one minute pitch/talk</td>
+				</tr>
+				<tr>
+					<td>Announcements on Twitter and Facebook</td>
+					<td>Announcements on Twitter and Facebook</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<footer class="content__simple">
+			<p class="text--centi">PLEASE NOTE: Costs are per event and plus VAT.<br>
+				* Sponsors own responsibility.
+			</p>
+			
+			<h3>Alternative Ideas</h3>
+			
+			<p class="text--centi">
+				We're very flexible and open to ideas about sponsorship, including discount for on-going sponsorship partners, if there’s something you’d like to try then <a href="mailto:richard@mkgeeknight.co.uk">get in touch</a> and let's have a chat.
+			</p>
+		</footer>
+	</div>
+</section>
+
+<section class="content // content--pad // content--black // content--below // diag-t-rh">
+	<div class="grid">
+		<h2 class="margin--double--mq">Future Events</h2>
+		
+		<article class="content__simple--small">
+			<ul class="list--star // margin--double--mq">{% for entry in nextEventLive.eventDate('>=' ~ (now)).order('eventDate ASC') %}<li>{{ entry.eventDate | date('jS F, Y') }}</li>{% endfor %}</ul>
+		</article>
+	</div>
+</section>
+
+
+<section class="content // content--pad // content--above // overlay--aqua // bgimg-gallery1 // slide__holder // diag-t-rh">
+	<div class="grid">
+		<h2>What Are People Saying About MKGN?</h2>
+		<article class="content__simple" id="quotes">
+			{% set entries = craft.entries.section('quotes').limit(10).order('RAND()') %}
+			{% cache %}
+			{% for entry in entries %}
+			<blockquote>
+				<p>{{ entry.quote }}</p>
+				<footer>
+					<cite>{{ entry.title }}</cite>
+				</footer>
+			</blockquote>
+			{% endfor %}
+			{% endcache %}
+		</article>
+	</div>
+</section>
+
+<section class="content // content--pad // content--pink // content--above // diag-t-rh // diag-b-lh">
+	<div class="grid">
+		<h2 class="margin--double--mq">Contact</h2>
+		
+		<article class="content__simple">
+			{{ entry.contactCopy }}
+			<br><br>
+		</article>
+	</div>
+</section>
+
+{% endblock %}

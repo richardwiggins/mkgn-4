@@ -1,0 +1,14 @@
+{% if entry.titoEventName | length %}
+<section class="content // content--pad // content--above // content--deep-purple //  // diag-t-rh // diag-b-rh" id="tickets">
+	<div class="grid">
+		<article class="content__simple // no--bullets">
+			<time class="block // center">{{ entry.eventDate | date('M j, Y') }}</time>
+			<h1>Tickets</h1>
+			
+			{{ entry.ticketIntro }}
+			
+			<tito-widget event="mkgn/{{ entry.titoEventName }}"></tito-widget>
+		</article>
+	</div>
+</section>
+{% endif %}

@@ -1,0 +1,170 @@
+{% extends "_layout" %}
+{% if entry.seoTitle %}
+	{% set title = entry.seoTitle %}
+{% else %}
+	{% set title = entry.title %}
+{% endif %}
+{% if entry.seoDescription %}
+	{% set seoDescription = entry.seoDescription %}
+{% endif %}
+{% if entry.seoKeywords %}
+	{% set seoKeywords = entry.seoKeywords %}
+{% endif %}
+
+{% set nextEvent = craft.entries({
+	section: 'events',
+	with: [
+		'entry.title',
+		'entry.url',
+		'entry.eventDate'
+	],
+	limit: 4
+}) %}
+{% if nextEvent | length %}{% set nextEventLive = nextEvent %}{% endif %}
+
+{% block content %}
+
+
+<section class="masthead">
+	<h1 class="headline // push">
+		The event for
+		<div class="words__wrapper waiting">
+			<b class="is-visible">Creatives</b>
+			<b>Dev</b>
+			<b>Geeks</b>
+		</div>
+		in Milton Keynes
+	</h1>
+	
+	{% for entry in nextEventLive.eventDate('>=' ~ (now)).order('eventDate ASC').limit(1) %}
+	<p class="center // btn--overlap // btn--group">
+		<a href="#speakers" class="btn // "><b>Next Event: {{ entry.eventDate | date('M j, Y') }}</b></a>
+		<a href="#tickets" class="btn // btn--secondary"><b>Get your tickets</b></a>
+	</p>
+	{% endfor %}
+</section>
+
+<section class="content // content__split // clear">
+	<article class="content__split__even // content--pad // overlay--aqua // bgimg-gallery1 // slide__holder">
+		<div class="content__even // content__even__first" id="quotes">
+			{% set entries = craft.entries.section('quotes').limit(10).order('RAND()') %}
+			{% cache %}
+			{% for entry in entries %}
+			<blockquote>
+				<p>{{ entry.quote }}</p>
+				<footer>
+					<cite>{{ entry.title }}</cite>
+				</footer>
+			</blockquote>
+			{% endfor %}
+			{% endcache %}
+		</div>
+	</article>
+	
+	<article class="content__split__even  content--pink // content--pad ">
+		<div class="content__even // content__even__last">
+			{{ entry.body }}
+			
+			<h4 class="margin--half">Save the dates!</h4>
+			{% for entry in nextEventLive.eventDate('>=' ~ (now)).order('eventDate ASC') %}/ {{ entry.eventDate | date('M j, Y') }} {% endfor %}
+		</div>
+	</article>
+</section>
+
+{% for entry in nextEventLive.eventDate('>=' ~ (now)).order('eventDate ASC').limit(1) %}
+<section class="content // content--pad // content--dark-purple // content--above // diag-t-rh // diag-b-lh // reduce--margin" id="speakers">
+	{% set headlineTalks = craft.entries.section('talks').relatedTo({
+		sourceElement: entry,
+		field: 'talks'
+	}).headlineTalk('1').order('sortOrder') %}
+	{% set talks = craft.entries.section('talks').relatedTo({
+		sourceElement: entry,
+		field: 'talks'
+	}).headlineTalk('not 1') %}
+	
+	{% set eventLink = entry.url %}
+	
+	<div class="grid">
+		<time class="block // center">{{ entry.eventDate | date('M j, Y') }}</time>
+		<h2>Speakers</h2>
+		
+		<span class="content__simple // margin--double--mq">{{ entry.speakerIntro}}</span>
+	</div>
+	
+	<div class="grid">
+		{% for entry in headlineTalks %}
+	
+			{% set speakeritem = craft.entries.section('speakers').relatedTo({
+				targetElement: entry,
+				limit: 1
+			}) %}
+			{% for entry in speakeritem %}
+			<figure class="content__split__med // speaker__headline">
+				<a href="{{ eventLink }}/#{{ entry.firstName }}" class="no--underline // img--overlap-speaker // animateIn // fadeInUp">
+					{% for image in entry.profilePhoto %}
+						{% if entry.profilePhoto %}
+						<img src="{{ image.getUrl('profile') }}" alt="{{ entry.title }}">
+						{% endif %}
+					{% endfor %}
+					<figcaption class="speaker__label">
+						<div class="btn"><b>{{ entry.firstName }}<br>{{ entry.lastName }}</b></div>
+					</figcaption>
+				</a>
+			</figure>
+			{% endfor %}
+		
+		{% endfor %}
+	</div>
+	
+	<div class="grid // grid__wide">
+		{% for entry in talks %}
+	
+			{% set speakeritem = craft.entries.section('speakers').relatedTo({
+				targetElement: entry,
+				limit: 1
+			}) %}
+			{% for entry in speakeritem %}
+			<figure class="content__split__thirds // speaker__5">
+				<a href="{{ eventLink }}/#{{ entry.firstName }}" class="no--underline // img--overlap-speaker // animateIn // fadeInUp">
+					{% for image in entry.profilePhoto %}
+						{% if entry.profilePhoto %}
+						<img src="{{ image.getUrl('profile') }}" alt="{{ entry.title }}">
+						{% endif %}
+					{% endfor %}
+					<figcaption class="speaker__label">
+						<div class="btn"><b>{{ entry.firstName }}<br>{{ entry.lastName }}</b></div>
+					</figcaption>
+				</a>
+			</figure>
+			{% endfor %}
+		
+		{% endfor %}
+	</div>
+</section>
+
+<section class="content // content--pad // content--below // bg--gallery" id="location">
+	<div class="grid">
+		<time class="block // center">{{ entry.eventDate | date('M j, Y') }}</time>
+{% endfor %}
+		<h2>The Venue</h2>
+		<article {# class="content__dominant" #} class="content__simple">
+			
+			<figure class="img--overlap">
+				<img src="/img/sq-mseckington.jpg" alt="Melinda Seckington, speaking at MK Geek Night">
+				<img src="/img/sq-aob.jpg" alt="Alex O'Byrne, speaking at MK Geek Night">
+			</figure>
+			
+			{{ entry.venue }}
+		</article>
+	</div>
+</section>
+
+{% for entry in nextEventLive.eventDate('>=' ~ (now)).order('eventDate ASC').limit(1) %}
+{# TICKETS SECTION #}
+{% include '_includes/tickets' %}
+
+{# PARTNERS SECTION #}
+{% include '_includes/partners' %}
+{% endfor %}
+
+{% endblock %}

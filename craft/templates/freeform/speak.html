@@ -1,0 +1,29 @@
+{{ form.renderTag }}
+
+{% if form.hasErrors %}
+    <h5 class="form--errors">
+        {{ "There was an error submitting this form"|t }}
+    </h5>
+{% endif %}
+
+{% for row in form %}
+    <fieldset>
+        {% for field in row %}
+            {% set columnClass = "freeform-column " ~ form.customAttributes.columnClass %}
+            {% if field.type == "submit" %}
+            	<button type="submit"><b>Submit your talk proposal</b></button>
+            {% else %}
+            {{ field.render({
+                class: field.type != "submit" ? "freeform-input" : "",
+                labelClass: "freeform-label" ~ (field.inputOnly ? " freeform-input-only-label" : "") ~ (field.required ? " freeform-required" : ""),
+                errorClass: "freeform-errors // no--bullets",
+                instructionsClass: "freeform-instructions",
+                useRequiredAttribute: true
+            }) }}
+            {% endif %}
+        {% endfor %}
+    </fieldset>
+{% endfor %}
+
+
+{{ form.renderClosingTag }}

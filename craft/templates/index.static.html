@@ -1,0 +1,514 @@
+{% extends "_layout" %}
+{% if entry.seoTitle %}
+	{% set title = entry.seoTitle %}
+{% else %}
+	{% set title = entry.title %}
+{% endif %}
+{% if entry.seoDescription %}
+	{% set seoDescription = entry.seoDescription %}
+{% endif %}
+{% if entry.seoKeywords %}
+	{% set seoKeywords = entry.seoKeywords %}
+{% endif %}
+{# {% set headHtml = '<script src="https://js.tito.io/v1" async></script>' %} #}
+
+{% block content %}
+	
+	<section class="content // content--pad //  masthead">
+		<div class="grid">
+			<article class="content__split__even">
+				<h2>{{ entry.title }}</h2>
+				
+				{{ entry.body }}
+				
+				<span class="btn--group">
+					<p><a class="btn">Why Attend?</a></p>
+				</span>
+			</article>
+			
+			<div class="panel // content--reverse // content--brand-purple // content__split__even // last // animateIn // fadeInDown">
+				<div class="panel__group">
+					<figure>
+						<svg class="icon // icon-bristol">
+							<use xlink:href="/img/icons/svg-sprite.svg#icon-bristol"></use>
+						</svg>
+					</figure>
+					<div class="panel__details">
+						<p class="margin--none">Next Event: <strong>24-25 Mar, 2017</strong></p>
+						<h1 class="margin--none">Bristol</h1>
+						<h6 class="transp--white">Conference</h6>
+					</div>
+				</div>
+				<div class="btn--group">
+					<p><a class="btn // btn--primary">Tickets</a></p>
+					<p><a class="btn // btn--white">More info</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	
+	<nav class="nav__sub // content--reverse // content--brand-green">
+		<ul class="grid">
+			<li><a href="#schedule" onclick="$('#schedule').animatescroll({padding: 50});" class="no--underline">Schedule</a></li>
+			<li><a href="#tickets" onclick="$('#tickets').animatescroll({padding: 50});" class="no--underline">Tickets</a></li>
+			<li><a href="#location" onclick="$('#location').animatescroll({padding: 50});" class="no--underline">Location</a></li>
+			<li><a href="#partners" onclick="$('#partners').animatescroll({padding: 50});" class="no--underline">Partners</a></li>
+		</ul>
+	</nav>
+	
+	<section class="content // content--pad // content--reverse // content--brand-green">
+		<div class="grid">
+			<div class="panel // content--reverse // content--brand-blue // content__split__even // animateIn // flipInX">
+				<div class="panel__group">
+					<figure>
+						<svg class="icon // icon-belfast">
+							<use xlink:href="/img/icons/svg-sprite.svg#icon-belfast"></use>
+						</svg>
+					</figure>
+					<div class="panel__details">
+						<p class="margin--none"><strong>24-25 Mar, 2017</strong></p>
+						<h3 class="margin--none">Belfast</h3>
+						<h6 class="transp--white">Conference</h6>
+					</div>
+				</div>
+				<div class="btn--group">
+					<p><a class="btn // btn--primary // btn--narrow">Tickets</a></p>
+					<p><a class="btn // btn--white // btn--narrow">More info</a></p>
+				</div>
+			</div>
+			
+			<div class="panel // content--reverse // content--brand-purple // content__split__even // last // animateIn // flipInX">
+				<div class="panel__group">
+					<figure>
+						<svg class="icon // icon-bristol">
+							<use xlink:href="/img/icons/svg-sprite.svg#icon-bristol"></use>
+						</svg>
+					</figure>
+					<div class="panel__details">
+						<p class="margin--none"><strong>24-25 Mar, 2017</strong></p>
+						<h3 class="margin--none">Bristol</h3>
+						<h6 class="transp--white">Conference</h6>
+					</div>
+				</div>
+				<p><a class="btn // btn--white // btn--narrow">More info</a></p>
+			</div>
+		</div>
+		
+		<div class="grid">
+			<article class="content__simple">
+				<h1>{{ entry.title }}</h1>
+				<h2>{{ entry.title }}</h2>
+				<h3>{{ entry.title }}</h3>
+				<h4>{{ entry.title }}</h4>
+				<h5>{{ entry.title }}</h5>
+				<h6>{{ entry.title }}</h6>
+				{{ entry.body }}
+				
+				<span class="btn--group">
+					<p><a class="btn">More info</a></p>
+					<p><a class="btn // btn--primary">More info</a></p>
+					<p><a class="btn // btn--secondary">More info</a></p>
+					<p><a class="btn // btn--white">More info</a></p>
+				</span>
+				
+				<div class="panel // content--reverse // content--brand-purple">
+					<h3>Bristol</h3>			
+					
+					{{ entry.body }}
+					
+					<span class="btn--group">
+						<p><a class="btn // btn--primary">Tickets</a></p>
+						<p><a class="btn // btn--white">More info</a></p>
+					</span>
+				</div>
+				
+			</article>
+		</div>
+	</section>
+	
+	<section class="content // content--pad">
+		<div class="grid">
+			<h2 class="center">Events</h2>
+		
+			<div class="panel // content--brand-light-green // content__split__even // animateIn // flipInX">
+				<div class="panel__group">
+					<figure>
+						<svg class="icon // icon-belfast">
+							<use xlink:href="/img/icons/svg-sprite.svg#icon-belfast"></use>
+						</svg>
+					</figure>
+					<div class="panel__details">
+						<p class="margin--none"><strong>24-25 Mar, 2017</strong></p>
+						<h3 class="margin--none">Belfast</h3>
+						<h6 class="transp--white">Conference</h6>
+					</div>
+				</div>
+				<p><a class="btn // btn--white // btn--narrow">More info</a></p>
+			</div>
+			
+			<div class="panel // content--reverse // content--brand-blue // content__split__even // last // animateIn // flipInX">
+				<div class="panel__group">
+					<figure>
+						<svg class="icon // icon-bristol">
+							<use xlink:href="/img/icons/svg-sprite.svg#icon-bristol"></use>
+						</svg>
+					</figure>
+					<div class="panel__details">
+						<p class="margin--none"><strong>24-25 Mar, 2017</strong></p>
+						<h3 class="margin--none">Manchester</h3>
+						<h6 class="transp--white">Conference</h6>
+					</div>
+				</div>
+				<p><a class="btn // btn--white // btn--narrow">More info</a></p>
+			</div>
+			
+			<div class="panel // content--reverse // content--brand-red // content__split__even // content__single // animateIn // flipInX">
+				<div class="panel__group">
+					<figure>
+						<svg class="icon // icon-bristol">
+							<use xlink:href="/img/icons/svg-sprite.svg#icon-bristol"></use>
+						</svg>
+					</figure>
+					<div class="panel__details">
+						<p class="margin--none"><strong>24-25 Mar, 2017</strong></p>
+						<h3 class="margin--none">Bristol</h3>
+						<h6 class="transp--white">Conference</h6>
+					</div>
+				</div>
+				<p><a class="btn // btn--white // btn--narrow">More info</a></p>
+			</div>
+		</div>
+		
+		<div class="grid">
+			<article class="content__simple">
+				<h2 class="center">Events</h2>
+				
+				{{ entry.body }}
+				
+				<span class="btn--group">
+					<p><a class="btn">More info</a></p>
+					<p><a class="btn // btn--primary">More info</a></p>
+					<p><a class="btn // btn--secondary">More info</a></p>
+					<p><a class="btn // btn--white">More info</a></p>
+				</span>
+			</article>
+		</div>
+	</section>
+	
+	<section class="content // content--pad // content--reverse // has--content--white-panel // content--brand-orange">
+		<div class="grid">
+			<h2 class="center">Some of our Amazing Speakers</h2>
+			
+			<div class="panel // content__split__even // content--white // content__left-avatar // no--reverse // animateIn // fadeInDown">
+				<a href="" class="no--underline // media__left--panel">
+					<img src="/img/dummy/sarah_336_336_80.jpg" alt="" class="avatar">
+				</a>
+				<div class="content__media__left__panel">
+					<h6 class="margin--none"><a>Sarah Parmenter</a></h6>
+					<p class="text--deci"><strong>See Sarah next at...</strong></p>
+					<p><a class="btn // btn--secondary">About Sarah</a></p>
+				</div>
+			</div>
+			
+			<div class="panel // content__split__even // content--white // content__left-avatar // animateIn // fadeInDown">
+				<a href="" class="no--underline // media__left--panel">
+					<img src="/img/dummy/Val_Head_2015_336_336_80.jpg" alt="" class="avatar">
+				</a>
+				<div class="content__media__left__panel">
+					<h6 class="margin--none"><a>Sarah Parmenter</a></h6>
+					<p class="text--deci"><strong>See Sarah next at...</strong></p>
+					<p><a class="btn // btn--secondary">About Sarah</a></p>
+				</div>
+			</div>
+			
+			<div class="panel // content__split__even // content--white // content__left-avatar // animateIn // fadeInDown">
+				<a href="" class="no--underline // media__left--panel">
+					<img src="/img/dummy/brad_frost_ffly_336_336.png" alt="" class="avatar">
+				</a>
+				<div class="content__media__left__panel">
+					<h6 class="margin--none"><a>Sarah Parmenter</a></h6>
+					<p class="text--deci"><strong>See Sarah next at...</strong></p>
+					<p><a class="btn // btn--secondary">About Sarah</a></p>
+				</div>
+			</div>
+			
+			<div class="panel // content__split__even // content--white // content__left-avatar // animateIn // fadeInDown">
+				<a href="" class="no--underline // media__left--panel">
+					<img src="/img/dummy/una-kravets_336_382_80.jpg" alt="" class="avatar">
+				</a>
+				<div class="content__media__left__panel">
+					<h6 class="margin--none"><a>Sarah Parmenter</a></h6>
+					<p class="text--deci"><strong>See Sarah next at...</strong></p>
+					<p><a class="btn // btn--secondary">About Sarah</a></p>
+				</div>
+			</div>
+			
+			<p class="center // clear"><a class="btn // btn--white">Don't think we should have an 'All' Speakers page</a></p>
+		</div>
+	</section>
+	
+	<section class="content // content--pad // content--reverse // content--black">
+		<div class="grid">
+			<h2 class="center">Latest from the Blog</h2>
+			{% set blog =  craft.entries.section('blog').limit(2) %}
+			{% for entry in blog %}
+				{% set cat = entry.blogCategory.first() %}
+				{% include '_includes/blog-item' %}
+			{% endfor %}
+			
+			
+			
+{#
+			<article class="content__split__even // content__left-avatar">
+				<a href="" class="no--underline // media__left--small">
+					<img src="/img/dummy/sarah_336_336_80.jpg" alt="" class="avatar">
+				</a>
+				<div class="content__media__left">
+					<h5><a>Lightning Talks at the Warm-Up in Berlin</a></h5>
+					{{ entry.body }}
+				</div>
+			</article>
+			<article class="content__split__even // content__left-avatar">
+				<a href="" class="no--underline // media__left--small">
+					<img src="/img/dummy/brad_frost_ffly_336_336.png" alt="" class="avatar">
+				</a>
+				<div class="content__media__left">
+					<h5><a>Lightning Talks at the Warm-Up in Berlin</a></h5>
+					{{ entry.body }}
+				</div>
+			</article>
+#}
+		</div>
+	</section>
+	
+	<section class="content // content--pad // content--reverse // content--brand-grey">
+		<div class="grid">
+			<h2 class="center">Val Head</h2>
+			
+			<figure class="content__dominant__aside // center">
+				<img src="/img/dummy/Val_Head_2015_336_336_80.jpg" alt="" class="avatar // margin // center--media"/>
+				<figcaption class="center">
+					<h6 class="margin--none">On the Web</h6>
+					<p><a>valhead.com</a></p>
+					
+					<h6 class="margin--none">On Twitter</h6>
+					<p><a>@valhead</a></p>
+				</figcaption>
+			</figure>
+
+			<article class="content__dominant">				
+				<p>Val is a designer and web animation consultant with a talent for getting designers and developers alike excited about the power of animation. She’s the author of The Pocket Guide to CSS Animations, and the forthcoming Meaningful Motion, published by Rosenfeld Media.</p>
+				
+				<p>She shares her passion for web animation as the host of the All The Right Moves screencast, co-host of the Motion and Meaning podcast, and curator of the UI Animation Newsletter.</p>
+				
+				<p>A proud supporter of the web community, she co-founded the Web Design Day conference and runs Pittsburgh’s Girl Develop It Chapter. Val leads workshops at companies and conferences around the world on motion design for the web and loves every minute of it.</p>
+			</article>
+		</div>
+	</section>
+	
+	<section class="content // content--pad // content--reverse // has--content--white-panel // content--brand-orange" id="schedule">
+		<div class="grid">
+			<h2 class="center">Schedule</h2>
+			
+			<article class="content__simple // no--bullets">
+				<p>A run-down of all the conference talks and events. This will be updated with more details on talk topics and speaker slots nearer the conference.</p>
+				
+				<h2>Thursday 25th March, 2017</h2>
+				
+			</article>
+		</div>
+		<div class="grid">
+			<ul class="schedule // content__simple__large // no--bullets">
+				<li class="content--brand-grey">
+					<span class="schedule__meta"><h3 class="margin--none">8:30</h2></span>
+					<span class="schedule__nav"><a class="btn // btn--secondary // schedule__item__toggle" title="View details on this talk">Talk Details<span aria-hidden="true"></span></a></span>
+					<div class="schedule__details // schedule__details--simple">
+						<div class="text--kilo // margin--half"><a class="schedule__item__link">Registration</a></div>
+						<div class="schedule__talk">{{ entry.body }}</div>
+					</div>
+				</li>
+				<li class="content--white">
+					<span class="schedule__meta"><h2>9:30</h2></span>
+					<span class="schedule__nav"><a class="btn // btn--secondary // schedule__item__toggle" title="View details on this talk">Talk Details<span aria-hidden="true"></span></a></span>
+					<a href="" class="no--underline // schedule__avatar">
+						<img src="/img/dummy/Val_Head_2015_336_336_80.jpg" alt="" class="avatar">
+					</a>
+					<div class="schedule__details">
+						<h4 class="margin--none"><a>Val Head</a></h4>
+						<h5><a class="schedule__item__link">Revolutionise Your Page: Real Art Direction on the Web but Showing a REALLY Long Talk Title</a></h5>
+						<div class="schedule__talk">{{ entry.body }}</div>
+					</div>
+				</li>
+				<li class="content--white">
+					<span class="schedule__meta"><h2>10:30</h2></span>
+					<span class="schedule__nav"><a class="btn // btn--secondary // schedule__item__toggle" title="View details on this talk">Talk Details<span aria-hidden="true"></span></a></span>
+					<a href="" class="no--underline // schedule__avatar">
+						<img src="/img/dummy/brad_frost_ffly_336_336.png" alt="" class="avatar">
+					</a>
+					<div class="schedule__details">
+						<h4 class="margin--none"><a>Brad Frost</a></h4>
+						<h5><a class="schedule__item__link">Style Guide Best Practices</a></h5>
+						<div class="schedule__talk">{{ entry.body }}</div>
+					</div>
+				</li>
+				<li class="content--brand-grey">
+					<span class="schedule__meta"><h3 class="margin--none">8:30</h2></span>
+					<span class="schedule__nav"><a class="btn // btn--secondary // schedule__item__toggle" title="View details on this talk">Talk Details<span aria-hidden="true"></span></a></span>
+					<div class="schedule__details // schedule__details--simple">
+						<div class="text--kilo // margin--half"><a class="schedule__item__link">Registration</a></div>
+						<div class="schedule__talk">{{ entry.body }}</div>
+					</div>
+				</li>
+				<li class="content--white">
+					<span class="schedule__meta"><h2>9:30</h2></span>
+					<span class="schedule__nav"><a class="btn // btn--secondary // schedule__item__toggle" title="View details on this talk">Talk Details<span aria-hidden="true"></span></a></span>
+					<a href="" class="no--underline // schedule__avatar">
+						<img src="/img/dummy/Val_Head_2015_336_336_80.jpg" alt="" class="avatar">
+					</a>
+					<div class="schedule__details">
+						<h4 class="margin--none"><a>Val Head</a></h4>
+						<h5><a class="schedule__item__link">Revolutionise Your Page: Real Art Direction on the Web but Showing a REALLY Long Talk Title</a></h5>
+						<div class="schedule__talk">{{ entry.body }}</div>
+					</div>
+				</li>
+				<li class="content--white">
+					<span class="schedule__meta"><h2>10:30</h2></span>
+					<span class="schedule__nav"><a class="btn // btn--secondary // schedule__item__toggle" title="View details on this talk">Talk Details<span aria-hidden="true"></span></a></span>
+					<a href="" class="no--underline // schedule__avatar">
+						<img src="/img/dummy/brad_frost_ffly_336_336.png" alt="" class="avatar">
+					</a>
+					<div class="schedule__details">
+						<h4 class="margin--none"><a>Brad Frost</a></h4>
+						<h5><a class="schedule__item__link">Style Guide Best Practices</a></h5>
+						<div class="schedule__talk">{{ entry.body }}</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="grid  center">
+			<span class="btn--group // center--media">
+				<p><a class="btn // btn--white">Register Now</a></p>
+				<p><a class="btn // btn--secondary">Why Attend?</a></p>
+			</span>
+		</div>
+	</section>
+	
+	<section class="content // content--pad // content--reverse // content--brand-green">
+		<div class="grid">
+			<article class="content__simple">
+				<h2 class="center">Location!</h2>
+				<p>Whether you're looking for a family day out, a romantic break or a bit of culture, Bristol has a lot to offer so if you’re not a local Bristolian check out our ideas for great things to do while you are with us at the Pixel Pioneers conference.</p>
+			</article>
+			
+			<div class="content__split__even // location__map // margin" id="map"></div>
+			
+			<div class="content__split__even // margin">
+				Image will go here
+			</div>
+		</div>
+		<div class="grid">
+			<article class="content__simple">
+				<h6 class="margin--none // transp--white">Conference Venue</h6>
+				<h2 class="margin--none">Venue Name</h2>
+				<h5>Princes Wharf, Wapping Rd, Bristol BS1 4RN</h5>
+				<p>M Shed – M Shed is the museum of Bristol, telling the story of the city for over 2000 years through music, film, art and technology.</p>
+			</article>
+		</div>
+		<div class="grid  center">
+			<span class="btn--group // center--media">
+				<p><a class="btn // btn">Local Area Guide</a></p>
+				<p><a class="btn // btn--primary">Register Now</a></p>
+				<p><a class="btn // btn--white">Why Attend?</a></p>
+			</span>
+		</div>
+	</section>
+	
+	<section class="content // content--pad // content--reverse // content--black" id="tickets">
+		<div class="grid">
+			<article class="content__simple // no--bullets">
+				<h2 class="center">Tickets</h2>
+				
+				<div class="panel // content--white">
+				<tito-widget event="pixel-pioneers/demo"></tito-widget>
+				</div>
+			</article>
+		</div>
+	</section>
+	
+	<section class="content // content--pad // content--reverse // content--brand-purple">
+		<div class="grid">
+			<article class="content__simple">
+				<h2 class="center">Purple!</h2>
+				{{ entry.body }}
+				
+				<span class="btn--group">
+					<p><a class="btn">More info</a></p>
+					<p><a class="btn // btn--primary">More info</a></p>
+				</span>
+			</article>
+		</div>
+	</section>
+	
+	{% include '_includes/newsletter' %}
+	
+	<section class="content // content--pad // content--reverse // content--brand-green">
+		<div class="grid">
+			<h2 class="center">Don't just take our word for it!</h2>
+			
+			<blockquote class="content__split__even">
+				<p>I came. I listened. I stayed. Great event, great speakers, great crowd, great venue. Learn, network. enjoy</p>
+				<footer>
+					<a href="" class="no--underline // media__left--small">
+						<img src="/img/dummy/sarah_336_336_80.jpg" alt="" class="avatar">
+					</a>
+					<cite>
+						<h6 class="margin--none">Sarah Parmenter</h6>
+						<p class="text--deci">UX Designer</p>
+					</cite>
+				</footer>
+			</blockquote>
+			
+			<blockquote class="content__split__even">
+				<p>I came. I listened. I stayed. Great event, great speakers, great crowd, great venue. Learn, network. enjoy</p>
+				<footer>
+					<a href="" class="no--underline // media__left--small">
+						<img src="/img/dummy/sarah_336_336_80.jpg" alt="" class="avatar">
+					</a>
+					<cite>
+						<h6 class="margin--none">Sarah Parmenter</h6>
+						<p class="text--deci">UX Designer</p>
+					</cite>
+				</footer>
+			</blockquote>
+		</div>
+	</section>
+	
+	<section class="content // content--pad // content--brand-light-grey" id="partners">
+		<div class="grid // center">
+			<h2>Huge thanks to our Global Partners</h2>
+			
+			<ul class="list--inline // no--bullets // margin--double">
+				<li>Logo</li>
+				<li>Logo</li>
+				<li>Logo</li>
+				<li>Logo</li>
+			</ul>
+		</div>
+		<div class="grid // center">
+			<article class="content__simple">
+				<h5>Become a Partner</h5>
+				
+				<span class="justify">
+				<p>NEED REAL CONTENT! If your company is interested in sponsoring Hybrid this year, we’d love to hear from you. Send us a quick email and we’ll get right back to you with some more information and our sponsorship brochure.</p>
+				</span>
+				
+				<p><a class="btn">Get in touch</a></p>
+			</article>
+		</div>
+	</section>
+	
+{% endblock %}
+
+{% includeJsFile "https://maps.googleapis.com/maps/api/js?key=AIzaSyD6eBrvRym3jeyCYH8T9mDjSuEDeRfO6tE" %}
+{% includeJsFile "/js/min/maps-min.js" %}

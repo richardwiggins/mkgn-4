@@ -1,0 +1,21 @@
+{% for block in entry.contentBuilder %}
+
+{% switch block.type %}
+
+	{% case "contentSimple" %}
+	{% include '_includes/blocks/contentSimple' %}
+	
+	{% case "contentSplit" %}
+	{% include '_includes/blocks/contentSplit' %}
+	
+	{% case "simpleWithCode" %}
+	{% include '_includes/blocks/simpleWithCode' %}
+	
+	{% case "featureImage" %}
+	{% include '_includes/blocks/featureImage' %}
+	
+	{% case "showNewsletter" %}
+	{% include '_includes/blocks/showNewsletter' %}
+	
+{% endswitch %}
+{% endfor %}

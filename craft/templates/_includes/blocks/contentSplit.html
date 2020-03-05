@@ -1,0 +1,26 @@
+<section class="content // {% if block.removeTopPadding %}content--pad--bot{% else %}content--pad{% endif %} // {{ block.backgroundColour }}">
+	<div class="grid">
+		{% if block.heading %}
+			<h2{% if block.headlingAlignment in ['center',] %} class="center"{% endif %}>{{ block.heading }}</h2>
+		{% endif %}
+	
+		<article class="{{ block.splitType }}">			
+			{{ block.bodyFirst }}
+			
+			{% set imageFirst = block.imageFirst.first() %}		
+			{% if imageFirst %}
+				{% set transformedImages = craft.imager.transformImage(imageFirst, [{ width: 900 }, { width: 715 }, { width: 660 }, { width: 300}], { mode: 'fit' }) %}
+				<img src="{{ craft.imager.transformImage(imageFirst, { width: 715, mode: 'fit' }) }}" srcset="{{ craft.imager.srcset(transformedImages) }}" sizes="100vw" alt="{{ imageFirst.title }}"/>
+			{% endif %}
+		</article>
+		<article class="{% if block.splitType == 'content__dominant' %}content__dominant__aside{% else %}content__split__even{% endif %}">			
+			{{ block.bodySecond }}
+			
+			{% set imageSecond = block.imageSecond.first() %}		
+			{% if imageSecond %}
+				{% set transformedImages = craft.imager.transformImage(imageSecond, [{ width: 900 }, { width: 715 }, { width: 660 }, { width: 300}], { mode: 'fit' }) %}
+				<img src="{{ craft.imager.transformImage(imageSecond, { width: 715, mode: 'fit' }) }}" srcset="{{ craft.imager.srcset(transformedImages) }}" sizes="(min-width: 768px) 768px, 100vw" alt="{{ imageSecond.title }}"/>
+			{% endif %}
+		</article>
+	</div>
+</section>

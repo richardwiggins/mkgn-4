@@ -1,0 +1,34 @@
+{% set eventPartner = craft.entries.section('partners').relatedTo({
+    sourceElement: entry,
+}).order('sortOrder') %}
+{% if eventPartner | length %}
+<section class="content // content--pad // content--below // content--reverse // diag-t-rh // diag-b-rh" id="partners">
+	<div class="grid">
+		<time class="block // center">{{ entry.eventDate | date('M j, Y') }}</time>
+		<h1 class="margin--triple">Partners</h1>
+		
+		{% for entry in eventPartner if entry.leadPartner %}
+		<h3 class="center">Lead Partner</h3>
+		<ul class="clear // no--bullets // partners // partners--lead // margin--left--none // margin--double--mq">
+			{% for image in entry.partnerLogo %}
+				<li><a href="{% for row in entry.website %}{{ row.websiteURL }}{% endfor %}" target="_blank" class="no--underline // animateIn // fadeInDown"><img src="{{ image.getUrl() }}" alt="{{ entry.title }}"/></a></li>
+			{% endfor %}
+		</ul>
+		<hr class="margin--triple">
+		{% endfor %}
+
+		<ul class="clear // no--bullets // partners // margin--left--none // margin--double--mq">
+			{% for entry in eventPartner if not entry.leadPartner %}
+				{% for image in entry.partnerLogo %}
+					<li><a href="{% for row in entry.website %}{{ row.websiteURL }}{% endfor %}" target="_blank" class="no--underline // animateIn // fadeInDown"><img src="{{ image.getUrl() }}" alt="{{ entry.title }}"/></a></li>
+				{% endfor %}
+			{% endfor %}
+		</ul>
+
+		
+		<article class="content__simple // no--bullets">
+			{{ partners.body }}
+		</article>
+	</div>
+</section>
+{% endif %}

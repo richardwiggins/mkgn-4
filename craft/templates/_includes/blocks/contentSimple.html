@@ -1,0 +1,19 @@
+<section class="content // {% if block.removeTopPadding %}content--pad--bot{% else %}content--pad{% endif %} // {{ block.backgroundColour }}{% if block.addBgPaths %}// paths--bg{% endif %}">
+	<div class="grid">
+		<article class="content__simple">
+			{% if block.heading %}
+				<h2{% if block.headlingAlignment in ['center',] %} class="center"{% endif %}>{{ block.heading }}</h2>
+			{% endif %}
+			
+			{% for image in block.image %}
+			<figure class="{% if block.imageAlignment in ['left',] %}content__image__left{% elseif block.imageAlignment in ['right',] %}content__image__right{% endif %}">
+				<img src="{{ image.getUrl() }}" alt="{{ image.title }}">
+			</figure>
+			{% endfor %}
+			
+			{{ block.bodySimple }}
+		</article>
+		
+		
+	</div>
+</section>
