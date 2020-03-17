@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>document.getElementsByTagName("html")[0].className += " js";</script>
+	<script>
+		if('CSS' in window && CSS.supports('color', 'var(--color-var)')) {
+			document.write('<link rel="stylesheet" href="{{ siteUrl }}assets/css/style.css">');
+		} else {
+			document.write('<link rel="stylesheet" href="{{ siteUrl }}assets/css/style-fallback.css">');
+		}
+	</script>
+	<noscript>
+		<link rel="stylesheet" href="{{ siteUrl }}assets/css/style-fallback.css">
+	</noscript>
+	<title>MKGN</title>
+</head>
+<body>
+	<div class="off-canvas off-canvas--full-width off-canvas--navigation js-off-canvas js-off-canvas--nav">
+	<button class="reset anim-menu-btn offnav-control js-anim-menu-btn js-tab-focus" aria-label="Toggle navigation" aria-controls="offcanvas-panel-1">
+	<svg class="offnav-control__bg" aria-hidden="true" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" stroke-miterlimit="10" /></svg>
+	<i class="anim-menu-btn__icon anim-menu-btn__icon--arrow-right" aria-hidden="true"></i>
+	</button>
+
+	<main class="off-canvas__main">
+	<!-- insert your main content here -->
+		<div class="container">
+
+
+			<!-- Main Content
+			================================================== -->
+			{% block main %}
+				
+			{% endblock %}
+
+
+		</div>
+	</main>
+
+	<div id="offcanvas-panel-1" class="off-canvas__panel js-off-canvas__panel">
+	<div class="off-canvas__content">
+	<div class="offnav">
+	<div class="height-100% container max-width-sm flex flex-column">
+	<nav class="offnav__nav" role="navigation" aria-label="Main">
+	<ul class="offnav__list">
+	<li class="offnav__item"><a href="#0" class="offnav__link">About</a></li>
+	<li class="offnav__item"><a href="#0" class="offnav__link">Our Services</a></li>
+	<li class="offnav__item"><a href="#0" class="offnav__link">Portfolio</a></li>
+	<li class="offnav__item"><a href="#0" class="offnav__link">Blog</a></li>
+	<li class="offnav__item"><a href="#0" class="offnav__link">Contact</a></li>
+	</ul>
+	</nav>
+
+	<nav class="offnav__subnav" role="navigation" aria-label="Secondary">
+	<ul class="offnav__sublist">
+	<li class="offnav__subitem">&copy; Copyright</li>
+	<li class="offnav__subitem"><a href="#0" class="offnav__sublink">Twitter</a></li>
+	<li class="offnav__subitem"><a href="#0" class="offnav__sublink">Facebook</a></li>
+	<li class="offnav__subitem"><a href="#0" class="offnav__sublink">Instagram</a></li>
+	</ul>
+	</nav>
+
+	<button class="reset offnav__a11y-close-btn js-off-canvas__close-btn js-off-canvas__a11y-close-btn">Close Navigation 👉</button>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+
+<script src="{{ siteUrl }}assets/js/scripts.js"></script>
+</body>
+</html>
