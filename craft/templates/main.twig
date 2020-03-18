@@ -17,6 +17,43 @@
 	<title>MKGN</title>
 </head>
 <body>
+	{# <div class="padding-component hide@md no-js:is-hidden">
+		<button class="btn btn--primary" aria-controls="sidebar">Show sidebar</button>
+	</div> #}
+
+	<nav class="nav__mobile bottom-0 left-0 right-0 position-fixed width-100% height-xl bg-secondary hide@md">
+		<button class="btn btn--primary" aria-controls="sidebar">Show sidebar</button>
+	</nav>
+
+	<div class="flex@md">
+		<aside class="sidebar sidebar--static@md js-sidebar" data-static-class="border-right" id="sidebar" aria-labelledby="sidebarTitle">
+			<div class="sidebar__panel">
+			<header class="sidebar__header padding-y-sm padding-x-md">
+				Logo
+			</header>
+
+			<div class="sidebar__content">
+			<!-- start sidebar content -->
+			<div class="text-component padding-md">
+			<p>Sidebar content.</p>
+			</div>
+			<!-- end sidebar content -->
+			</div>
+			</div>
+		</aside>
+
+		<main class="flex-grow">
+			<!-- start main content -->
+			{% block main %}
+				
+			{% endblock %}
+			<!-- end main content -->
+		</main>
+	</div>
+
+{# 
+
+
 	<div class="off-canvas off-canvas--full-width off-canvas--navigation js-off-canvas js-off-canvas--nav">
 	<button class="reset anim-menu-btn offnav-control js-anim-menu-btn js-tab-focus" aria-label="Toggle navigation" aria-controls="offcanvas-panel-1">
 	<svg class="offnav-control__bg" aria-hidden="true" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" stroke-miterlimit="10" /></svg>
@@ -66,8 +103,8 @@
 	</div>
 	</div>
 	</div>
-	</div>
+	</div> #}
 
-<script src="{{ siteUrl }}assets/js/scripts.js"></script>
+	<script src="{{ siteUrl }}assets/js/scripts.js"></script>
 </body>
 </html>
