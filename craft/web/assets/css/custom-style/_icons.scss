@@ -2,3 +2,9 @@
   // make sure to include the font-family declaration if you are using an icon font
   // font-family: 'fontName';
 }
+
+.svg-inherit {
+	svg {
+		fill: currentColor;
+	}
+}

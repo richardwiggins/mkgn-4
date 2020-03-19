@@ -13,7 +13,7 @@ Usage: codyhouse.co/license
 	--sidebar-max-width: 100%;
 
 	// static variation -> sidebar is always visible (optimized for bigger screens)
-	--sidebar-static-width: 100%;
+	--sidebar-static-width: 25%;
 	--sidebar-static-max-width: 380px;
 	--sidebar-static-height: 100vh;
 	--sidebar-static-min-height: 0;
@@ -70,7 +70,7 @@ Usage: codyhouse.co/license
 	max-width: var(--sidebar-max-width);
 	display: flex;
 	flex-direction: column;
-	background-color: var(--color-bg);
+	background-color: var(--color-secondary);
 	transform: translateX(-100%);
 	// transition: .3s;
 
@@ -80,12 +80,6 @@ Usage: codyhouse.co/license
 	.sidebar--is-visible & {
 		transform: translateX(0);
 	}
-}
-
-.sidebar__header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 }
 
 .sidebar__close-btn {
@@ -110,7 +104,7 @@ Usage: codyhouse.co/license
 }
 
 .sidebar__content {
-	height: 100%;
+	// height: 100%;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 }
@@ -135,10 +129,6 @@ Usage: codyhouse.co/license
 		transform: translateX(0);
 		transition: none;
 		box-shadow: none;
-	}
-
-	.sidebar__header {
-		@include srHide;
 	}
 
 	.sidebar__content {

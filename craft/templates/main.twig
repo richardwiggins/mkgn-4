@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script>document.getElementsByTagName("html")[0].className += " js";</script>
+	<link rel="stylesheet" href="https://use.typekit.net/wox0srz.css">
 	<script>
 		if('CSS' in window && CSS.supports('color', 'var(--color-var)')) {
 			document.write('<link rel="stylesheet" href="{{ siteUrl }}assets/css/style.css">');
@@ -22,21 +23,28 @@
 	</div> #}
 
 	<nav class="nav__mobile bottom-0 left-0 right-0 position-fixed width-100% height-xl bg-secondary hide@md">
-		<button class="btn btn--primary" aria-controls="sidebar">Show sidebar</button>
+		{# <button class="btn btn--primary" aria-controls="sidebar">Show sidebar</button> #}
+		<a href="#menu" class="font-secondary color-white" aria-controls="sidebar">Menu</a>
 	</nav>
 
 	<div class="flex@md">
-		<aside class="sidebar sidebar--static@md js-sidebar" data-static-class="border-right" id="sidebar" aria-labelledby="sidebarTitle">
+		<aside class="sidebar sidebar--static@md js-sidebar" data-static-class="bg-accent-lighter" id="sidebar" aria-labelledby="sidebarTitle">
 			<div class="sidebar__panel">
-			<header class="sidebar__header padding-y-sm padding-x-md">
-				Logo
+			<header class="sidebar__header padding-y-sm padding-x-md color-accent svg-inherit">
+				<svg class="width-xxxl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932.56 258.67"><title>MK Geek Night</title><path d="M178.08 9.73h50v249h-50v-174.35l-59.37 65.74-59.37-65.74v57.19l-49.98 55.43v-187.27h50l59.37 65.82zm269.83 163.2l44.79-49.64c5.58-38.83 39.3-68.69 80.05-68.69a81.14 81.14 0 0 1 39.72 10.31l33.73-37.21a131 131 0 0 0-73.45-22.37c-72.16 0-130.65 57.91-130.65 129.34a128.1 128.1 0 0 0 5.81 38.26zm139.43-13.7h21.56l22.66-25.09 22.44-24.89h-66.7zm304.6-149.76v174.71l-118.74-174.45h-50v187.27l50-55.4v-57.22l118.74 174.37h50v-249.28zm-196.7 99.79l-22.47 24.88-22.66 25.09h-.38a81.22 81.22 0 0 1-142.45 22.44l-33.65 37.26a130.9 130.9 0 0 0 99.12 45.07c63.66 0 116.55-45.1 128.16-104.77v-50zm-225.65-99.79l-67.59.16-92 102 .07-.07v-101.83h-50v231.68l96.93-107.27zm-112.59 124.67l-33.64 37.25 78.64 87.2 67.56.16-112.56-124.64z" transform="translate(-9.36 -5.33)"/></svg>
 			</header>
+
 
 			<div class="sidebar__content">
 			<!-- start sidebar content -->
-			<div class="text-component padding-md">
-			<p>Sidebar content.</p>
-			</div>
+				<nav class="text-component padding-md">
+					<ul class="text-md" id="menu">
+						<li><a href="#" class="color-white color-primary@md">Tickets</a></li>
+						<li><a href="#">Next event</a></li>
+						<li><a href="#">Partners</a></li>
+						<li><a href="#">News and links</a></li>
+					</ul>
+				</nav>
 			<!-- end sidebar content -->
 			</div>
 			</div>
@@ -50,60 +58,6 @@
 			<!-- end main content -->
 		</main>
 	</div>
-
-{# 
-
-
-	<div class="off-canvas off-canvas--full-width off-canvas--navigation js-off-canvas js-off-canvas--nav">
-	<button class="reset anim-menu-btn offnav-control js-anim-menu-btn js-tab-focus" aria-label="Toggle navigation" aria-controls="offcanvas-panel-1">
-	<svg class="offnav-control__bg" aria-hidden="true" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" stroke-miterlimit="10" /></svg>
-	<i class="anim-menu-btn__icon anim-menu-btn__icon--arrow-right" aria-hidden="true"></i>
-	</button>
-
-	<main class="off-canvas__main">
-	<!-- insert your main content here -->
-		<div class="container">
-
-
-			<!-- Main Content
-			================================================== -->
-			{% block main %}
-				
-			{% endblock %}
-
-
-		</div>
-	</main>
-
-	<div id="offcanvas-panel-1" class="off-canvas__panel js-off-canvas__panel">
-	<div class="off-canvas__content">
-	<div class="offnav">
-	<div class="height-100% container max-width-sm flex flex-column">
-	<nav class="offnav__nav" role="navigation" aria-label="Main">
-	<ul class="offnav__list">
-	<li class="offnav__item"><a href="#0" class="offnav__link">About</a></li>
-	<li class="offnav__item"><a href="#0" class="offnav__link">Our Services</a></li>
-	<li class="offnav__item"><a href="#0" class="offnav__link">Portfolio</a></li>
-	<li class="offnav__item"><a href="#0" class="offnav__link">Blog</a></li>
-	<li class="offnav__item"><a href="#0" class="offnav__link">Contact</a></li>
-	</ul>
-	</nav>
-
-	<nav class="offnav__subnav" role="navigation" aria-label="Secondary">
-	<ul class="offnav__sublist">
-	<li class="offnav__subitem">&copy; Copyright</li>
-	<li class="offnav__subitem"><a href="#0" class="offnav__sublink">Twitter</a></li>
-	<li class="offnav__subitem"><a href="#0" class="offnav__sublink">Facebook</a></li>
-	<li class="offnav__subitem"><a href="#0" class="offnav__sublink">Instagram</a></li>
-	</ul>
-	</nav>
-
-	<button class="reset offnav__a11y-close-btn js-off-canvas__close-btn js-off-canvas__a11y-close-btn">Close Navigation 👉</button>
-	</div>
-	</div>
-	</div>
-	</div>
-	</div> #}
 
 	<script src="{{ siteUrl }}assets/js/scripts.js"></script>
 </body>
