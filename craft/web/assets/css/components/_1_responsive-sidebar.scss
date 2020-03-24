@@ -22,7 +22,7 @@ Usage: codyhouse.co/license
 }
 
 .sidebar, .sidebar__panel {
-	top: 0;
+	//top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
@@ -30,11 +30,15 @@ Usage: codyhouse.co/license
 
 .sidebar {
 	position: relative;
-	visibility: hidden;
+	// visibility: hidden;
 	// transition: visibility 0s .3s;
 	will-change: transform;
-  transition: transform var(--off-canvas-animation-duration) var(--ease-in-out); 
+  transition: all var(--off-canvas-animation-duration) var(--ease-in-out); 
 	flex-shrink: 0;
+
+	height: 0px;
+
+	bottom: 0;
 
 	&::after { // overlay layer
 		content: '';
@@ -55,8 +59,10 @@ Usage: codyhouse.co/license
 }
 
 .sidebar--is-visible {
-	visibility: visible;
+	// visibility: visible;
 	// transition: none;
+
+	height: 100%;
 	
 	&::after {
 		background-color: alpha(var(--color-black), 0.85);
@@ -71,14 +77,16 @@ Usage: codyhouse.co/license
 	display: flex;
 	flex-direction: column;
 	background-color: var(--color-secondary);
-	transform: translateX(-100%);
+	transform: translateY(100%);
 	// transition: .3s;
+
+	top: 0;
 
 
   transition: transform var(--off-canvas-animation-duration) var(--ease-in-out); 
 
 	.sidebar--is-visible & {
-		transform: translateX(0);
+		transform: translateY(0);
 	}
 }
 
@@ -111,7 +119,7 @@ Usage: codyhouse.co/license
 
 // --static
 .sidebar--static, html:not(.js) .sidebar {
-	visibility: visible;
+	// visibility: visible;
 	transition: none;
 	width: var(--sidebar-static-width);
 	max-width: var(--sidebar-static-max-width);
@@ -126,7 +134,7 @@ Usage: codyhouse.co/license
 		position: static;
 		display: block;
 		background-color: transparent;
-		transform: translateX(0);
+		transform: translateY(0);
 		transition: none;
 		box-shadow: none;
 	}
@@ -142,11 +150,11 @@ Usage: codyhouse.co/license
 
 .js {
 	.sidebar {
-		// opacity: 0; // hide sidebar while it is initialized in JS
+		opacity: 0; // hide sidebar while it is initialized in JS
 	}
 
 	.sidebar--loaded {
-		// opacity: 1;
+		opacity: 1;
 	}
 }
 
@@ -173,4 +181,12 @@ html:not(.js) {
 // no-js
 html:not(.js) .sidebar {
 	position: static;
+}
+
+.sidebar__header {
+	color: var(--color-white);
+
+	@include breakpoint(md) {
+		color: var(--color-accent);
+	}
 }

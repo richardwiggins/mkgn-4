@@ -4,3 +4,56 @@ ul {
 		list-style: none;
 	}
 }
+
+.sidebar__link--primary {
+	background-image: linear-gradient(transparent 50%, var(--color-accent) 50%);
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+	color: var(--color-white);
+	font-size: var(--text-lg);
+	font-weight: 600;
+	will-change: background-size;
+	transition: background-size .3s var(--ease-in-out);
+
+	&:hover {
+		background-size: 100% 100%;
+	}
+
+	@include breakpoint(md) {
+		background-image: linear-gradient(transparent 50%, alpha(var(--color-primary), 0.2) 50%);
+		color: var(--color-primary);
+		font-size: var(--text-md);
+
+		&:hover {
+			color: var(--color-accent-darker);
+		}
+	}
+}
+
+.sidebar__link--secondary {
+	background-image: linear-gradient(transparent 50%, var(--color-accent) 50%);
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+	color: var(--color-white);
+	display: inline-block;
+	font-size: var(--text-md);
+	font-weight: 600;
+	margin-bottom: var(--space-xxxs);
+	will-change: background-size;
+	transition: background-size .3s var(--ease-in-out);
+
+	&:hover {
+		background-size: 100% 100%;
+	}
+
+	@include breakpoint(md) {
+		background-image: linear-gradient(transparent 50%, alpha(var(--color-primary), 0.2) 50%);
+		color: var(--color-accent);
+		font-size: calc(var(--text-sm) + 15%);
+		margin-bottom: 0;
+
+		&:hover {
+			color: var(--color-accent-darker);
+		}
+	}
+}

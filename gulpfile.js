@@ -9,6 +9,7 @@ var calc = require('postcss-calc');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var version = require('gulp-version-number');
 
 // js file paths
 var utilJsPath = 'craft/web/assets/js'; // util.js path - you may need to update this if including the framework as external node module
@@ -22,7 +23,22 @@ var scssFilesPath = 'craft/web/assets/css/**/*.scss'; // scss files to watch
 function reload(done) {
   browserSync.reload();
   done();
-} 
+}
+
+// const versionConfig = {
+//   'value': '%MDS%',
+//   'append': {
+//     'key': 'v',
+//     'to': ['css', 'js'],
+//   },
+// };
+
+// gulp.task('twig', function() {
+//   return gulp.src('craft/templates/**/*.twig')
+//     .pipe($.htmlmin({collapseWhitespace: true}))
+//     .pipe($.versionNumber(versionConfig))
+//     .pipe(gulp.dest('docroot'));
+// });
 
 gulp.task('sass', function() {
   return gulp.src(scssFilesPath)
