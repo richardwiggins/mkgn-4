@@ -14,10 +14,12 @@
   --btn-radius: 0;
 }
 
-.btn {
+.btn,
+.tito-submit {
+  font-family: var(--font-secondary);
   cursor: pointer;
   border: 3px solid var(--color-tertiary);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   line-height: 1;
   box-shadow: 4px 4px 0px 0px var(--color-accent);
@@ -41,7 +43,8 @@
 }
 
 // themes
-.btn--primary {
+.btn--primary,
+.tito-submit {
   background-color: var(--color-primary);
   color: var(--color-white);
   @include fontSmooth;

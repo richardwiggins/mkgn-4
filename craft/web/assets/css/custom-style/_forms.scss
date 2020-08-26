@@ -10,9 +10,12 @@
   --form-control-radius: 0em;
 }
 
+input[type="text"].tito-ticket-quantity-field,
+input[type="text"].tito-ticket-donation-field,
 .form-control {
   border: 2px solid var(--color-tertiary-lighter);
   transition: all 0.3s ease;
+  padding: var(--form-control-padding-y)  var(--form-control-padding-x);
 
   &::-webkit-input-placeholder {
     color: var(--color-secondary-lighter);

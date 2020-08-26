@@ -1,0 +1,20 @@
+.hero {
+	background: rgb(11,0,58);
+	background: linear-gradient(180deg, rgba(11,0,58,1) 20%, rgba(42,1,87,1) 100%);
+	padding: var(--space-lg) 0;
+}
+
+.hero--tall {
+	min-height: 55vh;
+}
+
+.hero__keywords {
+	li {
+		list-style: none;
+		padding-right: var(--space-xs);
+
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+}

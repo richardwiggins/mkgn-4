@@ -1,13 +1,252 @@
 {% extends "/main" %}
 
 {% block main %}
-    <h1>Hey there!</h1>
+	
+	<div class="hero hero--tall flex flex-column justify-between">
+		<div class="container max-width-xxl color-white svg-inherit">
+			{# <div class="color-white text-lg font-bold">MK Geek Night</div> #}
+			<svg class="width-xxxl hide@md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932.56 258.67"><title>MK Geek Night</title><path d="M178.08 9.73h50v249h-50v-174.35l-59.37 65.74-59.37-65.74v57.19l-49.98 55.43v-187.27h50l59.37 65.82zm269.83 163.2l44.79-49.64c5.58-38.83 39.3-68.69 80.05-68.69a81.14 81.14 0 0 1 39.72 10.31l33.73-37.21a131 131 0 0 0-73.45-22.37c-72.16 0-130.65 57.91-130.65 129.34a128.1 128.1 0 0 0 5.81 38.26zm139.43-13.7h21.56l22.66-25.09 22.44-24.89h-66.7zm304.6-149.76v174.71l-118.74-174.45h-50v187.27l50-55.4v-57.22l118.74 174.37h50v-249.28zm-196.7 99.79l-22.47 24.88-22.66 25.09h-.38a81.22 81.22 0 0 1-142.45 22.44l-33.65 37.26a130.9 130.9 0 0 0 99.12 45.07c63.66 0 116.55-45.1 128.16-104.77v-50zm-225.65-99.79l-67.59.16-92 102 .07-.07v-101.83h-50v231.68l96.93-107.27zm-112.59 124.67l-33.64 37.25 78.64 87.2 67.56.16-112.56-124.64z" transform="translate(-9.36 -5.33)"/></svg>
 
-    <article class="article text-component">
-        <h2>Hey <a href="https://google.co.uk">there!</a></h2>
+			{# <ul class="position-sticky@md top-0 hero__keywords font-bold padding-bottom-md padding-bottom-0@md color-tertiary flex flex-wrap justify-between@xl">
+				<li class="line-height-sm">Creative.</li>
+				<li class="line-height-sm">Fun.</li>
+				<li class="line-height-sm">Techy.</li>
+				<li class="line-height-sm">Geeky.</li>
+				<li class="line-height-sm">Social.</li>
+				<li class="line-height-sm">Imformative.</li>
+				<li class="line-height-sm">Inspiring.</li>
+				<li class="line-height-sm">Eclectic.</li>
+			</ul> #}
+			<div class="breakout" id="animated-cards">
+				<div class="anim-cards anim-cards--reverse js-anim-cards">
+					<ul class="anim-cards__list font-bold color-tertiary padding-bottom-md padding-bottom-0@md">
+						<li class="anim-cards__item anim-cards-small__item">
+							Creative.
+						</li>
+						<li class="anim-cards__item anim-cards-small__item">
+							Fun.
+						</li>
+						<li class="anim-cards__item anim-cards-small__item">
+							Imformative.
+						</li>
+						<li class="anim-cards__item anim-cards-small__item">
+							Techy.
+						</li>
+						<li class="anim-cards__item anim-cards-small__item">
+							Geeky.
+						</li>
+						<li class="anim-cards__item anim-cards-small__item">
+							Social.
+						</li>
+						<li class="anim-cards__item anim-cards-small__item">
+							Inspiring.
+						</li>
+						<li class="anim-cards__item anim-cards-small__item">
+							Eclectic.
+						</li>
+						<li class="anim-cards__item anim-cards-small__item">
+							Social.
+						</li>
+						<li class="anim-cards__item anim-cards-small__item">
+							Educational.
+						</li>
+						<li class="anim-cards__item anim-cards-small__item">
+							Community.
+						</li>
+						<li class="anim-cards__item anim-cards-small__item">
+							Inventive.
+						</li>
+						<li class="anim-cards__item anim-cards-small__item">
+							Diverse.
+						</li>
+						<li class="anim-cards__item anim-cards-small__item">
+							Entertaining.
+						</li>
+					</ul>
+				</div>
+			</div>
 
-        <p>The next MKGN event will be on Thursday 12th March, 2020.  The doors open at 18.30 with our first speaker on stage around 19.30. The bar stays open until 23:00 so stick around for drinks, chat and a chance to network.</p>
 
-        <p>All of our events are held in the Skyroom at MK Gallery with drinks and breaks held within the cafe. MK Gallery is in Central Milton Keynes next to Milton Keynes Theatre and opposite centre:mk.</p>
-    </article>
+			<h1 class="color-white text-xl text-xxl@sm">MK Geek Night, a quarterly evening event in Milton Keynes, currently <span class="">Intergalactic</span></h1>
+		</div>
+
+		<div class="container max-width-xxl text-component">
+			<div class="font-secondary color-white text-md">Next virtual event</div>
+			<div class="font-secondary text-xl  text-uppercase margin-top-0"><a href="#next-mkgn" class="js-smooth-scroll color-white" data-duration="300">#34 Sep 24, 2020</a></div>
+		</div>
+	</div>
+
+	<div class="">
+
+		<div class="container max-width-xxl text-component margin-top-lg">
+			<h5 class="font-primary font-bold color-accent">Upcoming events</h5>
+		</div>
+
+		<div id="animated-cards">
+			<div class="anim-cards js-anim-cards">
+				<ul class="anim-cards__list">
+					<li class="anim-cards__item text-component font-secondary color-accent text-md text-gradient">
+						#34 September 17, 2020
+					</li>
+					<li class="anim-cards__item text-component font-secondary color-accent text-md text-gradient">
+						#35 December 10, 2020
+					</li>
+					<li class="anim-cards__item text-component font-secondary color-accent text-md text-gradient">
+						#36 March TBC, 2021
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="drag-gallery js-drag-gallery margin-bottom-lg">
+			<ul class="drag-gallery__list">
+				<li class="drag-gallery__item">
+					<img src="/assets/img/home-naomi.jpg" alt="Shots from IRL MKGN">
+				</li>
+				<li class="drag-gallery__item">
+					<img src="/assets/img/home-cafe1.jpg" alt="Shots from IRL MKGN">
+				</li>
+				<li class="drag-gallery__item">
+					<img src="/assets/img/home-bren.jpg" alt="Shots from IRL MKGN">
+				</li>
+				<li class="drag-gallery__item">
+					<img src="/assets/img/home-charlotte.jpg" alt="Shots from IRL MKGN">
+				</li>
+				<li class="drag-gallery__item">
+					<img src="/assets/img/home-cafe2.jpg" alt="Shots from IRL MKGN">
+				</li>
+				<li class="drag-gallery__item">
+					<img src="/assets/img/home-documentally.jpg" alt="Shots from IRL MKGN">
+				</li>
+				<li class="drag-gallery__item">
+					<img src="/assets/img/home-helen.jpg" alt="Shots from IRL MKGN">
+				</li>
+				<li class="drag-gallery__item">
+					<img src="/assets/img/home-ruth.jpg" alt="Shots from IRL MKGN">
+				</li>
+				<li class="drag-gallery__item">
+					<img src="/assets/img/home-james.jpg" alt="Shots from IRL MKGN">
+				</li>
+			</ul>
+			<div aria-hidden="true" class="drag-gallery__gesture-hint"></div>
+		</div>
+
+		<div class="container max-width-adaptive-md padding-y-lg@md margin-bottom-lg">
+
+		    <article class="article text-component">
+		        <h3 class="text-xl@sm">So what is MKGN?</h2>
+
+		        <p>Milton Keynes Geek Night is a quarterly evening event for the digital and creative communities combining talks from some of the best speakers in the UK and beyond, with the opportunity watch new and up and coming presenters.</p>
+
+		        <p>Usually an IRL event held in the Skyroom at MK Gallery in Central Milton Keynes, but due to Covid we are holding our events virtually via the wonder of the interwebs.</p>
+
+		        <h3 class="text-xl@sm">When & where</h2>
+
+		        <p><strong>When:</strong> September 24th 2020 - starting at 19:30BST.</p>
+
+		        <p><strong>Where:</strong> Streaming LIVE to YouTube. The Live Stream will allow you to interact with the speakers and fellow attendees via chat keeping the community feel that is such a big part of MKGN.</p>
+		    </article>
+		</div>
+
+		<div class="container max-width-xxl margin-bottom-xxl text-component" id="next-mkgn">
+
+		    <h2 class="text-xl text-xxl@sm margin-bottom-xs">#34 Sep 24, 2020</h2>
+
+		    <div class="grid gap-lg margin-bottom-xxxxs">
+			    <div class="card-v3 col-6@sm col-4@lg">
+					<a href="#0" class="card-v3__link" aria-label="Details of this speaker and talk">
+						<figure class="card-v3__img">
+							<img src="/assets/img/s-aarronwalter.jpg" alt="Aarron Walter">
+						</figure>
+
+						<div class="card-v3__content">
+							<div class="card-v3__label">Aarron Walter</div>
+							<h3 class="color-primary text-md@lg text-lg@xl">Designing For Emotion</h3>
+						</div>
+
+						<div class="card-v3__footer">
+							<span>More about this talk</span>
+							<svg class="icon" viewBox="0 0 16 16"><g fill="none" stroke-width="1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><line x1="0.5" y1="8.5" x2="15.5" y2="8.5"></line><polyline points="10.5,3.5 15.5,8.5 10.5,13.5 "></polyline></g></svg>
+						</div>
+					</a>
+				</div>
+				<div class="card-v3 col-6@sm col-4@lg">
+					<a href="#0" class="card-v3__link" aria-label="Details of this speaker and talk">
+						<figure class="card-v3__img">
+							<img src="/assets/img/s-alisoncoward.jpg" alt="Alison Coward">
+						</figure>
+
+						<div class="card-v3__content">
+							<div class="card-v3__label">Alison Coward</div>
+							<h3 class="color-primary text-md@lg text-lg@xl">Cultivating Your Remote Team Culture</h3>
+						</div>
+
+						<div class="card-v3__footer">
+							<span>More about this talk</span>
+							<svg class="icon" viewBox="0 0 16 16"><g fill="none" stroke-width="1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><line x1="0.5" y1="8.5" x2="15.5" y2="8.5"></line><polyline points="10.5,3.5 15.5,8.5 10.5,13.5 "></polyline></g></svg>
+						</div>
+					</a>
+				</div>
+				<div class="card-v3 col-6@sm col-4@lg">
+					<a href="#0" class="card-v3__link" aria-label="Details of this speaker and talk">
+						<figure class="card-v3__img">
+							<img src="/assets/img/zach-lieberman.jpg" alt="Zach Lieberman">
+						</figure>
+
+						<div class="card-v3__content">
+							<div class="card-v3__label">Zach Lieberman</div>
+							<h3 class="color-primary text-md@lg text-lg@xl">Poetic Computation</h3>
+						</div>
+
+						<div class="card-v3__footer">
+							<span>More about this talk</span>
+							<svg class="icon" viewBox="0 0 16 16"><g fill="none" stroke-width="1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><line x1="0.5" y1="8.5" x2="15.5" y2="8.5"></line><polyline points="10.5,3.5 15.5,8.5 10.5,13.5 "></polyline></g></svg>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<p class="font-bold">View the <a href="">event details and schedule</a>.</p>
+		</div>
+
+		<section class="hero margin-bottom-xl" id="tickets">
+			<div class="container max-width-adaptive-md color-white svg-inherit text-component">
+
+				<h2 class="text-xl text-xxl@sm margin-bottom-xs color-white">Tickets</h2>
+				
+				<p>We're aware that many of you might be furloughed or otherwise impacted by the lockdown, so we have decided to stick with the <em>Pay What You Can Afford</em> model.</p>
+
+				<p>You'll receive a link to the Live Stream at a later date, after purchasing your ticket - which are on sale NOW — don’t miss out on the next Intergalactic MKGN.</p>
+
+				<p>If the form below is not visible or not working for you, please use this <a href="https://ti.to/mkgn/mkgn-34" class="color-white">link to get your ticket</a>.</p>
+
+				<tito-widget event="mkgn/mkgn-34"></tito-widget>
+
+			</div>
+		</section>
+
+		<div class="container max-width-adaptive-md" id="partners">
+			<h2 class="text-xl text-xxl@sm margin-bottom-xs">Partners</h2>
+
+			<h5 class="font-primary font-bold color-accent margin-bottom-sm">Partners</h5>
+
+			<ul class="flex gap-xl margin-bottom-xxxxs">
+				<li class=""><img class="height-xl" src="{{ siteUrl }}uploads/partners/guru-colour.svg" alt=""></li>
+			</ul>
+
+			<h5 class="font-primary font-bold color-accent margin-bottom-sm">Community partners</h5>
+
+			<ul class="flex gap-xl margin-bottom-xxxxs">
+				<li class=""><img class="height-lg" src="{{ siteUrl }}uploads/partners/SP_Landscape-Long-Logo_CMYK.svg" alt=""></li>
+			</ul>
+
+			<h5 class="font-primary font-bold color-accent margin-bottom-sm">In-kind partners</h5>
+
+			<ul class="flex gap-xl margin-bottom-md">
+				<li class=""><img class="height-lg" src="{{ siteUrl }}uploads/partners/tito-machine.svg" alt=""></li>
+				<li><img class="height-lg" src="{{ siteUrl }}uploads/partners/PixelCreation.2018.colour.svg" alt=""></li>
+			</ul>
+		</div>
+
+	</div>
 {% endblock %}

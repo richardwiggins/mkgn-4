@@ -268,6 +268,170 @@ Math.easeInOutQuad = function (t, b, c, d) {
   };
   window.addEventListener('mousedown', detectClick);
 }());
+// File#: _1_anim-card
+// Usage: codyhouse.co/license
+(function() {
+  var AnimCards = function(element) {
+    this.element = element;
+    this.list = this.element.getElementsByTagName('ul')[0];
+    this.cards = this.list.children;
+    this.reverseDirection = Util.hasClass(this.element, 'anim-cards--reverse');
+    this.translate = 0; // store container translate value
+    this.animationId = false;
+    this.animating = false;
+    this.paused = false;
+    // change speed of animation  
+    this.animationSpeed = 1; // > 1 to increse speed, < 1 to reduce; always > 0
+    initAnimCardsEvents(this);
+  };
+
+  function initAnimCardsEvents(cards) {
+    // init observer
+    var observer = new IntersectionObserver(animCardsObserve.bind(cards));
+    observer.observe(cards.element);
+
+    cards.element.addEventListener('update-card-width', function(event){ // reset animation on resize
+      if(cards.animating) {
+        cancelPrevAnimation(cards);
+        if(!cards.paused) initAnimCards(cards);
+      }
+    });
+
+    // play/pause button
+    cards.element.addEventListener('anim-cards', function(event) {
+      cards.paused = false;
+      if(cards.animating) initAnimCards(cards);
+    });
+    cards.element.addEventListener('pause-cards', function(event) {
+      cards.paused = true;
+      if(cards.animating) {
+        cancelPrevAnimation(cards);
+        cards.timestamp = false;
+      }
+    });
+  };
+
+  function animCardsObserve(entries) {
+    if(entries[0].isIntersecting) {
+      this.animating = true;
+      if(!this.paused) initAnimCards(this); // init animation
+    } else {
+      this.animating = false;
+      cancelPrevAnimation(this);
+    }
+  };
+
+  function initAnimCards(cards) {
+    if(cards.paused) return;
+    cards.cardWidth = getAnimCardsWidth(cards);
+    cards.animationId = window.requestAnimationFrame(triggerAnimCards.bind(cards));
+  };
+
+  function triggerAnimCards(timestamp) {
+    cancelPrevAnimation(this);
+    if(!this.timestamp) this.timestamp = timestamp;
+    var translateIncrease = (this.timestamp - timestamp)*0.06*this.animationSpeed;
+    this.timestamp = timestamp;
+    updateAnimCardsTranslate(this, translateIncrease);
+    updateAnimCardsList(this);
+    setTranslate(this);
+    this.animationId = window.requestAnimationFrame(triggerAnimCards.bind(this));
+  };
+
+  function updateAnimCardsTranslate(cards, translate) {
+    cards.translate = cards.reverseDirection ? cards.translate - translate : cards.translate + translate;
+    cards.translate = Math.round(Math.abs(cards.translate));
+    if(!cards.reverseDirection) cards.translate = cards.translate*-1;
+  };
+
+  function updateAnimCardsList(cards) {
+    if(Math.abs(cards.translate) <= cards.cardWidth) return;
+    // need to remove first item from the list and append it to the end of list
+    cards.translate = Math.abs(cards.translate) - cards.cardWidth;
+    if(!cards.reverseDirection) cards.translate = cards.translate*-1;
+    var clone = cards.cards[0].cloneNode(true);
+    cards.list.removeChild(cards.cards[0]);
+    cards.list.appendChild(clone);
+  };
+
+  function setTranslate(cards) {
+    cards.list.style.transform = 'translateX('+cards.translate+'px)';
+    cards.list.style.msTransform = 'translateX('+cards.translate+'px)';
+  };
+
+  function getAnimCardsWidth(cards) {
+    return parseFloat(window.getComputedStyle(cards.cards[0]).marginRight) + cards.cards[0].offsetWidth;
+  };
+
+  function cancelPrevAnimation(cards) {
+    if(cards.animationId) {
+      window.cancelAnimationFrame(cards.animationId);
+      cards.animationId = false;
+    }
+  };
+
+  function initAnimCardsController(controller) {
+    // play/pause btn controller
+    var cardsContainer = document.getElementById(controller.getAttribute('aria-controls'));
+    if(!cardsContainer) return;
+    var cardsList = cardsContainer.getElementsByClassName('js-anim-cards');
+    if(cardsList.length < 1) return;
+
+    // detect click
+    controller.addEventListener('click', function(event){
+      var playAnimation = controller.getAttribute('aria-pressed') == 'true';
+      var animEvent = playAnimation ? 'anim-cards' : 'pause-cards';
+      playAnimation ? controller.setAttribute('aria-pressed', 'false') : controller.setAttribute('aria-pressed', 'true');
+      for(var i = 0; i < cardsList.length; i++) {
+        cardsList[i].dispatchEvent(new CustomEvent(animEvent));
+      }
+    });
+  };
+
+  //initialize the AnimCards objects
+  var animCards = document.getElementsByClassName('js-anim-cards'),
+    requestAnimationFrameSupported = window.requestAnimationFrame,
+    reducedMotion = Util.osHasReducedMotion(),
+    intersectionObserverSupported = ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype);
+
+  if( animCards.length > 0 ) {
+    var animCardsArray = [];
+    for( var i = 0; i < animCards.length; i++) {
+      if(!requestAnimationFrameSupported || reducedMotion || !intersectionObserverSupported) {
+        // animation is off if requestAnimationFrame/IntersectionObserver is not supported or reduced motion is on
+        Util.addClass(animCards[i], 'anim-cards--anim-off');
+      } else {(function(i){animCardsArray.push(new AnimCards(animCards[i]));})(i);}
+    }
+
+    if(animCardsArray.length > 0) {
+      var resizingId = false,
+        customEvent = new CustomEvent('update-card-width');
+      
+      window.addEventListener('resize', function() {
+        clearTimeout(resizingId);
+        resizingId = setTimeout(doneResizing, 500);
+      });
+
+      function doneResizing() {
+        for( var i = 0; i < animCardsArray.length; i++) {
+          (function(i){animCardsArray[i].element.dispatchEvent(customEvent)})(i);
+        };
+      };
+    };
+
+    // check play/pause buttons
+    var animCardsControl = document.getElementsByClassName('js-anim-cards-control');
+    if(animCardsControl.length > 0) {
+      for( var i = 0; i < animCardsControl.length; i++) {
+        if(!requestAnimationFrameSupported || reducedMotion || !intersectionObserverSupported) {
+          Util.addClass(animCardsControl[i], 'is-hidden');
+        } else {
+          (function(i){initAnimCardsController(animCardsControl[i]);})(i);
+        } 
+      }
+    }
+  }
+}());
 // File#: _1_anim-menu-btn
 // Usage: codyhouse.co/license
 (function() {
@@ -547,6 +711,7 @@ Math.easeInOutQuad = function (t, b, c, d) {
 (function() {
   var Sidebar = function(element) {
     this.element = element;
+    this.html = document.getElementsByClassName('html-wrapper')[0];
     this.triggers = document.querySelectorAll('[aria-controls="'+this.element.getAttribute('id')+'"]');
     this.firstFocusable = null;
     this.lastFocusable = null;
@@ -587,12 +752,14 @@ Math.easeInOutQuad = function (t, b, c, d) {
 
   function showSidebar(sidebar) { // mobile layout only
     Util.addClass(sidebar.element, sidebar.showClass);
+    Util.addClass(sidebar.html, 'html-off-canvas--visible');
     getFocusableElements(sidebar);
     Util.moveFocus(sidebar.element);
   };
 
   function closeSidebar(sidebar) { // mobile layout only
     Util.removeClass(sidebar.element, sidebar.showClass);
+    Util.removeClass(sidebar.html, 'html-off-canvas--visible');
     sidebar.firstFocusable = null;
     sidebar.lastFocusable = null;
     if(sidebar.selectedTrigger) sidebar.selectedTrigger.focus();
@@ -1114,13 +1281,13 @@ Math.easeInOutQuad = function (t, b, c, d) {
   function initOpacityAnim(gallery) { // animate img opacities on drag
     for(var i = 0; i < gallery.imgs.length; i++) {
       var observer = new IntersectionObserver(opacityCallback.bind(gallery.imgs[i]), { threshold: [0, 0.1] });
-		  observer.observe(gallery.imgs[i]);
+      observer.observe(gallery.imgs[i]);
     }
   };
 
   function opacityCallback(entries, observer) { // reveal images when they enter the viewport
     var threshold = entries[0].intersectionRatio.toFixed(1);
-		if(threshold > 0) {
+    if(threshold > 0) {
       Util.addClass(this, 'drag-gallery__item--visible');
       observer.unobserve(this);
     }
@@ -1155,12 +1322,12 @@ Math.easeInOutQuad = function (t, b, c, d) {
 
   function initHintGesture(gallery) { // show user a hint about gallery dragging
     var observer = new IntersectionObserver(hintGestureCallback.bind(gallery.gestureHint[0]), { threshold: [0, 1] });
-		observer.observe(gallery.gestureHint[0]);
+    observer.observe(gallery.gestureHint[0]);
   };
 
   function hintGestureCallback(entries, observer) {
     var threshold = entries[0].intersectionRatio.toFixed(1);
-		if(threshold > 0) {
+    if(threshold > 0) {
       Util.addClass(this, 'drag-gallery__gesture-hint--animate');
       observer.unobserve(this);
     }

@@ -3,9 +3,32 @@
   --radius: 0.55em; // border radius base size
 }
 
+html {
+	scroll-behavior: smooth;
+}
 
-
+.breakout { 
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 100vw; 
+}
 
 .nav__mobile {
 	z-index: 99;
+}
+
+.link__badge {
+	margin-right: .75rem;
+	position: relative;
+
+	&:after {
+		content: '';
+		position: absolute;
+		background: var(--color-primary);
+		border-radius: 50%;
+		padding: .25rem;
+		right: -.75rem;
+		top: 0;
+	}
 }

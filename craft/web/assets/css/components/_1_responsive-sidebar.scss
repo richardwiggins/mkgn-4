@@ -13,9 +13,9 @@ Usage: codyhouse.co/license
 	--sidebar-max-width: 100%;
 
 	// static variation -> sidebar is always visible (optimized for bigger screens)
-	--sidebar-static-width: 25%;
+	--sidebar-static-width: 24%;
 	--sidebar-static-max-width: 380px;
-	--sidebar-static-height: 100vh;
+	--sidebar-static-height: 100%;
 	--sidebar-static-min-height: 0;
 
 	--off-canvas-animation-duration: 0.4s;
@@ -33,12 +33,13 @@ Usage: codyhouse.co/license
 	// visibility: hidden;
 	// transition: visibility 0s .3s;
 	will-change: transform;
-  transition: all var(--off-canvas-animation-duration) var(--ease-in-out); 
+ 	transition: all var(--off-canvas-animation-duration) var(--ease-in-out); 
 	flex-shrink: 0;
 
 	height: 0px;
 
 	bottom: 0;
+	overflow-x: hidden;
 
 	&::after { // overlay layer
 		content: '';
@@ -123,8 +124,11 @@ Usage: codyhouse.co/license
 	transition: none;
 	width: var(--sidebar-static-width);
 	max-width: var(--sidebar-static-max-width);
-	height: var(--sidebar-static-height);
-	min-height: var(--sidebar-static-min-height);
+	// height: var(--sidebar-static-height);
+	// min-height: var(--sidebar-static-min-height);
+
+	// height: auto;
+	// will-change: auto;
 
 	&::after {
 		display: none;
@@ -132,6 +136,7 @@ Usage: codyhouse.co/license
 
 	.sidebar__panel {
 		position: static;
+		// position: fixed;
 		display: block;
 		background-color: transparent;
 		transform: translateY(0);
@@ -145,6 +150,23 @@ Usage: codyhouse.co/license
 
 	.sidebar__close-btn {
 		display: none;
+	}
+
+	@include breakpoint(md) {
+		height: auto;
+		will-change: auto;
+
+		.sidebar__panel {
+			position: fixed;
+		}
+	}
+
+	@include breakpoint(lg) {
+		width: 22%;
+	}
+
+	@include breakpoint(xl) {
+		width: 20%;
 	}
 }
 

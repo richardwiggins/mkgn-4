@@ -3,11 +3,19 @@
 // (START) Global Editor code https://codyhouse.co/ds/globals/typography
 
 // --------------------------------
+@font-face {
+	font-family: 'MonumentExtended Regular';
+	src: url('../fonts/MonumentExtended-Regular.otf') format('opentype');
+	font-weight: 500;
+	font-style: normal;
+}
 
 :root {
 	// font family
-	--font-primary: benton-sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
-	--font-secondary: benton-sans-wide, benton-sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+	// --font-primary: benton-sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+	// --font-secondary: benton-sans-wide, benton-sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+	--font-primary: aktiv-grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+	--font-secondary: 'MonumentExtended Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
 
 	// body font size
 	--text-base-size: 1em;
@@ -54,8 +62,13 @@ body {
 }
 
 h1, h2, h3, h4 {
-	font-family: var(--font-primary);
+	color: var(--color-accent);
+	font-family: var(--font-secondary);
 	font-weight: 700;
+}
+
+h3 {
+	color: var(--color-tertiary);
 }
 
 // font family
@@ -111,9 +124,50 @@ mark {
 		font-size: var(--text-sm);
 		color: var(--color-contrast-medium);
 	}
+
+	p {
+		@include breakpoint(lg) {
+			font-size: calc(var(--text-sm) * var(--text-scale-ratio) * 1.15);
+		}
+
+		@include breakpoint(xl) {
+			font-size: calc(var(--text-sm) * var(--text-scale-ratio) * 1.25);
+		}
+	}
+
+	a:not(.card-v3__link) {
+		background-image: linear-gradient(transparent 50%, alpha(var(--color-primary), 0.2) 50%);
+		background-repeat: no-repeat;
+		background-size: 0% 100%;
+		will-change: background-size;
+		transition: background-size .3s var(--ease-in-out);
+		color: var(--color-primary);
+
+		&:hover {
+			background-size: 100% 100%;
+			color: var(--color-accent-darker);
+		}
+
+		&.color-white {
+			&:hover {
+				color: var(--color-primary);
+			}
+		}
+	}
 }
 
 .article { // e.g., blog posts
 	--body-line-height: 1.58; // set body line-height
 	--text-vspace-multiplier: 1.2; // increase vertical spacing
+}
+
+.text-gradient {
+	background: rgb(255,255,255);
+	background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(151,68,243,1) 35%, rgba(249,57,245,1) 62%, rgba(151,68,243,1) 100%);
+	/* clip hackery */
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent; 
+	-moz-text-fill-color: transparent;
 }

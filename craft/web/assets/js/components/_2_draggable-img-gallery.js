@@ -109,13 +109,13 @@
   function initOpacityAnim(gallery) { // animate img opacities on drag
     for(var i = 0; i < gallery.imgs.length; i++) {
       var observer = new IntersectionObserver(opacityCallback.bind(gallery.imgs[i]), { threshold: [0, 0.1] });
-		  observer.observe(gallery.imgs[i]);
+      observer.observe(gallery.imgs[i]);
     }
   };
 
   function opacityCallback(entries, observer) { // reveal images when they enter the viewport
     var threshold = entries[0].intersectionRatio.toFixed(1);
-		if(threshold > 0) {
+    if(threshold > 0) {
       Util.addClass(this, 'drag-gallery__item--visible');
       observer.unobserve(this);
     }
@@ -150,12 +150,12 @@
 
   function initHintGesture(gallery) { // show user a hint about gallery dragging
     var observer = new IntersectionObserver(hintGestureCallback.bind(gallery.gestureHint[0]), { threshold: [0, 1] });
-		observer.observe(gallery.gestureHint[0]);
+    observer.observe(gallery.gestureHint[0]);
   };
 
   function hintGestureCallback(entries, observer) {
     var threshold = entries[0].intersectionRatio.toFixed(1);
-		if(threshold > 0) {
+    if(threshold > 0) {
       Util.addClass(this, 'drag-gallery__gesture-hint--animate');
       observer.unobserve(this);
     }
