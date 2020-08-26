@@ -206,9 +206,10 @@ html:not(.js) .sidebar {
 }
 
 .sidebar__header {
-	color: var(--color-white);
+	// color: var(--color-white);
+	color: var(--color-primary);
 
-	@include breakpoint(md) {
-		color: var(--color-accent);
-	}
+	// @include breakpoint(md) {
+	// 	color: var(--color-accent);
+	// }
 }

@@ -10,7 +10,7 @@ Usage: codyhouse.co/license
 :root {
   --anim-cards-width: 350px; // single card width
   --anim-cards-gap: var(--space-md);  // gap
-  --anim-cards-width-small: 150px; // single card width
+  --anim-cards-width-small: auto; // single card width
 }
 
 @supports(--css: variables) {

@@ -20,6 +20,7 @@
 
   @include defineColorHSL(--color-secondary-darker, 235, 94%, 40%);
   @include defineColorHSL(--color-secondary-dark, 235, 94%, 50%);
+  // @include defineColorHSL(--color-secondary, 218, 100%, 37%);
   @include defineColorHSL(--color-secondary, 235, 94%, 60%);
   @include defineColorHSL(--color-secondary-light, 235, 94%, 70%);
   @include defineColorHSL(--color-secondary-lighter, 235, 94%, 80%);

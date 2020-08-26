@@ -13,9 +13,18 @@
     this.customStaticClass = "";
     this.readyClass = "sidebar--loaded";
     this.layout = false; // this will be static or mobile
+    this.close = document.querySelectorAll('[aria-controls="closeSidebar"]');
     getCustomStaticClass(this); // custom classes for static version
     initSidebar(this);
   };
+
+  var p = document.getElementById("closeSidebar"); // Find the paragraph element in the page
+  p.onclick = showAlert; // Add onclick function to element
+    
+  function showAlert(event) {
+    closeSidebar(sidebar);
+    alert("onclick Event triggered!");
+  }
 
   function getCustomStaticClass(element) {
     var customClasses = element.element.getAttribute('data-static-class');

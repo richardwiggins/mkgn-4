@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="https://use.typekit.net/wox0srz.css">
 	<script>
 		if('CSS' in window && CSS.supports('color', 'var(--color-var)')) {
-			document.write('<link rel="stylesheet" href="{{ siteUrl }}assets/css/style.css?455sss4s">');
+			document.write('<link rel="stylesheet" href="{{ siteUrl }}assets/css/style.css?4d4d4">');
 		} else {
 			document.write('<link rel="stylesheet" href="{{ siteUrl }}assets/css/style-fallback.css">');
 		}
@@ -25,44 +25,53 @@
 	<nav class="nav__mobile bottom-0 left-0 right-0 position-fixed width-100% height-lg bg-secondary hide@md flex justify-between items-center padding-x-md">
 		{# <button class="btn btn--primary" aria-controls="sidebar">Show sidebar</button> #}
 		<a href="#menu" class="font-secondary color-white" aria-controls="sidebar">Menu</a>
-		<a href="" class="font-secondary color-white link__badge">Tickets</a>
+		<a href="{{ siteUrl }}tickets" class="font-secondary color-white link__badge" aria-controls="closeSidebar" id="closeSidebar">Tickets</a>
 	</nav>
 
 	<div class="flex@md">
-		<aside class="sidebar sidebar--static@md js-sidebar z-index-1" data-static-class="bg-accent-lighter" id="sidebar" aria-labelledby="sidebarTitle">
+		<aside class="sidebar sidebar--static@md js-sidebar z-index-1" data-static-class="bg-secondary" id="sidebar" aria-labelledby="sidebarTitle">
 			<div class="sidebar__panel">
-			<header class="sidebar__header padding-bottom-sm@md padding-top-lg padding-x-md padding-top-md@md svg-inherit">
-				<svg class="sidebar__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932.56 258.67"><title>MK Geek Night</title><path d="M178.08 9.73h50v249h-50v-174.35l-59.37 65.74-59.37-65.74v57.19l-49.98 55.43v-187.27h50l59.37 65.82zm269.83 163.2l44.79-49.64c5.58-38.83 39.3-68.69 80.05-68.69a81.14 81.14 0 0 1 39.72 10.31l33.73-37.21a131 131 0 0 0-73.45-22.37c-72.16 0-130.65 57.91-130.65 129.34a128.1 128.1 0 0 0 5.81 38.26zm139.43-13.7h21.56l22.66-25.09 22.44-24.89h-66.7zm304.6-149.76v174.71l-118.74-174.45h-50v187.27l50-55.4v-57.22l118.74 174.37h50v-249.28zm-196.7 99.79l-22.47 24.88-22.66 25.09h-.38a81.22 81.22 0 0 1-142.45 22.44l-33.65 37.26a130.9 130.9 0 0 0 99.12 45.07c63.66 0 116.55-45.1 128.16-104.77v-50zm-225.65-99.79l-67.59.16-92 102 .07-.07v-101.83h-50v231.68l96.93-107.27zm-112.59 124.67l-33.64 37.25 78.64 87.2 67.56.16-112.56-124.64z" transform="translate(-9.36 -5.33)"/></svg>
-			</header>
+				<header class="sidebar__header padding-bottom-sm@md padding-top-lg padding-x-md padding-top-md@md svg-inherit">
+					<a href="{{ siteUrl }}">
+					<svg class="sidebar__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932.56 258.67"><title>MK Geek Night</title><path d="M178.08 9.73h50v249h-50v-174.35l-59.37 65.74-59.37-65.74v57.19l-49.98 55.43v-187.27h50l59.37 65.82zm269.83 163.2l44.79-49.64c5.58-38.83 39.3-68.69 80.05-68.69a81.14 81.14 0 0 1 39.72 10.31l33.73-37.21a131 131 0 0 0-73.45-22.37c-72.16 0-130.65 57.91-130.65 129.34a128.1 128.1 0 0 0 5.81 38.26zm139.43-13.7h21.56l22.66-25.09 22.44-24.89h-66.7zm304.6-149.76v174.71l-118.74-174.45h-50v187.27l50-55.4v-57.22l118.74 174.37h50v-249.28zm-196.7 99.79l-22.47 24.88-22.66 25.09h-.38a81.22 81.22 0 0 1-142.45 22.44l-33.65 37.26a130.9 130.9 0 0 0 99.12 45.07c63.66 0 116.55-45.1 128.16-104.77v-50zm-225.65-99.79l-67.59.16-92 102 .07-.07v-101.83h-50v231.68l96.93-107.27zm-112.59 124.67l-33.64 37.25 78.64 87.2 67.56.16-112.56-124.64z" transform="translate(-9.36 -5.33)"/></svg>
+					</a>
+				</header>
 
 
-			<div class="sidebar__content">
-			<!-- start sidebar content -->
-				<nav class="sidebar__nav text-component padding-md" id="menu">
-					<ul>
-						<li><a href="#" class="sidebar__link--primary">Tickets</a></li>
-						<li><a href="#next-mkgn" class="sidebar__link--primary js-smooth-scroll" data-duration="300">Next event</a></li>
-						<li><a href="#" class="sidebar__link--primary">Partners</a></li>
-						{# <li><a href="#" class="sidebar__link--primary">News and links</a></li> #}
-					</ul>
+				<div class="sidebar__content">
+				<!-- start sidebar content -->
+					<nav class="sidebar__nav text-component padding-md" id="menu">
+						<ul>
+							<li><a href="{{ siteUrl }}tickets" class="sidebar__link--primary">Tickets</a></li>
+							<li><a href="#next-mkgn" class="sidebar__link--primary">Next event</a></li>
+							<li><a href="{{ siteUrl }}#partners" class="sidebar__link--primary">Partners</a></li>
+							{# <li><a href="#" class="sidebar__link--primary">News and links</a></li> #}
+						</ul>
 
-					<ul>
-						{# <li><a href="#" class="sidebar__link--secondary">Location</a></li> #}
-						{# <li><a href="#" class="sidebar__link--secondary">Past events</a></li> #}
-						{# <li><a href="#" class="sidebar__link--secondary">Give a talk</a></li> #}
-						{# <li><a href="#" class="sidebar__link--secondary">About</a></li> #}
-						{# <li><a href="#" class="sidebar__link--secondary">Code of conduct</a></li> #}
-					</ul>
+						{# <ul>
+							<li><a href="#" class="sidebar__link--secondary">Location</a></li>
+							<li><a href="#" class="sidebar__link--secondary">Past events</a></li>
+							<li><a href="#" class="sidebar__link--secondary">Give a talk</a></li>
+							<li><a href="#" class="sidebar__link--secondary">About</a></li>
+							<li><a href="#" class="sidebar__link--secondary">Code of conduct</a></li>
+						</ul> #}
 
-					<ul>
-						<li class="line-height-sm"><a href="http://twitter.com/MKGeekNight" class="sidebar__link--tertiary">Twitter</a></li>
-						<li class="line-height-sm"><a href="https://www.instagram.com/mkgeeknight/" class="sidebar__link--tertiary">Instagram</a></li>
-						{# <li class="line-height-sm"><a href="#" class="sidebar__link--tertiary">Soundcloud</a></li> #}
-						{# <li class="line-height-sm"><a href="#" class="sidebar__link--tertiary">Facebook</a></li> #}
-					</ul>
-				</nav>
-			<!-- end sidebar content -->
-			</div>
+						<ul>
+							<li class="line-height-sm"><a href="http://twitter.com/MKGeekNight" class="sidebar__link--tertiary">Twitter</a></li>
+							<li class="line-height-sm"><a href="https://www.instagram.com/mkgeeknight/" class="sidebar__link--tertiary">Instagram</a></li>
+							{# <li class="line-height-sm"><a href="#" class="sidebar__link--tertiary">Soundcloud</a></li> #}
+							{# <li class="line-height-sm"><a href="#" class="sidebar__link--tertiary">Facebook</a></li> #}
+						</ul>
+					</nav>
+				<!-- end sidebar content -->
+				</div>
+
+				<div class="sidebar__footer display@md">
+					<div class="padding-x-md padding-y-xs color-white text-sm">
+						#34 Sep 24, 2020
+					</div>
+					<a href="{{ siteUrl }}tickets" class="bg-primary block padding-x-md padding-y-sm btn btn--primary font-secondary color-white"><span class="link__badge link__badge--white">Tickets</span></a>
+				</div>
 			</div>
 		</aside>
 
@@ -75,7 +84,7 @@
 		</main>
 	</div>
 
-	<script src="{{ siteUrl }}assets/js/scripts.js"></script>
+	<script src="{{ siteUrl }}assets/js/scripts.min.js"></script>
 	<script src="https://js.tito.io/v1" async></script>
 </body>
 </html>

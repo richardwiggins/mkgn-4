@@ -21,6 +21,8 @@ Usage: codyhouse.co/license
 }
 
 .card-v3__img {
+  transition: transform .3s var(--ease-in-out);
+  
   img {
     display: block;
     width: 100%;
@@ -47,14 +49,14 @@ Usage: codyhouse.co/license
   padding-bottom: var(--space-sm);
   margin-top: auto;
 
-  span { // text
-    display: inline-block;
-    font-size: var(--text-sm);
-    will-change: transform;
-    transform: translateY(20%);
-    opacity: 0;
-    transition: transform .3s, opacity .3s;
-  }
+  // span { // text
+  //   display: inline-block;
+  //   font-size: var(--text-sm);
+  //   will-change: transform;
+  //   transform: translateY(20%);
+  //   opacity: 0;
+  //   transition: transform .3s, opacity .3s;
+  // }
 
   .icon {
     display: block;
@@ -86,4 +88,8 @@ Usage: codyhouse.co/license
       transform: scaleX(1);
     }
   }
+
+  .card-v3__img {
+      transform: translateY(-3px) translateX(-3px);
+    }
 }

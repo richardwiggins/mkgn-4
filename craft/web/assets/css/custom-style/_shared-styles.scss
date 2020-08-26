@@ -31,4 +31,10 @@ html {
 		right: -.75rem;
 		top: 0;
 	}
+
+	&.link__badge--white {
+		&:after {
+			background: var(--color-accent-dark);
+		}
+	}
 }

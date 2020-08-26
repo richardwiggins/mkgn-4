@@ -58,6 +58,8 @@ Have fun.
     float: left;
     vertical-align: middle;
     width: 100%;
+
+    margin-top: var(--space-md);
 }
 @media screen and (min-width: 520px) {
     .tito-ticket-name-wrapper,
@@ -66,7 +68,7 @@ Have fun.
     }
 }
 .tito-ticket-name {
-    color: var(--color-tertiary);
+    color: var(--color-tertiary-lighter);
     display: block;
     font-size: var(--text-md);
     font-weight: bold;

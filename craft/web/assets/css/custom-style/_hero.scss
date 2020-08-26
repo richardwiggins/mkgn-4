@@ -8,10 +8,15 @@
 	min-height: 55vh;
 }
 
+.hero--mid {
+	min-height: 40vh;
+}
+
 .hero__keywords {
 	li {
 		list-style: none;
-		padding-right: var(--space-xs);
+		display: block;
+		padding-right: var(--space-lg);
 
 		&:last-child {
 			padding-right: 0;

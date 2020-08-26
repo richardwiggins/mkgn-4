@@ -39,11 +39,11 @@ ul {
 	}
 
 	@include breakpoint(md) {
-		background-image: linear-gradient(transparent 50%, alpha(var(--color-primary), 0.2) 50%);
-		color: var(--color-primary);
+		// background-image: linear-gradient(transparent 50%, alpha(var(--color-primary), 0.2) 50%);
+		// color: var(--color-primary);
 
 		&:hover {
-			color: var(--color-accent-darker);
+			// color: var(--color-accent-darker);
 		}
 	}
 }
@@ -83,5 +83,21 @@ ul {
 
 	@include breakpoint(md) {
 		width: 8rem;
+	}
+}
+
+.sidebar__footer {
+	// background: var(--color-secondary);
+	position: absolute;
+	bottom: 0;
+	width: var(--sidebar-static-width);
+	max-width: var(--sidebar-static-max-width);
+
+	@include breakpoint(lg) {
+		width: 22%;
+	}
+
+	@include breakpoint(xl) {
+		width: 20%;
 	}
 }
