@@ -7,6 +7,20 @@ html {
 	scroll-behavior: smooth;
 }
 
+.container {
+	width: calc(100% - 2*var(--component-padding));
+	margin-left: auto;
+	margin-right: auto;
+
+	@include breakpoint(md) {
+		width: calc(100% - 2.5*var(--component-padding));
+	}
+
+	@include breakpoint(xl) {
+		width: calc(100% - 3.5*var(--component-padding));
+	}
+}
+
 .breakout { 
 	position: relative;
 	left: 50%;
@@ -36,5 +50,26 @@ html {
 		&:after {
 			background: var(--color-accent-dark);
 		}
+	}
+}
+
+.speaker__role {
+
+	font-weight: var(--font-bold-weight);
+	margin: var(--space-sm) 0;
+
+	@include breakpoint(sm) {
+		font-weight: 400;
+		transform: rotate(90deg);
+		white-space: nowrap;
+		transform-origin: top left;
+	}
+}
+
+.event__img {
+	width: 30%;
+
+	@include breakpoint(sm) {
+		width: auto;
 	}
 }
