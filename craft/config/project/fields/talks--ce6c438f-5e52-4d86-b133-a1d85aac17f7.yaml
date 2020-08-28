@@ -1,0 +1,15 @@
+contentColumnType: string
+fieldGroup: bb1cc818-9a89-4344-82ca-4d6c1d8dbfa7
+handle: talks
+instructions: ''
+name: Talks
+searchable: true
+settings:
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  sources:
+    - 'section:c0e2d53e-5f83-430c-bac0-a006cd6c12da'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries

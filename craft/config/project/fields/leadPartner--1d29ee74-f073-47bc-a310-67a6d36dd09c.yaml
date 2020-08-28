@@ -1,0 +1,11 @@
+contentColumnType: boolean
+fieldGroup: a9c8a941-15b1-466e-a1a3-6aa013e1d989
+handle: leadPartner
+instructions: ''
+name: 'Lead Partner'
+searchable: true
+settings:
+  default: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

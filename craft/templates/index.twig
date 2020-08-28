@@ -1,5 +1,17 @@
 {% extends "/main" %}
 
+{% if entry.seoTitle %}
+	{% set title = entry.seoTitle %}
+{% else %}
+	{% set title = entry.title %}
+{% endif %}
+{% if entry.seoDescription %}
+	{% set seoDescription = entry.seoDescription %}
+{% endif %}
+{% if entry.seoKeywords %}
+	{% set seoKeywords = entry.seoKeywords %}
+{% endif %}
+
 {% block main %}
 	
 	<div class="hero hero--tall flex flex-column justify-between">
@@ -69,14 +81,15 @@
 
 			<h1 class="color-white text-xl text-xxl@sm margin-bottom-md">MK Geek Night, a quarterly evening event in Milton Keynes, currently <span class="">Intergalactic</span></h1>
 		</div>
-
-		<div class="container max-width-xxl text-component">
-			<div class="font-secondary color-white text-md">Next virtual event</div>
-			<div class="font-secondary text-xl  text-uppercase margin-top-0"><a href="#next-mkgn" class="js-smooth-scroll color-white" data-duration="300">#34 Sep 24, 2020</a></div>
-		</div>
+		{% for entry in nextEvent %}
+			<div class="container max-width-xxl text-component">
+				<div class="font-secondary color-white text-md">Next virtual event</div>
+				<div class="font-secondary text-xl  text-uppercase margin-top-0"><a href="#next-mkgn" class="js-smooth-scroll color-white" data-duration="300">#{{ entry.eventNo }} {{ entry.eventDate | date('M j, Y') }}</a></div>
+			</div>
+		{% endfor %}
 	</div>
 
-	<div class="">
+	<div>
 
 		<div class="container max-width-xxl text-component margin-top-lg">
 			<h5 class="font-primary font-bold color-accent">Upcoming events</h5>
@@ -85,15 +98,11 @@
 		<div id="animated-cards">
 			<div class="anim-cards js-anim-cards">
 				<ul class="anim-cards__list">
+				{% for entry in events %}
 					<li class="anim-cards__item text-component font-secondary color-accent text-md text-gradient">
-						#34 September 17, 2020
+						#{{ entry.eventNo }} {{ entry.eventDate | date('F j, Y') }}
 					</li>
-					<li class="anim-cards__item text-component font-secondary color-accent text-md text-gradient">
-						#35 December 10, 2020
-					</li>
-					<li class="anim-cards__item text-component font-secondary color-accent text-md text-gradient">
-						#36 March TBC, 2021
-					</li>
+				{% endfor %}
 				</ul>
 			</div>
 		</div>
@@ -133,27 +142,24 @@
 
 		<div class="container max-width-adaptive-md padding-y-lg@md margin-bottom-lg">
 
-		    <article class="article text-component">
-		        <h3 class="text-xl@sm">So what is MKGN?</h2>
+			<article class="article text-component">
+				<h3 class="text-xl@sm">So what is MKGN?</h2>
+				{{ entry.body }}
 
-		        <p>Milton Keynes Geek Night is a quarterly evening event for the digital and creative communities combining talks from some of the best speakers in the UK and beyond, with the opportunity watch new and up and coming presenters.</p>
+				<h3 class="text-xl@sm">When & where</h2>
 
-		        <p>Usually an IRL event held in the Skyroom at MK Gallery in Central Milton Keynes, but due to Covid we are holding our events virtually via the wonder of the interwebs.</p>
-
-		        <h3 class="text-xl@sm">When & where</h2>
-
-		        <p><strong>When:</strong> September 24th 2020 - starting at 19:30BST.</p>
-
-		        <p><strong>Where:</strong> Streaming LIVE to YouTube. The Live Stream will allow you to interact with the speakers and fellow attendees via chat keeping the community feel that is such a big part of MKGN.</p>
-		    </article>
+				{% for entry in nextEvent %}
+					{{ entry.eventIntro}}
+				{% endfor %}
+			</article>
 		</div>
 
 		<div class="container max-width-xxl margin-bottom-xxl" id="next-mkgn">
 
-		    <h2 class="text-xl text-xxl@sm margin-bottom-xs">#34 Sep 24, 2020</h2>
+			<h2 class="text-xl text-xxl@sm margin-bottom-xs">#34 Sep 24, 2020</h2>
 
-		    <div class="grid gap-lg margin-bottom-xxxxs">
-			    <div class="card-v3 col-6@sm col-4@lg">
+			<div class="grid gap-lg margin-bottom-xxxxs">
+				<div class="card-v3 col-6@sm col-4@lg">
 					<a href="{{ siteUrl }}event" class="card-v3__link" aria-label="Details of this speaker and talk">
 						<figure class="card-v3__img">
 							<img src="/assets/img/s-aarronwalter.jpg" alt="Aarron Walter">
@@ -209,9 +215,10 @@
 			<h3 class="text-component color-contrast-high">View the <a href="{{ siteUrl }}event">event details and schedule</a>.</h3>
 		</div>
 
-		{% include '_includes/tickets' %}
+		{% for entry in nextEvent %}
+			{% include '_includes/tickets' %}
 
-		{% include '_includes/partners' %}
-
+			{% include '_includes/partners' %}
+		{% endfor %}
 	</div>
 {% endblock %}

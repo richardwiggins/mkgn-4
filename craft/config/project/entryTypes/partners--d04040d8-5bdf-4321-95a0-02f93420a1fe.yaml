@@ -1,0 +1,33 @@
+fieldLayouts:
+  1ed1bec8-a233-49b2-b210-aba576176f5f:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 834ad2ee-cf30-45a8-b5a8-dbf6527fff70
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: f40d0fd7-6cec-47fa-9535-ab15ed4732c5
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 1d29ee74-f073-47bc-a310-67a6d36dd09c
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 3d10df47-f48c-4ae8-a6fd-1663ffe6db6e
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: General
+        sortOrder: 1
+handle: partners
+hasTitleField: true
+name: Partners
+section: 8c7b1d14-0b67-434f-add4-9ea397f6c251
+sortOrder: 1
+titleFormat: null

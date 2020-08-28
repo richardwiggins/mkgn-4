@@ -1,0 +1,15 @@
+enableVersioning: true
+handle: partner
+name: Partner
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  73c38894-ebbc-4d2e-960d-f1077a2ce423:
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/_partner
+    uriFormat: partner-us
+type: single

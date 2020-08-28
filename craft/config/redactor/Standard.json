@@ -1,4 +1,17 @@
 {
-	"buttons": ["format","bold","italic","lists","link","image","file","horizontalrule", "video"],
-	"plugins": ["source","fullscreen", "video"]
+    "buttons": [
+        "format",
+        "bold",
+        "italic",
+        "lists",
+        "link",
+        "image",
+        "file",
+        "horizontalrule",
+        "video"
+    ],
+    "plugins": [
+        "fullscreen",
+        "video"
+    ]
 }

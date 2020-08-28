@@ -1,0 +1,9 @@
+handle: photos
+hasUrls: true
+name: 'General Photos'
+settings:
+  path: '@basePath/uploads/photos'
+  url: '@baseUrl/uploads/photos'
+sortOrder: 3
+type: craft\volumes\Local
+url: null

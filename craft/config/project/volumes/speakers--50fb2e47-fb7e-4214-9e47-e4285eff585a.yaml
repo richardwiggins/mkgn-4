@@ -1,0 +1,9 @@
+handle: speakers
+hasUrls: true
+name: Speakers
+settings:
+  path: '@basePath/uploads/speakers'
+  url: '@baseUrl/uploads/speakers'
+sortOrder: 1
+type: craft\volumes\Local
+url: null

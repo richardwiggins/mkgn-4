@@ -1,0 +1,56 @@
+contentColumnType: text
+fieldGroup: bb1cc818-9a89-4344-82ca-4d6c1d8dbfa7
+handle: website
+instructions: ''
+name: Website
+searchable: true
+settings:
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - handle
+              - websiteURL
+            -
+              - heading
+              - URL
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - handle
+              - prettyUrl
+            -
+              - heading
+              - 'Pretty URL'
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+  defaults:
+    __assoc__:
+      -
+        - row1
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+            -
+              - col2
+              - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

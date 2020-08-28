@@ -1,0 +1,33 @@
+fieldLayouts:
+  7cdd1868-bb7d-452d-a1d9-5d65747704e1:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 037a5f54-21d8-4b39-b38d-0e7af880f8a2
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 3d10df47-f48c-4ae8-a6fd-1663ffe6db6e
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: ff0f68aa-7f23-460a-b429-526f9611389c
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: be1ea388-e829-48f9-ab9c-3c2e3a9a6a84
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+handle: talks
+hasTitleField: true
+name: Talks
+section: c0e2d53e-5f83-430c-bac0-a006cd6c12da
+sortOrder: 1
+titleFormat: null

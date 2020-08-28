@@ -1,7 +1,8 @@
 {
   "require": {
     "aelvan/imager": "v2.4.0",
-    "craftcms/cms": "^3.4.0",
+    "craftcms/cms": "3.5.7",
+    "craftcms/redactor": "2.7.2",
     "solspace/craft-freeform": "3.6.5",
     "vlucas/phpdotenv": "^3.4.0"
   },

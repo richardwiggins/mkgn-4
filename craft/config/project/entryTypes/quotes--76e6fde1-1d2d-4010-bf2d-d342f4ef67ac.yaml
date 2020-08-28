@@ -1,0 +1,21 @@
+fieldLayouts:
+  8cd95c51-2f3d-417a-8128-ebe93a557da8:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 4acd8113-e54d-4ca2-bf2d-983737014e55
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+        name: General
+        sortOrder: 1
+handle: quotes
+hasTitleField: true
+name: Quotes
+section: 84017f43-8186-49ad-8493-a5374cb3fafe
+sortOrder: 1
+titleFormat: null

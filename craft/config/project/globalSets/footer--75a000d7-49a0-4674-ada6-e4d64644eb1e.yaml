@@ -1,0 +1,12 @@
+fieldLayouts:
+  2bf4d510-85e9-4739-bece-05d1f35d43a3:
+    tabs:
+      -
+        fields:
+          3d10df47-f48c-4ae8-a6fd-1663ffe6db6e:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+handle: footer
+name: Footer

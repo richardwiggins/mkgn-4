@@ -1,3 +1,29 @@
+{% set seoTitleGlobal = globalSeo.seoTitle %}
+{% set seoDescriptionGlobal = globalSeo.seoDescription %}
+{% set seoKeywordsGlobal = globalSeo.seoKeywords %}
+
+{% set nextEvent = craft.entries({
+	section: 'events',
+	eventDate: '>=' ~ now|date('Y-m-d'),
+	orderBy: 'eventDate asc',
+	limit: 1,
+	with: [
+	'entry.title',
+	'entry.url',
+	'entry.eventDate'
+	]
+}).all %}
+
+{% set events = craft.entries({
+	section: 'events',
+	eventDate: '>=' ~ now|date('Y-m-d'),
+	orderBy: 'eventDate asc',
+	with: [
+	'entry.title',
+	'entry.eventDate'
+	]
+}).all %}
+
 <!doctype html>
 <html lang="en" class="html-wrapper">
 <head>
@@ -15,12 +41,9 @@
 	<noscript>
 		<link rel="stylesheet" href="{{ siteUrl }}assets/css/style-fallback.css">
 	</noscript>
-	<title>MKGN</title>
+	<title>{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }}{% else %}{{ seoTitleGlobal }}{% endif %}</title>
 </head>
 <body class="main">
-	{# <div class="padding-component hide@md no-js:is-hidden">
-		<button class="btn btn--primary" aria-controls="sidebar">Show sidebar</button>
-	</div> #}
 
 	<nav class="nav__mobile bottom-0 left-0 right-0 position-fixed width-100% height-lg bg-secondary hide@md flex justify-between items-center padding-x-md">
 		{# <button class="btn btn--primary" aria-controls="sidebar">Show sidebar</button> #}
@@ -68,7 +91,9 @@
 
 				<div class="sidebar__footer display@md">
 					<div class="padding-x-md padding-y-xs color-white text-sm">
-						#34 Sep 24, 2020
+						{% for entry in nextEvent %}
+							#{{ entry.eventNo }} {{ entry.eventDate | date('M j, Y') }}
+						{% endfor %}
 					</div>
 					<a href="{{ siteUrl }}tickets" class="bg-primary block padding-x-md padding-y-sm btn btn--primary font-secondary color-white"><span class="link__badge link__badge--white">Tickets</span></a>
 				</div>

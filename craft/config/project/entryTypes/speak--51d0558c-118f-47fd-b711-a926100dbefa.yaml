@@ -1,0 +1,41 @@
+fieldLayouts:
+  9b543c91-4436-4333-a591-c0471deca87a:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 3d10df47-f48c-4ae8-a6fd-1663ffe6db6e
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 20af4766-fe55-42f8-9d36-2ab967f5d1e7
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: ba29f542-5277-4f31-940d-1e7f36817ccf
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 2f37e135-42dc-4728-9899-b1c8a1bd538d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 3e44c697-2501-4e56-af5a-b9ca5afff38b
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 2
+handle: speak
+hasTitleField: true
+name: 'Give A Talk'
+section: 7c4bf085-efef-4f5b-b52b-110009802361
+sortOrder: 1
+titleFormat: null

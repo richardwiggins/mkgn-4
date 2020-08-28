@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: bb1cc818-9a89-4344-82ca-4d6c1d8dbfa7
+handle: profilePhoto
+instructions: ''
+name: 'Profile Photo'
+searchable: true
+settings:
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: ''
+  singleUploadLocationSource: 'volume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
+  singleUploadLocationSubpath: ''
+  sources: '*'
+  useSingleFolder: '1'
+  viewMode: large
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Assets

@@ -1,0 +1,50 @@
+field: 421187d3-d8a1-4e53-8bdd-483006ef5566
+fieldLayouts:
+  703f918f-9c3a-42d1-b45f-206eaca80f16:
+    tabs:
+      -
+        fields:
+          9cb40196-5f25-480a-bbee-4959e2d1500a:
+            required: true
+            sortOrder: 1
+          9ed8ee9d-dc58-4cc1-8dbe-78737566c3a3:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  9cb40196-5f25-480a-bbee-4959e2d1500a:
+    contentColumnType: string
+    fieldGroup: null
+    handle: person
+    instructions: ''
+    name: Person
+    searchable: true
+    settings:
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: 'Add a speaker'
+      sources:
+        - 'section:320c4965-45f5-4543-84d7-606ed8ab334f'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Entries
+  9ed8ee9d-dc58-4cc1-8dbe-78737566c3a3:
+    contentColumnType: string
+    fieldGroup: null
+    handle: talk
+    instructions: ''
+    name: Talk
+    searchable: true
+    settings:
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: 'Add the relevant speakers talk'
+      sources:
+        - 'section:c0e2d53e-5f83-430c-bac0-a006cd6c12da'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Entries
+handle: speaker
+name: Speaker
+sortOrder: 1

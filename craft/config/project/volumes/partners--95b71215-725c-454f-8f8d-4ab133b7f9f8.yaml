@@ -1,0 +1,8 @@
+handle: partners
+hasUrls: true
+name: Partners
+settings:
+  path: '@basePath/uploads/partners'
+sortOrder: 2
+type: craft\volumes\Local
+url: $ASSET_BASE_URL/partners

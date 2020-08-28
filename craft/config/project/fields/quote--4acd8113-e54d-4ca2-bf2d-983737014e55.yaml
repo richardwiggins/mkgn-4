@@ -1,0 +1,15 @@
+contentColumnType: text
+fieldGroup: a9c8a941-15b1-466e-a1a3-6aa013e1d989
+handle: quote
+instructions: ''
+name: Quote
+searchable: true
+settings:
+  charLimit: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

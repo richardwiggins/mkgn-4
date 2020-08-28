@@ -1,0 +1,39 @@
+dateModified: 1598554454
+email:
+  fromEmail: richard@mkgeeknight.co.uk
+  fromName: MKGN
+  template: ''
+  transportType: craft\mail\transportadapters\Sendmail
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
+plugins:
+  freeform:
+    enabled: '1'
+    licenseKey: 5OYP5M02MRAFB7F8IOTHW1IO
+    schemaVersion: 3.0.6
+    settings:
+      defaultView: forms
+      emailTemplateDirectory: null
+      emailTemplateStorage: db
+      fieldDisplayOrder: name
+      formTemplateDirectory: templates/freeform
+      license: gele-ae1c-10fe-9119-8602
+      showTutorial: false
+      spamProtectionEnabled: true
+  imager:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 2.0.0
+    settings: null
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+system:
+  edition: pro
+  live: true
+  name: MKGN
+  schemaVersion: 3.5.13
+  timeZone: UTC

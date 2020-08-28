@@ -1,0 +1,18 @@
+enableVersioning: true
+handle: genericPages
+name: 'Generic Pages'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  73c38894-ebbc-4d2e-960d-f1077a2ce423:
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/_entry
+    uriFormat: '{slug}'
+structure:
+  maxLevels: 1
+  uid: 30cd2c6c-7319-4a10-b8ff-b12dc9200241
+type: structure

@@ -1,0 +1,12 @@
+fieldLayouts:
+  007a4cb8-d7ce-4642-8a7b-18f9f224c8c2:
+    tabs:
+      -
+        fields:
+          3d10df47-f48c-4ae8-a6fd-1663ffe6db6e:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+handle: tickets
+name: Tickets

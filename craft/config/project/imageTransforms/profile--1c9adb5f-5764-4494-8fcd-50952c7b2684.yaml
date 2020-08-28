@@ -1,0 +1,9 @@
+format: jpg
+handle: profile
+height: 550
+interlace: none
+mode: crop
+name: Profile
+position: center-center
+quality: 60
+width: 550

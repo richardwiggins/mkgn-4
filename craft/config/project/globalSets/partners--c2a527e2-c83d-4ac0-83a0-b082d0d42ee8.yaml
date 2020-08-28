@@ -1,0 +1,12 @@
+fieldLayouts:
+  7c1fbc27-a991-493d-9093-91e3b2c9273e:
+    tabs:
+      -
+        fields:
+          3d10df47-f48c-4ae8-a6fd-1663ffe6db6e:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+handle: partners
+name: Partners

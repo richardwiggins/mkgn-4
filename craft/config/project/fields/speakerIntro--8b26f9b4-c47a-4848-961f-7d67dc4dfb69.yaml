@@ -1,0 +1,17 @@
+contentColumnType: string
+fieldGroup: bb1cc818-9a89-4344-82ca-4d6c1d8dbfa7
+handle: speakerIntro
+instructions: ''
+name: 'Speaker Intro'
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  cleanupHtml: '1'
+  columnType: text
+  configFile: ''
+  purifierConfig: ''
+  purifyHtml: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

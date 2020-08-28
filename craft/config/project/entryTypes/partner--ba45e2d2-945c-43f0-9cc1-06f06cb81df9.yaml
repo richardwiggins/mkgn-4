@@ -1,0 +1,61 @@
+fieldLayouts:
+  5a5d7ec9-4911-4e7f-b03d-2512c1cfc3dc:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: null
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 037a5f54-21d8-4b39-b38d-0e7af880f8a2
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 3d10df47-f48c-4ae8-a6fd-1663ffe6db6e
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 2270fb9e-8c42-4e4a-a83a-7eacc0f4aa7c
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 32dc7383-b5f5-4efc-ae15-4d8d6c5eca5a
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 34392bde-93ff-43f9-918e-1a339046dd31
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 70fa333b-4878-4ea8-a725-6650bb44fdc7
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 3e44c697-2501-4e56-af5a-b9ca5afff38b
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 20af4766-fe55-42f8-9d36-2ab967f5d1e7
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: ba29f542-5277-4f31-940d-1e7f36817ccf
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 2f37e135-42dc-4728-9899-b1c8a1bd538d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 2
+handle: partner
+hasTitleField: false
+name: Partner
+section: 86241b75-979b-4c60-96ce-e039c5527096
+sortOrder: 1
+titleFormat: '{section.name|raw}'

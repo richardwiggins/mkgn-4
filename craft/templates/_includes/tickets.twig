@@ -1,15 +1,14 @@
+{% if entry.titoEventName | length %}
 <section class="hero margin-bottom-xl" id="tickets">
 	<div class="container max-width-adaptive-md color-white svg-inherit text-component">
 
 		<h2 class="text-xl text-xxl@sm margin-bottom-xs color-white">Tickets</h2>
-		
-		<p>We're aware that many of you might be furloughed or otherwise impacted by the lockdown, so we have decided to stick with the <em>Pay What You Can Afford</em> model.</p>
+		<div class="font-secondary text-md color-tertiary-lighter margin-bottom-sm">#{{ entry.eventNo }} {{ entry.eventDate | date('M j, Y') }}</div>
 
-		<p>You'll receive a link to the Live Stream at a later date, after purchasing your ticket - which are on sale NOW — don’t miss out on the next Intergalactic MKGN.</p>
-
-		<p>If the form below is not visible or not working for you, please use this <a href="https://ti.to/mkgn/mkgn-34" class="color-white">link to get your ticket</a>.</p>
+		{{ entry.ticketIntro }}
 
 		<tito-widget event="mkgn/mkgn-34"></tito-widget>
 
 	</div>
 </section>
+{% endif %}

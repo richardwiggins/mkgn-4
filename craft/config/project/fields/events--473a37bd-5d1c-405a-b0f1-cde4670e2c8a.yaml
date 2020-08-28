@@ -1,0 +1,15 @@
+contentColumnType: string
+fieldGroup: bb1cc818-9a89-4344-82ca-4d6c1d8dbfa7
+handle: events
+instructions: ''
+name: Events
+searchable: true
+settings:
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  sources:
+    - 'section:bceb27df-8ebe-4877-bab9-be7e1e52acb9'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries

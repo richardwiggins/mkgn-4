@@ -1,0 +1,13 @@
+contentColumnType: datetime
+fieldGroup: bb1cc818-9a89-4344-82ca-4d6c1d8dbfa7
+handle: eventDate
+instructions: ''
+name: 'Event Date'
+searchable: true
+settings:
+  minuteIncrement: '30'
+  showDate: 1
+  showTime: 0
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Date
