@@ -154,29 +154,67 @@
 			</article>
 		</div>
 
+		{% for entry in nextEvent %}
 		<div class="container max-width-xxl margin-bottom-xxl" id="next-mkgn">
 
-			<h2 class="text-xl text-xxl@sm margin-bottom-xs">#34 Sep 24, 2020</h2>
+			{# {% set talks = craft.entries.section('talks').relatedTo({
+				sourceElement: entry,
+				field: 'talks'
+			}).all() %} #}
+			{% set talks = entry.talks.all() %}
+
+
+			{% set eventLink = entry.url %}
+
+			<h2 class="text-xl text-xxl@sm margin-bottom-xs">#{{ entry.eventNo }} {{ entry.eventDate | date('M j, Y') }}</h2>
 
 			<div class="grid gap-lg margin-bottom-xxxxs">
-				<div class="card-v3 col-6@sm col-4@lg">
-					<a href="{{ siteUrl }}event" class="card-v3__link" aria-label="Details of this speaker and talk">
-						<figure class="card-v3__img">
-							<img src="/assets/img/s-aarronwalter.jpg" alt="Aarron Walter">
-						</figure>
+				{% for entry in talks %}
 
-						<div class="card-v3__content">
-							<div class="card-v3__label">Aarron Walter</div>
-							<h3 class="color-primary text-md@lg text-lg@xl">Designing For Emotion</h3>
-						</div>
+					{% set talkTitle = entry.heading %}
+					{% set speakeritem = craft.entries.section('speakers').relatedTo({
+						targetElement: entry,
+						limit: 1
+					}).all() %}
+					{% for entry in speakeritem %}
+					<div class="card-v3 col-6@sm col-4@lg">
+						<a href="{{ eventLink }}/#{{ entry.firstName }}" class="card-v3__link" aria-label="Details of {{ entry.firstName }}’s speaker and talk">
+							{% for image in entry.profilePhoto.all() %}
+								{% if entry.profilePhoto %}
+								<figure class="card-v3__img">
+									<img src="{{ image.getUrl('profile') }}" alt="{{ entry.title }}">
+								</figure>
+								{% endif %}
+							{% endfor %}
 
-						<div class="card-v3__footer">
-							<span>More about this talk</span>
-							<svg class="icon" viewBox="0 0 16 16"><g fill="none" stroke-width="1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><line x1="0.5" y1="8.5" x2="15.5" y2="8.5"></line><polyline points="10.5,3.5 15.5,8.5 10.5,13.5 "></polyline></g></svg>
-						</div>
-					</a>
-				</div>
-				<div class="card-v3 col-6@sm col-4@lg">
+							<div class="card-v3__content">
+								<div class="card-v3__label">{{ entry.title }}</div>
+
+								{# {% set speakertalk = craft.entries.section('talks').relatedTo({
+									sourceElement: entry,
+									field: 'talks',
+									limit: 1
+								}) %}
+
+								{% for entry in speakertalk %}
+								{{ entry.heading }}
+								{% endfor %} #}
+								<h3 class="color-primary text-md@lg text-lg@xl">{{ talkTitle }}</h3>
+							</div>
+
+							<div class="card-v3__footer">
+								<span>More about {{ entry.firstName }}’s talk</span>
+								<svg class="icon" viewBox="0 0 16 16"><g fill="none" stroke-width="1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><line x1="0.5" y1="8.5" x2="15.5" y2="8.5"></line><polyline points="10.5,3.5 15.5,8.5 10.5,13.5 "></polyline></g></svg>
+							</div>
+						</a>
+					</div>
+					{% endfor %}
+				{% endfor %}
+
+
+
+
+				{# <div class="card-v3 col-6@sm col-4@lg">
 					<a href="{{ siteUrl }}event" class="card-v3__link" aria-label="Details of this speaker and talk">
 						<figure class="card-v3__img">
 							<img src="/assets/img/s-alisoncoward.jpg" alt="Alison Coward">
@@ -209,11 +247,12 @@
 							<svg class="icon" viewBox="0 0 16 16"><g fill="none" stroke-width="1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><line x1="0.5" y1="8.5" x2="15.5" y2="8.5"></line><polyline points="10.5,3.5 15.5,8.5 10.5,13.5 "></polyline></g></svg>
 						</div>
 					</a>
-				</div>
+				</div> #}
 			</div>
 
 			<h3 class="text-component color-contrast-high">View the <a href="{{ siteUrl }}event">event details and schedule</a>.</h3>
 		</div>
+		{% endfor %}
 
 		{% for entry in nextEvent %}
 			{% include '_includes/tickets' %}

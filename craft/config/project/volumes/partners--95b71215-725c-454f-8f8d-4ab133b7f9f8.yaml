@@ -1,3 +1,34 @@
+fieldLayouts:
+  c4183b37-7b70-4797-9dda-8a54173bcb44:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
 handle: partners
 hasUrls: true
 name: Partners
@@ -5,4 +36,4 @@ settings:
   path: '@basePath/uploads/partners'
 sortOrder: 2
 type: craft\volumes\Local
-url: $ASSET_BASE_URL/partners
+url: '@baseURL/uploads/partners'

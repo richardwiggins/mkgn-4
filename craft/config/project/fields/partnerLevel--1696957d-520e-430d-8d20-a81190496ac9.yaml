@@ -1,0 +1,55 @@
+contentColumnType: string
+fieldGroup: a9c8a941-15b1-466e-a1a3-6aa013e1d989
+handle: partnerLevel
+instructions: ''
+name: 'Partner Level'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Lead Partner'
+        -
+          - value
+          - leadPartner
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Partner
+        -
+          - value
+          - partner
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Community Partner'
+        -
+          - value
+          - communityPartner
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'In-kind Partner'
+        -
+          - value
+          - inKindPartner
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\RadioButtons
