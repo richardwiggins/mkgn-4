@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: bb1cc818-9a89-4344-82ca-4d6c1d8dbfa7
+handle: talkTime
+instructions: ''
+name: 'Talk Time'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

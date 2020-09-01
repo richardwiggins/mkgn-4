@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: a9c8a941-15b1-466e-a1a3-6aa013e1d989
+handle: speakerRole
+instructions: ''
+name: 'Speaker Role'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

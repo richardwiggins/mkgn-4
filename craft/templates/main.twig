@@ -33,7 +33,7 @@
 	<link rel="stylesheet" href="https://use.typekit.net/wox0srz.css">
 	<script>
 		if('CSS' in window && CSS.supports('color', 'var(--color-var)')) {
-			document.write('<link rel="stylesheet" href="{{ siteUrl }}assets/css/style.css?4ddd4d4">');
+			document.write('<link rel="stylesheet" href="{{ siteUrl }}assets/css/style.css?d4d444">');
 		} else {
 			document.write('<link rel="stylesheet" href="{{ siteUrl }}assets/css/style-fallback.css">');
 		}
@@ -48,7 +48,7 @@
 	<nav class="nav__mobile bottom-0 left-0 right-0 position-fixed width-100% height-lg bg-secondary hide@md flex justify-between items-center padding-x-md">
 		{# <button class="btn btn--primary" aria-controls="sidebar">Show sidebar</button> #}
 		<a href="#menu" class="font-secondary color-white" aria-controls="sidebar">Menu</a>
-		<a href="{{ siteUrl }}tickets" class="font-secondary color-white link__badge" aria-controls="closeSidebar" id="closeSidebar">Tickets</a>
+		<a href="{{ siteUrl }}#tickets" class="font-secondary color-white link__badge" aria-controls="closeSidebar" id="closeSidebar">Tickets</a>
 	</nav>
 
 	<div class="flex@md">
@@ -65,9 +65,9 @@
 				<!-- start sidebar content -->
 					<nav class="sidebar__nav text-component padding-md" id="menu">
 						<ul>
-							<li><a href="{{ siteUrl }}tickets" class="sidebar__link--primary">Tickets</a></li>
-							<li><a href="#next-mkgn" class="sidebar__link--primary">Next event</a></li>
-							<li><a href="{{ siteUrl }}#partners" class="sidebar__link--primary">Partners</a></li>
+							<li><a href="{{ siteUrl }}#tickets" class="js-sidebar__close-btn sidebar__link--primary">Tickets</a></li>
+							<li><a href="{{ siteUrl }}#next-mkgn" class="js-sidebar__close-btn sidebar__link--primary">Next event</a></li>
+							<li><a href="{{ siteUrl }}#partners" class="js-sidebar__close-btn sidebar__link--primary">Partners</a></li>
 							{# <li><a href="#" class="sidebar__link--primary">News and links</a></li> #}
 						</ul>
 
@@ -95,7 +95,7 @@
 							#{{ entry.eventNo }} {{ entry.eventDate | date('M j, Y') }}
 						{% endfor %}
 					</div>
-					<a href="{{ siteUrl }}tickets" class="bg-primary block padding-x-md padding-y-sm btn btn--primary font-secondary color-white"><span class="link__badge link__badge--white">Tickets</span></a>
+					<a href="{{ siteUrl }}#tickets" class="bg-primary block padding-x-md padding-y-sm btn btn--primary font-secondary color-white"><span class="link__badge link__badge--white">Tickets</span></a>
 				</div>
 			</div>
 		</aside>

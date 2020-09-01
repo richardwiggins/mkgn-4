@@ -813,7 +813,7 @@ Math.easeInOutQuad = function (t, b, c, d) {
   function initClick(sidebar, event) { // mobile layout only
     //close sidebar when clicking on close button or sidebar bg layer 
     if( !event.target.closest('.js-sidebar__close-btn') && !Util.hasClass(event.target, 'js-sidebar') ) return;
-    event.preventDefault();
+    // event.preventDefault();
     closeSidebar(sidebar);
   };
 

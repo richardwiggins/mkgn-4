@@ -19,7 +19,7 @@
 			{# <div class="color-white text-lg font-bold">MK Geek Night</div> #}
 			<svg class="width-xxxl hide@md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932.56 258.67"><title>MK Geek Night</title><path d="M178.08 9.73h50v249h-50v-174.35l-59.37 65.74-59.37-65.74v57.19l-49.98 55.43v-187.27h50l59.37 65.82zm269.83 163.2l44.79-49.64c5.58-38.83 39.3-68.69 80.05-68.69a81.14 81.14 0 0 1 39.72 10.31l33.73-37.21a131 131 0 0 0-73.45-22.37c-72.16 0-130.65 57.91-130.65 129.34a128.1 128.1 0 0 0 5.81 38.26zm139.43-13.7h21.56l22.66-25.09 22.44-24.89h-66.7zm304.6-149.76v174.71l-118.74-174.45h-50v187.27l50-55.4v-57.22l118.74 174.37h50v-249.28zm-196.7 99.79l-22.47 24.88-22.66 25.09h-.38a81.22 81.22 0 0 1-142.45 22.44l-33.65 37.26a130.9 130.9 0 0 0 99.12 45.07c63.66 0 116.55-45.1 128.16-104.77v-50zm-225.65-99.79l-67.59.16-92 102 .07-.07v-101.83h-50v231.68l96.93-107.27zm-112.59 124.67l-33.64 37.25 78.64 87.2 67.56.16-112.56-124.64z" transform="translate(-9.36 -5.33)"/></svg>
 
-			{# <ul class="position-sticky@md top-0 hero__keywords font-bold padding-bottom-md padding-bottom-0@md color-tertiary flex flex-wrap justify-between@xl">
+			<ul class="hero__keywords font-secondary margin-y-md margin-bottom-xxs@md margin-top-0@md color-white flex flex-wrap">
 				<li class="line-height-sm">Creative.</li>
 				<li class="line-height-sm">Fun.</li>
 				<li class="line-height-sm">Techy.</li>
@@ -28,10 +28,10 @@
 				<li class="line-height-sm">Imformative.</li>
 				<li class="line-height-sm">Inspiring.</li>
 				<li class="line-height-sm">Eclectic.</li>
-			</ul> #}
-			<div class="breakout" id="animated-cards">
+			</ul>
+			{# <div class="breakout" id="animated-cards">
 				<div class="anim-cards anim-cards--reverse js-anim-cards">
-					<ul class="anim-cards__list font-bold color-tertiary padding-bottom-md padding-bottom-0@md">
+					<ul class="anim-cards__list font-bold color-white padding-bottom-md padding-bottom-0@md">
 						<li class="anim-cards__item anim-cards-small__item font-tertiary text-center">
 							Creative.
 						</li>
@@ -76,7 +76,7 @@
 						</li>
 					</ul>
 				</div>
-			</div>
+			</div> #}
 
 
 			<h1 class="color-white text-xl text-xxl@sm margin-bottom-md">MK Geek Night, a quarterly evening event in Milton Keynes, currently <span class="">Intergalactic</span></h1>
@@ -210,44 +210,6 @@
 					</div>
 					{% endfor %}
 				{% endfor %}
-
-
-
-
-				{# <div class="card-v3 col-6@sm col-4@lg">
-					<a href="{{ siteUrl }}event" class="card-v3__link" aria-label="Details of this speaker and talk">
-						<figure class="card-v3__img">
-							<img src="/assets/img/s-alisoncoward.jpg" alt="Alison Coward">
-						</figure>
-
-						<div class="card-v3__content">
-							<div class="card-v3__label">Alison Coward</div>
-							<h3 class="color-primary text-md@lg text-lg@xl">Cultivating Your Remote Team Culture</h3>
-						</div>
-
-						<div class="card-v3__footer">
-							<span>More about this talk</span>
-							<svg class="icon" viewBox="0 0 16 16"><g fill="none" stroke-width="1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><line x1="0.5" y1="8.5" x2="15.5" y2="8.5"></line><polyline points="10.5,3.5 15.5,8.5 10.5,13.5 "></polyline></g></svg>
-						</div>
-					</a>
-				</div>
-				<div class="card-v3 col-6@sm col-4@lg">
-					<a href="{{ siteUrl }}event" class="card-v3__link" aria-label="Details of this speaker and talk">
-						<figure class="card-v3__img">
-							<img src="/assets/img/zach-lieberman.jpg" alt="Zach Lieberman">
-						</figure>
-
-						<div class="card-v3__content">
-							<div class="card-v3__label">Zach Lieberman</div>
-							<h3 class="color-primary text-md@lg text-lg@xl">Poetic Computation</h3>
-						</div>
-
-						<div class="card-v3__footer">
-							<span>More about this talk</span>
-							<svg class="icon" viewBox="0 0 16 16"><g fill="none" stroke-width="1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><line x1="0.5" y1="8.5" x2="15.5" y2="8.5"></line><polyline points="10.5,3.5 15.5,8.5 10.5,13.5 "></polyline></g></svg>
-						</div>
-					</a>
-				</div> #}
 			</div>
 
 			<h3 class="text-component color-contrast-high">View the <a href="{{ siteUrl }}event">event details and schedule</a>.</h3>

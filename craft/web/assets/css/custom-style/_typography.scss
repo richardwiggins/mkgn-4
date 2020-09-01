@@ -22,17 +22,17 @@
 	font-style: normal;
 }
 
-@font-face {
-	font-family: 'MonumentExtended Ultralight';
-	src: url('../fonts/MonumentExtended-Ultralight.eot'); /* IE9 Compat Modes */
-	src: url('../fonts/MonumentExtended-Ultralight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-		url('../fonts/MonumentExtended-Ultralight.woff2') format('woff2'), /* Super Modern Browsers */
-		url('../fonts/MonumentExtended-Ultralight.woff') format('woff'), /* Pretty Modern Browsers */
-		url('../fonts/MonumentExtended-Ultralight.ttf')  format('truetype'), /* Safari, Android, iOS */
-		url('../fonts/MonumentExtended-Ultralight.otf')  format('opentype');
-	font-weight: 400;
-	font-style: normal;
-}
+// @font-face {
+// 	font-family: 'MonumentExtended Ultralight';
+// 	src: url('../fonts/MonumentExtended-Ultralight.eot'); /* IE9 Compat Modes */
+// 	src: url('../fonts/MonumentExtended-Ultralight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+// 		url('../fonts/MonumentExtended-Ultralight.woff2') format('woff2'), /* Super Modern Browsers */
+// 		url('../fonts/MonumentExtended-Ultralight.woff') format('woff'), /* Pretty Modern Browsers */
+// 		url('../fonts/MonumentExtended-Ultralight.ttf')  format('truetype'), /* Safari, Android, iOS */
+// 		url('../fonts/MonumentExtended-Ultralight.otf')  format('opentype');
+// 	font-weight: 400;
+// 	font-style: normal;
+// }
 
 :root {
 	// font family
@@ -40,7 +40,7 @@
 	// --font-secondary: benton-sans-wide, benton-sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
 	--font-primary: aktiv-grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
 	--font-secondary: 'MonumentExtended Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
-	--font-tertiary: 'MonumentExtended Ultralight', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+	// --font-tertiary: 'MonumentExtended Ultralight', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
 
 	// body font size
 	--text-base-size: 1em;
@@ -102,10 +102,10 @@ h3 {
 	font-family: var(--font-secondary);
 	font-weight: var(--font-secondary-weight);
 }
-.font-tertiary {
-	font-family: var(--font-tertiary);
-	font-weight: var(--font-secondary-weight);
-}
+// .font-tertiary {
+// 	font-family: var(--font-tertiary);
+// 	font-weight: var(--font-secondary-weight);
+// }
 
 // color
 .color-secondary-darker { color: alpha(var(--color-secondary-darker), var(--color-o, 1)); }
