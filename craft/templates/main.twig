@@ -33,7 +33,7 @@
 	<link rel="stylesheet" href="https://use.typekit.net/wox0srz.css">
 	<script>
 		if('CSS' in window && CSS.supports('color', 'var(--color-var)')) {
-			document.write('<link rel="stylesheet" href="{{ siteUrl }}assets/css/style.css?d4d444">');
+			document.write('<link rel="stylesheet" href="{{ siteUrl }}assets/css/style.css?dd555">');
 		} else {
 			document.write('<link rel="stylesheet" href="{{ siteUrl }}assets/css/style-fallback.css">');
 		}
@@ -46,9 +46,8 @@
 <body class="main">
 
 	<nav class="nav__mobile bottom-0 left-0 right-0 position-fixed width-100% height-lg bg-secondary hide@md flex justify-between items-center padding-x-md">
-		{# <button class="btn btn--primary" aria-controls="sidebar">Show sidebar</button> #}
-		<a href="#menu" class="font-secondary color-white" aria-controls="sidebar">Menu</a>
-		<a href="{{ siteUrl }}#tickets" class="font-secondary color-white link__badge" aria-controls="closeSidebar" id="closeSidebar">Tickets</a>
+		<a href="#menu" class="font-secondary color-white padding-y-xs" aria-controls="sidebar">Menu</a>
+		<a href="{{ siteUrl }}#tickets" class="font-secondary color-white link__badge padding-y-xs" aria-controls="closeSidebar">Tickets</a>
 	</nav>
 
 	<div class="flex@md">
@@ -92,10 +91,10 @@
 				<div class="sidebar__footer display@md">
 					<div class="padding-x-md padding-y-xs color-white text-sm">
 						{% for entry in nextEvent %}
-							#{{ entry.eventNo }} {{ entry.eventDate | date('M j, Y') }}
+							#{{ entry.eventNo }} {{ entry.eventDate | date('M j Y') }}
 						{% endfor %}
 					</div>
-					<a href="{{ siteUrl }}#tickets" class="bg-primary block padding-x-md padding-y-sm btn btn--primary font-secondary color-white"><span class="link__badge link__badge--white">Tickets</span></a>
+					<a href="{{ siteUrl }}#tickets" class="js-sidebar__close-btn bg-primary block padding-x-md padding-y-sm btn btn--primary font-secondary color-white"><span class="link__badge link__badge--white">Tickets</span></a>
 				</div>
 			</div>
 		</aside>
@@ -109,7 +108,7 @@
 		</main>
 	</div>
 
-	<script src="{{ siteUrl }}assets/js/scripts.min.js"></script>
+	<script src="{{ siteUrl }}assets/js/scripts.min.js?s455juuiu"></script>
 	<script src="https://js.tito.io/v1" async></script>
 </body>
 </html>

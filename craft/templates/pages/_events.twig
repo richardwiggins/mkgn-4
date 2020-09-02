@@ -19,7 +19,7 @@
 		<div class="container max-width-xxl color-white svg-inherit margin-bottom-lg">
 			<svg class="width-xxxl hide@md margin-bottom-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932.56 258.67"><title>MK Geek Night</title><path d="M178.08 9.73h50v249h-50v-174.35l-59.37 65.74-59.37-65.74v57.19l-49.98 55.43v-187.27h50l59.37 65.82zm269.83 163.2l44.79-49.64c5.58-38.83 39.3-68.69 80.05-68.69a81.14 81.14 0 0 1 39.72 10.31l33.73-37.21a131 131 0 0 0-73.45-22.37c-72.16 0-130.65 57.91-130.65 129.34a128.1 128.1 0 0 0 5.81 38.26zm139.43-13.7h21.56l22.66-25.09 22.44-24.89h-66.7zm304.6-149.76v174.71l-118.74-174.45h-50v187.27l50-55.4v-57.22l118.74 174.37h50v-249.28zm-196.7 99.79l-22.47 24.88-22.66 25.09h-.38a81.22 81.22 0 0 1-142.45 22.44l-33.65 37.26a130.9 130.9 0 0 0 99.12 45.07c63.66 0 116.55-45.1 128.16-104.77v-50zm-225.65-99.79l-67.59.16-92 102 .07-.07v-101.83h-50v231.68l96.93-107.27zm-112.59 124.67l-33.64 37.25 78.64 87.2 67.56.16-112.56-124.64z" transform="translate(-9.36 -5.33)"/></svg>
 
-			<h1 class="color-white text-xl text-xxl@sm  margin-bottom-xxxs">#{{ entry.eventNo }} {{ entry.eventDate | date('M j, Y') }}</h1>
+			<h1 class="color-white text-xl text-xxl@sm  margin-bottom-xxxs">#{{ entry.eventNo }} {{ entry.eventDate | date('M j Y') }}</h1>
 
 			<ul class="hero__keywords padding-bottom-md padding-bottom-0@md color-white font-secondary flex@sm flex-wrap text-sm@md text-base@lg">
 				<li class="line-height-sm">Virtual event</li>
@@ -134,7 +134,7 @@
 			<ul class="anim-cards__list">
 			{% for entry in events %}
 				<li class="anim-cards__item text-component font-secondary color-accent text-md text-gradient">
-					#{{ entry.eventNo }} {{ entry.eventDate | date('F j, Y') }}
+					#{{ entry.eventNo }} {{ entry.eventDate | date('F j Y') }}
 				</li>
 			{% endfor %}
 			</ul>
