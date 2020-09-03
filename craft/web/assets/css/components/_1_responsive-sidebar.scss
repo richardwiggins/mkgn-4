@@ -170,6 +170,61 @@ Usage: codyhouse.co/license
 	}
 }
 
+
+// --static original, sort of
+// .sidebar--static, html:not(.js) .sidebar {
+// 	// visibility: visible;
+// 	transition: none;
+// 	width: var(--sidebar-static-width);
+// 	max-width: var(--sidebar-static-max-width);
+// 	// height: var(--sidebar-static-height);
+// 	// min-height: var(--sidebar-static-min-height);
+
+// 	// height: auto;
+// 	// will-change: auto;
+
+// 	&::after {
+// 		display: none;
+// 	}
+
+// 	.sidebar__panel {
+// 		position: static;
+// 		// position: fixed;
+// 		display: block;
+// 		background-color: transparent;
+// 		transform: translateY(0);
+// 		transition: none;
+// 		box-shadow: none;
+// 	}
+
+// 	.sidebar__content {
+// 		overflow: visible;
+// 	}
+
+// 	.sidebar__close-btn {
+// 		display: none;
+// 	}
+
+// 	@include breakpoint(md) {
+// 		height: auto;
+// 		will-change: auto;
+
+// 		.sidebar__panel {
+// 			position: fixed;
+// 		}
+// 	}
+
+// 	@include breakpoint(lg) {
+// 		width: 22%;
+// 	}
+
+// 	@include breakpoint(xl) {
+// 		width: 20%;
+// 	}
+// }
+
+
+
 .js {
 	.sidebar {
 		opacity: 0; // hide sidebar while it is initialized in JS

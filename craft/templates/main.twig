@@ -31,23 +31,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script>document.getElementsByTagName("html")[0].className += " js";</script>
 	<link rel="stylesheet" href="https://use.typekit.net/wox0srz.css">
+
+	 <link id="codyframe" rel="stylesheet" href="{{ siteUrl }}assets/css/style.css">
+	<!-- browsers not supporting CSS variables -->
 	<script>
-		if('CSS' in window && CSS.supports('color', 'var(--color-var)')) {
-			document.write('<link rel="stylesheet" href="{{ siteUrl }}assets/css/style.css?dd555">');
-		} else {
-			document.write('<link rel="stylesheet" href="{{ siteUrl }}assets/css/style-fallback.css">');
-		}
+		if(!('CSS' in window) || !CSS.supports('color', 'var(--color-var)')) {var cfStyle = document.getElementById('codyframe');if(cfStyle) {var href = cfStyle.getAttribute('href');href = href.replace('style.css', 'style-fallback.css');cfStyle.setAttribute('href', href);}}
 	</script>
-	<noscript>
-		<link rel="stylesheet" href="{{ siteUrl }}assets/css/style-fallback.css">
-	</noscript>
 	<title>{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }}{% else %}{{ seoTitleGlobal }}{% endif %}</title>
 </head>
 <body class="main">
 
 	<nav class="nav__mobile bottom-0 left-0 right-0 position-fixed width-100% bg-secondary hide@md flex justify-between items-center padding-x-md">
 		<a href="#menu" class="font-secondary color-white padding-y-xs" aria-controls="sidebar">Menu</a>
-		<a href="{{ siteUrl }}#tickets" class="font-secondary color-white link__badge padding-y-xs" aria-controls="closeSidebar">Tickets</a>
+		<a href="{{ siteUrl }}#tickets"
+		   class="font-secondary color-white link__badge padding-y-xs"
+		   id="mobile-tickets"
+		   aria-controls="closeSidebar">Tickets</a>
 	</nav>
 
 	<div class="flex@md">
@@ -108,7 +107,7 @@
 		</main>
 	</div>
 
-	<script src="{{ siteUrl }}assets/js/scripts.min.js?s455juuiu"></script>
+	<script src="{{ siteUrl }}assets/js/scripts.min.js?dsd0"></script>
 	<script src="https://js.tito.io/v1" async></script>
 </body>
 </html>
