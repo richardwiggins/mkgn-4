@@ -138,8 +138,20 @@ input[type="text"].tito-ticket-quantity-field {
     width: 70px !important;
 }
 input[type="text"].tito-ticket-donation-field {
-    width: 85px !important;
+    width: 75px !important;
     margin-left: 6px !important;
+
+    @include breakpoint(md) {
+        width: 110px !important;
+    }
+
+    @include breakpoint(lg) {
+        width: 120px !important;
+    }
+
+    @include breakpoint(xl) {
+        width: 130px !important;
+    }
 }
 .tito-ticket-price span {
     display: block;

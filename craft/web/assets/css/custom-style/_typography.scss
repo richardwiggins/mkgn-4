@@ -154,7 +154,7 @@ mark {
 		color: var(--color-contrast-medium);
 	}
 
-	p {
+	p, li {
 		@include breakpoint(lg) {
 			font-size: calc(var(--text-sm) * var(--text-scale-ratio) * 1.15);
 		}

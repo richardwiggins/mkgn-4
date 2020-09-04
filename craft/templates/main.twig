@@ -61,7 +61,7 @@
 
 				<div class="sidebar__content">
 				<!-- start sidebar content -->
-					<nav class="sidebar__nav text-component padding-md" id="menu">
+					<nav class="sidebar__nav padding-md" id="menu">
 						<ul>
 							<li><a href="{{ siteUrl }}#tickets" class="js-sidebar__close-btn sidebar__link--primary">Tickets</a></li>
 							<li><a href="{{ siteUrl }}#next-mkgn" class="js-sidebar__close-btn sidebar__link--primary">Next event</a></li>
@@ -98,12 +98,23 @@
 			</div>
 		</aside>
 
-		<main class="flex-grow z-index-2 overflow-hidden margin-bottom-xl margin-bottom-xxs@md">
+		<main class="flex-grow z-index-2 overflow-hidden">
 			<!-- start main content -->
 			{% block main %}
 				
 			{% endblock %}
 			<!-- end main content -->
+
+			<div aria-hidden="true" class="event__speaker--border breakout"></div>
+
+			<footer class="container max-width-adaptive-md padding-y-sm@xl margin-bottom-xxl margin-bottom-lg@md">
+				<div class="text-component text-sm">
+					<p>	MK Geek Night is a collaborative project from <a href="https://pixelcreation.co.uk/" target="_blank" rel="noreferrer noopener">Richard Wiggins</a> and <a href="https://www.davidhughes.org" target="_blank" rel="noreferrer noopener">David Hughes</a>.
+						<br>The MKGN brand, design and website was produced by <a href="http://pixelcreation.co.uk/" target="_blank" rel="noreferrer noopener">Pixel Creation</a> and is proudly hosted by <a href="https://www.guru.co.uk/" target="_blank" rel="noreferrer noopener">GURU</a>.
+						<br><a href="{{ siteUrl }}data-promise">Data Promise - Cookies, Privacy and more...</a>
+					</p>
+				</div>
+			</footer>
 		</main>
 	</div>
 

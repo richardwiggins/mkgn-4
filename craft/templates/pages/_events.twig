@@ -15,7 +15,7 @@
 
 {% set thisEventDate = entry.eventDate %}
 	
-	<div class="hero hero--mid flex flex-column justify-between">
+	<div class="gradient hero--mid flex flex-column justify-between">
 		<div class="container max-width-xxl color-white svg-inherit margin-bottom-lg">
 			<a href="{{ siteUrl }}" class="hide@md">
 			<svg class="width-xxxl margin-bottom-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932.56 258.67"><title>MK Geek Night</title><path d="M178.08 9.73h50v249h-50v-174.35l-59.37 65.74-59.37-65.74v57.19l-49.98 55.43v-187.27h50l59.37 65.82zm269.83 163.2l44.79-49.64c5.58-38.83 39.3-68.69 80.05-68.69a81.14 81.14 0 0 1 39.72 10.31l33.73-37.21a131 131 0 0 0-73.45-22.37c-72.16 0-130.65 57.91-130.65 129.34a128.1 128.1 0 0 0 5.81 38.26zm139.43-13.7h21.56l22.66-25.09 22.44-24.89h-66.7zm304.6-149.76v174.71l-118.74-174.45h-50v187.27l50-55.4v-57.22l118.74 174.37h50v-249.28zm-196.7 99.79l-22.47 24.88-22.66 25.09h-.38a81.22 81.22 0 0 1-142.45 22.44l-33.65 37.26a130.9 130.9 0 0 0 99.12 45.07c63.66 0 116.55-45.1 128.16-104.77v-50zm-225.65-99.79l-67.59.16-92 102 .07-.07v-101.83h-50v231.68l96.93-107.27zm-112.59 124.67l-33.64 37.25 78.64 87.2 67.56.16-112.56-124.64z" transform="translate(-9.36 -5.33)"/></svg>
@@ -52,7 +52,7 @@
 				limit: 1
 			}).all() %}
 
-			<div class="event__speaker--border breakout"></div>
+			<div aria-hidden="true" class="event__speaker--border breakout"></div>
 
 			<div class="grid gap-lg@sm margin-bottom-lg" id="{% for entry in speakeritem %}{{ entry.firstName }}{% endfor %}">
 
@@ -75,7 +75,7 @@
 				</div>
 				{% for entry in speakeritem %}
 				<figure class="col-3@sm margin-bottom-xs margin-bottom-0@md order-1 order-3@sm">
-					{% for image in entry.profilePhoto %}
+					{% for image in entry.profilePhoto.all() %}
 						{% if entry.profilePhoto %}
 						<div class="margin-left-0 event__img margin-bottom-sm@sm"><img src="{{ image.getUrl('profile') }}" alt="{{ entry.title }}"></div>
 						{% endif %}
@@ -127,19 +127,22 @@
 
 	{% include '_includes/partners' %}
 
-	<div class="container max-width-xxl text-component margin-top-lg">
-		<h5 class="font-primary font-bold color-accent">Upcoming events</h5>
-	</div>
+	<div class="gradient">
 
-	<div id="animated-cards">
-		<div class="anim-cards js-anim-cards">
-			<ul class="anim-cards__list">
-			{% for entry in events %}
-				<li class="anim-cards__item text-component font-secondary color-accent text-md text-gradient">
-					#{{ entry.eventNo }} {{ entry.eventDate | date('F j Y') }}
-				</li>
-			{% endfor %}
-			</ul>
+		<div class="container max-width-xxl text-component">
+			<h5 class="font-primary font-bold color-white">Upcoming events</h5>
+		</div>
+
+		<div id="animated-cards">
+			<div class="anim-cards js-anim-cards">
+				<ul class="anim-cards__list">
+				{% for entry in events %}
+					<li class="anim-cards__item text-component font-secondary color-accent text-md text-gradient">
+						#{{ entry.eventNo }} {{ entry.eventDate | date('F j Y') }}
+					</li>
+				{% endfor %}
+				</ul>
+			</div>
 		</div>
 	</div>
 {% endblock %}

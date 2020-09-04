@@ -24,6 +24,16 @@ ul {
 	}
 }
 
+.sidebar__nav {
+	ul li, ol li {
+	line-height: calc(var(--body-line-height) * var(--line-height-multiplier, 1));
+	}
+
+	ul, ol {
+	margin-bottom: calc(var(--space-unit) * 0.75 * var(--text-vspace-multiplier, 1));
+	}
+ }
+
 .sidebar__link--primary,
 .sidebar__link--secondary,
 .sidebar__link--tertiary {
