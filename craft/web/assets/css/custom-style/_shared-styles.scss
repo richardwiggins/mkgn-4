@@ -58,6 +58,10 @@ html {
 	height: 2px;
 	background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(151,68,243,1) 35%, rgba(249,57,245,1) 62%, rgba(255,255,255,1) 100%);
 	margin-bottom: var(--space-lg);
+
+	@include breakpoint(xl) {
+		margin-bottom: var(--space-xl);
+	}
 }
 
 

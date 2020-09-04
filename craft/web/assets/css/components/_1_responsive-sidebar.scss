@@ -16,7 +16,7 @@ Usage: codyhouse.co/license
 	--sidebar-static-width: 24%;
 	--sidebar-static-max-width: 380px;
 	--sidebar-static-height: 100%;
-	--sidebar-static-min-height: 0;
+	--sidebar-static-min-height: 100vh;
 
 	--off-canvas-animation-duration: 0.4s;
 }
@@ -125,7 +125,7 @@ Usage: codyhouse.co/license
 	width: var(--sidebar-static-width);
 	max-width: var(--sidebar-static-max-width);
 	// height: var(--sidebar-static-height);
-	// min-height: var(--sidebar-static-min-height);
+	min-height: var(--sidebar-static-min-height);
 
 	// height: auto;
 	// will-change: auto;

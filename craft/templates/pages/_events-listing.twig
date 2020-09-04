@@ -1,0 +1,106 @@
+{% extends "/main" %}
+{% if entry.seoTitle %}
+	{% set title = entry.seoTitle %}
+{% else %}
+	{% set title = entry.title %}
+{% endif %}
+{% if entry.seoDescription %}
+	{% set seoDescription = entry.seoDescription %}
+{% endif %}
+{% if entry.seoKeywords %}
+	{% set seoKeywords = entry.seoKeywords %}
+{% endif %}
+
+{# {% set events = craft.entries({
+	section: ['events'],
+	with: [
+		'entry.title',
+		'entry.url',
+	]
+}).limit(null) %} #}
+
+{% set pastEvents = craft.entries({
+	section: 'events',
+	eventDate: '<=' ~ now|date('Y-m-d'),
+	orderBy: 'eventDate desc',
+	with: [
+	'entry.title',
+	'entry.eventDate'
+	]
+}).all %}
+
+{% block main %}
+
+	
+	<div class="gradient flex flex-column justify-between margin-bottom-lg">
+		<div class="container max-width-xxl color-white svg-inherit ">
+			<a href="{{ siteUrl }}" class="hide@md">
+			<svg class="width-xxxl margin-bottom-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932.56 258.67"><title>MK Geek Night</title><path d="M178.08 9.73h50v249h-50v-174.35l-59.37 65.74-59.37-65.74v57.19l-49.98 55.43v-187.27h50l59.37 65.82zm269.83 163.2l44.79-49.64c5.58-38.83 39.3-68.69 80.05-68.69a81.14 81.14 0 0 1 39.72 10.31l33.73-37.21a131 131 0 0 0-73.45-22.37c-72.16 0-130.65 57.91-130.65 129.34a128.1 128.1 0 0 0 5.81 38.26zm139.43-13.7h21.56l22.66-25.09 22.44-24.89h-66.7zm304.6-149.76v174.71l-118.74-174.45h-50v187.27l50-55.4v-57.22l118.74 174.37h50v-249.28zm-196.7 99.79l-22.47 24.88-22.66 25.09h-.38a81.22 81.22 0 0 1-142.45 22.44l-33.65 37.26a130.9 130.9 0 0 0 99.12 45.07c63.66 0 116.55-45.1 128.16-104.77v-50zm-225.65-99.79l-67.59.16-92 102 .07-.07v-101.83h-50v231.68l96.93-107.27zm-112.59 124.67l-33.64 37.25 78.64 87.2 67.56.16-112.56-124.64z" transform="translate(-9.36 -5.33)"/></svg>
+			</a>
+
+			<h1 class="color-white text-xl text-xxl@sm  margin-bottom-xxxs">Past Events</h1>
+		</div>
+
+		<div class="container max-width-xxl text-component color-white">
+			<div class="max-width-md">
+				{{ entry.body }}
+			</div>
+		</div>
+	</div>
+
+	{# <div class="container max-width-xxl text-component margin-bottom-lg">
+		{{ entry.body }}
+	</div> #}
+
+
+
+
+
+	{% for entry in pastEvents %}
+		<div class="container max-width-xxl margin-bottom-md reveal-fx reveal-fx--translate-up" data-reveal-fx-delta="50" id="next-mkgn">
+			
+			{% set talks = entry.talks.all() %}
+			{% set eventLink = entry.url %}
+
+			<h2 class="text-xl text-xxl@sm margin-bottom-xs"><a href="{{ eventLink }}">#{{ entry.eventNo }} {{ entry.eventDate | date('M j Y') }}</a></h2>
+
+			<div class="grid gap-lg margin-bottom-xxxxs">
+				{% for entry in talks %}
+
+					{% set talkTitle = entry.heading %}
+					{% set speakeritem = craft.entries.section('speakers').relatedTo({
+						targetElement: entry,
+						limit: 1
+					}).all() %}
+					{% for entry in speakeritem %}
+					<div class="card-v3 col-6@xs col-4@sm">
+						<a href="{{ eventLink }}/#{{ entry.firstName }}" class="card-v3__link" aria-label="Details of {{ entry.firstName }}’s speaker and talk">
+							{% for image in entry.profilePhoto.all() %}
+								{% if entry.profilePhoto %}
+								<figure class="card-v3__img">
+									<img src="{{ image.getUrl('profile') }}" alt="{{ entry.title }}">
+								</figure>
+								{% endif %}
+							{% endfor %}
+
+							<div class="card-v3__content">
+								<div class="font-bold margin-bottom-xxxs text-md text-base@md text-md@xl">{{ entry.title }}</div>
+								<h3 class="color-primary text-md text-sm@md text-base@xl">{{ talkTitle }}</h3>
+							</div>
+
+							<div class="card-v3__footer">
+								<span class="text-sm@md text-base@xl">More about {{ entry.firstName }}’s talk</span>
+								<svg class="icon" viewBox="0 0 16 16"><g fill="none" stroke-width="1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><line x1="0.5" y1="8.5" x2="15.5" y2="8.5"></line><polyline points="10.5,3.5 15.5,8.5 10.5,13.5 "></polyline></g></svg>
+							</div>
+						</a>
+					</div>
+					{% endfor %}
+				{% endfor %}
+			</div>
+
+			{# <h3 class="text-component color-contrast-high"><a href="{{ eventLink }}">View event #{{ entry.eventNo }}</a>.</h3> #}
+		</div>
+
+		<div aria-hidden="true" class="event__speaker--border breakout"></div>
+	{% endfor %}
+{% endblock %}
