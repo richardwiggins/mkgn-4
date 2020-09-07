@@ -123,9 +123,13 @@
 
 	</div>
 
-	{% include '_includes/tickets' %}
+	{% if entry.eventDate > now %}
+		{% include '_includes/tickets' %}
+	{% endif %}
 
-	{% include '_includes/partners' %}
+	{% if entry.eventDate > now %}
+		{% include '_includes/partners' %}
+	{% endif %}
 
 	<div class="gradient">
 
