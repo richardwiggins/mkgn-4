@@ -500,6 +500,7 @@ Math.easeInOutQuad = function (t, b, c, d) {
 (function() {
   var Sidebar = function(element) {
     this.element = element;
+    this.html = document.getElementsByClassName('html-wrapper')[0];
     this.triggers = document.querySelectorAll('[aria-controls="'+this.element.getAttribute('id')+'"]');
     this.firstFocusable = null;
     this.lastFocusable = null;
@@ -551,12 +552,14 @@ Math.easeInOutQuad = function (t, b, c, d) {
 
   function showSidebar(sidebar) { // mobile layout only
     Util.addClass(sidebar.element, sidebar.showClass);
+    Util.addClass(sidebar.html, 'html-off-canvas--visible');
     getFocusableElements(sidebar);
     Util.moveFocus(sidebar.element);
   };
 
   function closeSidebar(sidebar) { // mobile layout only
     Util.removeClass(sidebar.element, sidebar.showClass);
+    Util.removeClass(sidebar.html, 'html-off-canvas--visible');
     sidebar.firstFocusable = null;
     sidebar.lastFocusable = null;
     if(sidebar.selectedTrigger) sidebar.selectedTrigger.focus();

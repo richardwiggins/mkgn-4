@@ -130,7 +130,7 @@
 					}).all() %}
 					{% for entry in speakeritem %}
 					<div class="card-v3 col-6@sm col-4@lg">
-						<a href="{{ eventLink }}/#{{ entry.firstName }}" class="card-v3__link" aria-label="Details of {{ entry.firstName }}’s speaker and talk">
+						<a href="{{ eventLink }}#{{ entry.firstName }}" class="card-v3__link" aria-label="Details of {{ entry.firstName }}’s speaker and talk">
 							{% for image in entry.profilePhoto.all() %}
 								{% if entry.profilePhoto %}
 								<figure class="card-v3__img">
