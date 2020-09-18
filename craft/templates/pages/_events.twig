@@ -13,7 +13,7 @@
 
 {% block main %}
 
-{% set thisEventDate = entry.eventDate %}
+{% set thisEventDate = entry.eventDate | date('M j Y') %}
 	
 	<div class="gradient hero--mid flex flex-column justify-between">
 		<div class="container max-width-xxl color-white svg-inherit margin-bottom-lg">
@@ -23,11 +23,13 @@
 
 			<h1 class="color-white text-xl text-xxl@sm  margin-bottom-xxxs">#{{ entry.eventNo }} {{ entry.eventDate | date('M j Y') }}</h1>
 
+			{% if thisEventDate >= now|date('M j Y') %}
 			<ul class="hero__keywords padding-bottom-md padding-bottom-0@md color-white font-secondary flex@sm flex-wrap text-sm@md text-base@lg">
 				<li class="line-height-sm">Virtual event</li>
 				<li class="line-height-sm">Talks start 19:30BST</li>
 				<li class="line-height-sm">Q&A session</li>
 			</ul>
+			{% endif %}
 		</div>
 
 		<div class="container max-width-xxl text-component color-white">
