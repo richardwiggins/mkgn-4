@@ -38,6 +38,22 @@
 		if(!('CSS' in window) || !CSS.supports('color', 'var(--color-var)')) {var cfStyle = document.getElementById('codyframe');if(cfStyle) {var href = cfStyle.getAttribute('href');href = href.replace('style.css', 'style-fallback.css');cfStyle.setAttribute('href', href);}}
 	</script>
 	<title>{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }}{% else %}{{ seoTitleGlobal }}{% endif %}</title>
+	<meta name="title" content="{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }}{% else %}{{ seoTitleGlobal }}{% endif %}">
+	<meta name="description" content="An event for the digital and creative communities combining talks from some of the best speakers in the UK and beyond, with the opportunity watch new and up and coming presenters.">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://mkgeeknight.co.uk/">
+	<meta property="og:title" content="MK Geek Night, a quarterly evening event in Milton Keynes, currently Intergalactic">
+	<meta property="og:description" content="An event for the digital and creative communities combining talks from some of the best speakers in the UK and beyond, with the opportunity watch new and up and coming presenters.">
+	<meta property="og:image" content="{{ siteUrl }}assets/img/mkgn-meta.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://mkgeeknight.co.uk/">
+	<meta property="twitter:title" content="MK Geek Night, a quarterly evening event in Milton Keynes, currently Intergalactic">
+	<meta property="twitter:description" content="An event for the digital and creative communities combining talks from some of the best speakers in the UK and beyond, with the opportunity watch new and up and coming presenters.">
+	<meta property="twitter:image" content="{{ siteUrl }}assets/img/mkgn-meta.png">
 
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
