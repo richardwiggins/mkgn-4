@@ -14,6 +14,7 @@
 {% block main %}
 
 {% set thisEventDate = entry.eventDate | date('M j Y') %}
+{% set talks = entry.talks.all() %}
 	
 	<div class="gradient hero--mid flex flex-column justify-between">
 		<div class="container max-width-xxl color-white svg-inherit margin-bottom-lg">
@@ -34,19 +35,22 @@
 
 		<div class="container max-width-xxl text-component color-white">
 			<div class="max-width-md">
-				{{ entry.speakerIntro }}
+				{% if talks %}
+					{{ entry.speakerIntro }}
+				{% else %}
+					{{ entry.speakerIntro }}
+					<div class="h2-text text-xl text-xxl@sm color-tertiary">Details to follow</div>
+				{% endif %}
 			</div>
 		</div>
 	</div>
-
+	
+	{% if talks %}
 	<div class="container max-width-xxl margin-top-lg" id="next-mkgn">
 
 		<h2 class="text-xl text-xxl@sm margin-bottom-xxxxs">Topics, speakers & schedule</h2>
 		<div class="margin-bottom-lg">Timings are approximate</div>
-
 		
-
-		{% set talks = entry.talks.all() %}
 		{% if talks | length %}
 		{% for entry in talks %}
 			{% set speakeritem = craft.entries.section('speakers').relatedTo({
@@ -124,6 +128,7 @@
 		{% endif %}
 
 	</div>
+	{% endif %}
 
 	{% if entry.eventDate > now %}
 		{% include '_includes/tickets' %}

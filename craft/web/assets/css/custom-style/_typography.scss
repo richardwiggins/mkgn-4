@@ -92,6 +92,12 @@ h1, h2, h3, h4 {
 	// font-weight: 700;
 }
 
+.h2-text {
+	color: var(--color-accent);
+	font-family: var(--font-secondary);
+}
+
+
 h3 {
 	color: var(--color-tertiary);
 }

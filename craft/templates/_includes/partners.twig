@@ -5,7 +5,7 @@
 {% set eventPartnerInkind = entry.partners.partnerLevel('inKindPartner').all() %}
 
 {% if eventPartner | length %}
-<div class="container max-width-adaptive-md" id="partners">
+<div class="container max-width-adaptive-md {% if talks %}{% else %}margin-top-lg{% endif %}" id="partners">
 	<div class="text-component margin-bottom-lg">
 		<h2 class="text-xl text-xxl@sm margin-bottom-xs">Partners</h2>
 
