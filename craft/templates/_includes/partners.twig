@@ -3,6 +3,7 @@
 {% set eventPartnerPartner = entry.partners.partnerLevel('partner').all() %}
 {% set eventPartnerCommunity = entry.partners.partnerLevel('communityPartner').all() %}
 {% set eventPartnerInkind = entry.partners.partnerLevel('inKindPartner').all() %}
+{% set talks = entry.talks.all() %}
 
 {% if eventPartner | length %}
 <div class="container max-width-adaptive-md {% if talks %}{% else %}margin-top-lg{% endif %}" id="partners">
