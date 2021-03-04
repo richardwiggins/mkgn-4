@@ -27,5 +27,6 @@
     "gulp-version-number": "^0.2.4",
     "postcss-calc": "^7.0.3",
     "postcss-css-variables": "git+https://github.com/CodyHouse/postcss-css-variables.git"
-  }
+  },
+  "dependencies": {}
 }

@@ -55,6 +55,11 @@
 						#{{ entry.eventNo }} {{ entry.eventDate | date('F j Y') }}
 					</li>
 				{% endfor %}
+				{% for entry in events %}
+					<li class="anim-cards__item text-component font-secondary color-accent text-md text-gradient">
+						#{{ entry.eventNo }} {{ entry.eventDate | date('F j Y') }}
+					</li>
+				{% endfor %}
 				</ul>
 			</div>
 		</div>

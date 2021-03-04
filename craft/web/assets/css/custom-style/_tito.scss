@@ -110,6 +110,9 @@ Have fun.
 @media screen and (min-width: 520px) {
     .tito-ticket-price-quantity {
         float: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 .tito-ticket-price {
