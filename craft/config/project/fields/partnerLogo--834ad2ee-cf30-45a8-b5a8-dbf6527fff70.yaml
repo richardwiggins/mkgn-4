@@ -5,13 +5,13 @@ instructions: ''
 name: 'Partner Logo'
 searchable: true
 settings:
-  defaultUploadLocationSource: 'volume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
+  defaultUploadLocationSource: 'volume:50fb2e47-fb7e-4214-9e47-e4285eff585a' # Speakers
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
   restrictFiles: ''
   selectionLabel: ''
-  singleUploadLocationSource: 'volume:95b71215-725c-454f-8f8d-4ab133b7f9f8'
+  singleUploadLocationSource: 'volume:95b71215-725c-454f-8f8d-4ab133b7f9f8' # Partners
   singleUploadLocationSubpath: ''
   sources: '*'
   useSingleFolder: '1'

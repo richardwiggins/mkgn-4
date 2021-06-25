@@ -85,39 +85,39 @@ permissions:
   - 'editglobalset:757e8857-287c-45e9-840b-067c8b0d3b45'
   - 'editglobalset:c2a527e2-c83d-4ac0-83a0-b082d0d42ee8'
   - 'editglobalset:f30095e7-4a6f-4ada-b270-0151da705328'
-  - 'saveassetinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
-  - 'createfoldersinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
-  - 'deletefilesandfoldersinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
-  - 'viewvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
-  - 'saveassetinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8'
-  - 'createfoldersinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8'
-  - 'deletefilesandfoldersinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8'
-  - 'viewvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8'
-  - 'saveassetinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'createfoldersinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'deletefilesandfoldersinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'viewvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
+  - 'saveassetinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a' # Speakers
+  - 'createfoldersinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a' # Speakers
+  - 'deletefilesandfoldersinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a' # Speakers
+  - 'viewvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a' # Speakers
+  - 'saveassetinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8' # Partners
+  - 'createfoldersinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8' # Partners
+  - 'deletefilesandfoldersinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8' # Partners
+  - 'viewvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8' # Partners
+  - 'saveassetinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'createfoldersinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'deletefilesandfoldersinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'viewvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
   - freeform-submissionsmanage
   - 'freeform-submissionsmanage:1'
   - freeform-submissionsaccess
-  - 'editimagesinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
-  - 'editimagesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'editimagesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8'
-  - 'viewpeerfilesinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
-  - 'editpeerfilesinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
-  - 'deletepeerfilesinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
-  - 'replacepeerfilesinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
-  - 'editpeerimagesinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
-  - 'viewpeerfilesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8'
-  - 'editpeerfilesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8'
-  - 'deletepeerfilesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8'
-  - 'replacepeerfilesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8'
-  - 'editpeerimagesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8'
-  - 'viewpeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'editpeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'deletepeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'replacepeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'editpeerimagesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'replacefilesinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
-  - 'replacefilesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8'
-  - 'replacefilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
+  - 'editimagesinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a' # Speakers
+  - 'editimagesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'editimagesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8' # Partners
+  - 'viewpeerfilesinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a' # Speakers
+  - 'editpeerfilesinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a' # Speakers
+  - 'deletepeerfilesinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a' # Speakers
+  - 'replacepeerfilesinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a' # Speakers
+  - 'editpeerimagesinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a' # Speakers
+  - 'viewpeerfilesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8' # Partners
+  - 'editpeerfilesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8' # Partners
+  - 'deletepeerfilesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8' # Partners
+  - 'replacepeerfilesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8' # Partners
+  - 'editpeerimagesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8' # Partners
+  - 'viewpeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'editpeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'deletepeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'replacepeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'editpeerimagesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'replacefilesinvolume:50fb2e47-fb7e-4214-9e47-e4285eff585a' # Speakers
+  - 'replacefilesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8' # Partners
+  - 'replacefilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos

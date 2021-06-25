@@ -19,12 +19,11 @@ fieldLayouts:
             placeholder: null
             readonly: false
             requirable: false
-            required: false
             size: null
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\TitleField
+            type: craft\fieldlayoutelements\AssetTitleField
             warning: null
             width: 100
         name: Content
@@ -33,7 +32,7 @@ handle: photos
 hasUrls: true
 name: 'General Photos'
 settings:
-  path: '@basePath/uploads/photos'
+  path: uploads/photos
 sortOrder: 3
 type: craft\volumes\Local
-url: $ASSET_BASE_URL/photos
+url: uploads/photos

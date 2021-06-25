@@ -1,4 +1,4 @@
-dateModified: 1600682236
+dateModified: 1615200013
 email:
   fromEmail: richard@mkgeeknight.co.uk
   fromName: MKGN
@@ -12,7 +12,7 @@ plugins:
   freeform:
     enabled: '1'
     licenseKey: 5OYP5M02MRAFB7F8IOTHW1IO
-    schemaVersion: 3.0.8
+    schemaVersion: 3.3.0
     settings:
       defaultView: forms
       emailTemplateDirectory: null
@@ -35,5 +35,5 @@ system:
   edition: pro
   live: true
   name: MKGN
-  schemaVersion: 3.5.13
+  schemaVersion: 3.6.6
   timeZone: UTC
