@@ -1,4 +1,4 @@
-dateModified: 1615200013
+dateModified: 1628755822
 email:
   fromEmail: richard@mkgeeknight.co.uk
   fromName: MKGN
@@ -8,11 +8,19 @@ graphql:
   publicToken:
     enabled: false
     expiryDate: null
+meta:
+  __names__:
+    6d86e5aa-61e4-43d4-889b-8754e3a001af: '404 - Page Not Found' # 404 - Page Not Found
+    75a000d7-49a0-4674-ada6-e4d64644eb1e: Footer # Footer
+    757e8857-287c-45e9-840b-067c8b0d3b45: 'Global SEO' # Global SEO
+    73510c09-a443-4e30-8712-f2565d8a10bd: Editor # Editor
+    c2a527e2-c83d-4ac0-83a0-b082d0d42ee8: Partners # Partners
+    f30095e7-4a6f-4ada-b270-0151da705328: Tickets # Tickets
 plugins:
   freeform:
     enabled: '1'
     licenseKey: 5OYP5M02MRAFB7F8IOTHW1IO
-    schemaVersion: 3.3.0
+    schemaVersion: 3.3.2
     settings:
       defaultView: forms
       emailTemplateDirectory: null
@@ -35,5 +43,5 @@ system:
   edition: pro
   live: true
   name: MKGN
-  schemaVersion: 3.6.6
+  schemaVersion: 3.7.7
   timeZone: UTC

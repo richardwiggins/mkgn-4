@@ -7,13 +7,13 @@ searchable: true
 settings:
   allowedKinds:
     - image
-  defaultUploadLocationSource: 'volume:50fb2e47-fb7e-4214-9e47-e4285eff585a' # Speakers
+  defaultUploadLocationSource: 'volume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
   defaultUploadLocationSubpath: ''
   limit: '2'
   localizeRelations: false
   restrictFiles: '1'
   selectionLabel: ''
-  singleUploadLocationSource: 'volume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  singleUploadLocationSource: 'volume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
   singleUploadLocationSubpath: ''
   sources: '*'
   useSingleFolder: '1'

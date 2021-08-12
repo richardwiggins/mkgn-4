@@ -3,13 +3,14 @@ fieldLayouts:
     tabs:
       -
         fields:
-          037a5f54-21d8-4b39-b38d-0e7af880f8a2:
-            required: false
-            sortOrder: 1
           3d10df47-f48c-4ae8-a6fd-1663ffe6db6e:
             required: false
             sortOrder: 2
+          037a5f54-21d8-4b39-b38d-0e7af880f8a2:
+            required: false
+            sortOrder: 1
         name: Content
         sortOrder: 1
 handle: page404
 name: '404 - Page Not Found'
+sortOrder: 1

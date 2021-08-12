@@ -10,3 +10,4 @@ fieldLayouts:
         sortOrder: 1
 handle: tickets
 name: Tickets
+sortOrder: 5
