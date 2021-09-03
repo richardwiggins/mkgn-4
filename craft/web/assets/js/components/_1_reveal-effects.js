@@ -14,37 +14,38 @@
 			fxRevealAll();
 			return;
 		}
+
+		var fxRevealDelta = 120; // amount (in pixel) the element needs to enter the viewport to be revealed - if not custom value (data-reveal-fx-delta)
 		
 		var viewportHeight = window.innerHeight,
 			fxChecking = false,
 			fxRevealedItems = [],
-			fxElementDelays = fxGetDelays(); //elements animation delay
-
-		var fxRevealDelta = 200; // amount (in pixel) the element needs to enter the viewport to be revealed
+			fxElementDelays = fxGetDelays(), //elements animation delay
+			fxElementDeltas = fxGetDeltas(); // amount (in px) the element needs enter the viewport to be revealed (default value is fxRevealDelta) 
+		
 		
 		// add event listeners
 		window.addEventListener('load', fxReveal);
 		window.addEventListener('resize', fxResize);
+		window.addEventListener('restartAll', fxRestart);
 
 		// observe reveal elements
-		var observer;
+		var observer = [];
 		initObserver();
-		
+
 		function initObserver() {
-			observer = new IntersectionObserver(
-				function(entries, observer) { 
-					entries.forEach(function(entry){
-						if(entry.isIntersecting) {
-							fxRevealItemObserver(entry.target);
-							observer.unobserve(entry.target);
-						}
-					});
-				}, 
-				{rootMargin: "0px 0px -"+fxRevealDelta+"px 0px"}
-			);
-	
 			for(var i = 0; i < fxElements.length; i++) {
-				observer.observe(fxElements[i]);
+				observer[i] = new IntersectionObserver(
+					function(entries, observer) { 
+						if(entries[0].isIntersecting) {
+							fxRevealItemObserver(entries[0].target);
+							observer.unobserve(entries[0].target);
+						}
+					}, 
+					{rootMargin: "0px 0px -"+fxElementDeltas[i]+"px 0px"}
+				);
+	
+				observer[i].observe(fxElements[i]);
 			}
 		};
 
@@ -68,7 +69,7 @@
 		function fxReveal() { // reveal visible elements
 			for(var i = 0; i < fxElements.length; i++) {(function(i){
 				if(fxRevealedItems.indexOf(i) != -1 ) return; //element has already been revelead
-				if(fxElementIsVisible(fxElements[i])) {
+				if(fxElementIsVisible(fxElements[i], i)) {
 					fxRevealItem(i);
 					fxRevealedItems.push(i);
 				}})(i); 
@@ -105,12 +106,20 @@
 			return delays;
 		};
 
+		function fxGetDeltas() { // get reveal delta
+			var deltas = [];
+			for(var i = 0; i < fxElements.length; i++) {
+				deltas.push( fxElements[i].getAttribute('data-reveal-fx-delta') ? parseInt(fxElements[i].getAttribute('data-reveal-fx-delta')) : fxRevealDelta);
+			}
+			return deltas;
+		};
+
 		function fxDisabled(element) { // check if elements need to be animated - no animation on small devices
 			return !(window.getComputedStyle(element, '::before').getPropertyValue('content').replace(/'|"/g, "") == 'reveal-fx');
 		};
 
-		function fxElementIsVisible(element) { // element is inside viewport
-			return (fxGetElementPosition(element) <= viewportHeight - fxRevealDelta);
+		function fxElementIsVisible(element, i) { // element is inside viewport
+			return (fxGetElementPosition(element) <= viewportHeight - fxElementDeltas[i]);
 		};
 
 		function fxGetElementPosition(element) { // get top position of element
@@ -128,12 +137,37 @@
 			// Reduced Motion on or Intersection Observer not supported
 			while(fxElements[0]) {
 				// remove all classes starting with 'reveal-fx--'
-				var classes = fxElements[0].className.split(" ").filter(function(c) {
+				var classes = fxElements[0].getAttribute('class').split(" ").filter(function(c) {
 					return c.lastIndexOf('reveal-fx--', 0) !== 0;
 				});
-				fxElements[0].className = classes.join(" ").trim();
+				fxElements[0].setAttribute('class', classes.join(" ").trim());
 				Util.removeClass(fxElements[0], 'reveal-fx');
 			}
 		};
+
+		function fxRestart() {
+      // restart the reveal effect -> hide all elements and re-init the observer
+      if (Util.osHasReducedMotion() || !intersectionObserverSupported || fxDisabled(fxElements[0])) {
+        return;
+      }
+      // check if we need to add the event listensers back
+      if(fxElements.length <= fxRevealedItems.length) {
+        window.addEventListener('load', fxReveal);
+        window.addEventListener('resize', fxResize);
+      }
+      // remove observer and reset the observer array
+      for(var i = 0; i < observer.length; i++) {
+        if(observer[i]) observer[i].disconnect();
+      }
+      observer = [];
+      // remove visible class
+      for(var i = 0; i < fxElements.length; i++) {
+        Util.removeClass(fxElements[i], 'reveal-fx--is-visible');
+      }
+      // reset fxRevealedItems array
+      fxRevealedItems = [];
+      // restart observer
+      initObserver();
+    };
 	}
 }());

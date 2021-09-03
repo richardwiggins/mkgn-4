@@ -1,5 +1,6 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+//var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 var sassGlob = require('gulp-sass-glob');
 var browserSync = require('browser-sync').create();
 var postcss      = require('gulp-postcss');
@@ -9,7 +10,7 @@ var calc = require('postcss-calc');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
-var version = require('gulp-version-number');
+var purgecss = require('gulp-purgecss');
 
 // js file paths
 var utilJsPath = 'craft/web/assets/js'; // util.js path - you may need to update this if including the framework as external node module

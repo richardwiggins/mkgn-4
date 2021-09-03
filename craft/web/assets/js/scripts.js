@@ -495,6 +495,120 @@ Math.easeInOutQuad = function (t, b, c, d) {
 		}
 	}
 }());
+// File#: _1_lazy-load
+// Usage: codyhouse.co/license
+(function() {
+  var LazyLoad = function(elements) {
+    this.elements = elements;
+    initLazyLoad(this);
+  };
+
+  function initLazyLoad(asset) {
+    if(lazySupported) setAssetsSrc(asset);
+    else if(intersectionObsSupported) observeAssets(asset);
+    else scrollAsset(asset);
+  };
+
+  function setAssetsSrc(asset) {
+    for(var i = 0; i < asset.elements.length; i++) {
+      if(asset.elements[i].getAttribute('data-bg') || asset.elements[i].tagName.toLowerCase() == 'picture') { // this could be an element with a bg image or a <source> element inside a <picture>
+        observeSingleAsset(asset.elements[i]);
+      } else {
+        setSingleAssetSrc(asset.elements[i]);
+      } 
+    }
+  };
+
+  function setSingleAssetSrc(img) {
+    if(img.tagName.toLowerCase() == 'picture') {
+      setPictureSrc(img);
+    } else {
+      setSrcSrcset(img);
+      var bg = img.getAttribute('data-bg');
+      if(bg) img.style.backgroundImage = bg;
+      if(!lazySupported || bg) img.removeAttribute("loading");
+    }
+  };
+
+  function setPictureSrc(picture) {
+    var pictureChildren = picture.children;
+    for(var i = 0; i < pictureChildren.length; i++) setSrcSrcset(pictureChildren[i]);
+    picture.removeAttribute("loading");
+  };
+
+  function setSrcSrcset(img) {
+    var src = img.getAttribute('data-src');
+    if(src) img.src = src;
+    var srcset = img.getAttribute('data-srcset');
+    if(srcset) img.srcset = srcset;
+  };
+
+  function observeAssets(asset) {
+    for(var i = 0; i < asset.elements.length; i++) {
+      observeSingleAsset(asset.elements[i]);
+    }
+  };
+
+  function observeSingleAsset(img) {
+    if( !img.getAttribute('data-src') && !img.getAttribute('data-srcset') && !img.getAttribute('data-bg') && img.tagName.toLowerCase() != 'picture') return; // using the native lazyload with no need js lazy-loading
+
+    var threshold = img.getAttribute('data-threshold') || '200px';
+    var config = {rootMargin: threshold};
+    var observer = new IntersectionObserver(observerLoadContent.bind(img), config);
+    observer.observe(img);
+  };
+
+  function observerLoadContent(entries, observer) { 
+    if(entries[0].isIntersecting) {
+      setSingleAssetSrc(this);
+      observer.unobserve(this);
+    }
+  };
+
+  function scrollAsset(asset) {
+    asset.elements = Array.prototype.slice.call(asset.elements);
+    asset.listening = false;
+    asset.scrollListener = eventLazyLoad.bind(asset);
+    document.addEventListener("scroll", asset.scrollListener);
+    asset.resizeListener = eventLazyLoad.bind(asset);
+    document.addEventListener("resize", asset.resizeListener);
+    eventLazyLoad.bind(asset)(); // trigger before starting scrolling/resizing
+  };
+
+  function eventLazyLoad() {
+    var self = this;
+    if(self.listening) return;
+    self.listening = true;
+    setTimeout(function() {
+      for(var i = 0; i < self.elements.length; i++) {
+        if ((self.elements[i].getBoundingClientRect().top <= window.innerHeight && self.elements[i].getBoundingClientRect().bottom >= 0) && getComputedStyle(self.elements[i]).display !== "none") {
+          setSingleAssetSrc(self.elements[i]);
+
+          self.elements = self.elements.filter(function(image) {
+            return image.hasAttribute("loading");
+          });
+
+          if (self.elements.length === 0) {
+            if(self.scrollListener) document.removeEventListener("scroll", self.scrollListener);
+            if(self.resizeListener) window.removeEventListener("resize", self.resizeListener);
+          }
+        }
+      }
+      self.listening = false;
+    }, 200);
+  };
+
+  window.LazyLoad = LazyLoad;
+
+  var lazyLoads = document.querySelectorAll('[loading="lazy"]'),
+    lazySupported = 'loading' in HTMLImageElement.prototype,
+    intersectionObsSupported = ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype);
+  
+  if( lazyLoads.length > 0 ) {
+    new LazyLoad(lazyLoads);
+  };
+  
+}());
 // File#: _1_responsive-sidebar
 // Usage: codyhouse.co/license
 (function() {
@@ -714,37 +828,38 @@ Math.easeInOutQuad = function (t, b, c, d) {
 			fxRevealAll();
 			return;
 		}
+
+		var fxRevealDelta = 120; // amount (in pixel) the element needs to enter the viewport to be revealed - if not custom value (data-reveal-fx-delta)
 		
 		var viewportHeight = window.innerHeight,
 			fxChecking = false,
 			fxRevealedItems = [],
-			fxElementDelays = fxGetDelays(); //elements animation delay
-
-		var fxRevealDelta = 200; // amount (in pixel) the element needs to enter the viewport to be revealed
+			fxElementDelays = fxGetDelays(), //elements animation delay
+			fxElementDeltas = fxGetDeltas(); // amount (in px) the element needs enter the viewport to be revealed (default value is fxRevealDelta) 
+		
 		
 		// add event listeners
 		window.addEventListener('load', fxReveal);
 		window.addEventListener('resize', fxResize);
+		window.addEventListener('restartAll', fxRestart);
 
 		// observe reveal elements
-		var observer;
+		var observer = [];
 		initObserver();
-		
+
 		function initObserver() {
-			observer = new IntersectionObserver(
-				function(entries, observer) { 
-					entries.forEach(function(entry){
-						if(entry.isIntersecting) {
-							fxRevealItemObserver(entry.target);
-							observer.unobserve(entry.target);
-						}
-					});
-				}, 
-				{rootMargin: "0px 0px -"+fxRevealDelta+"px 0px"}
-			);
-	
 			for(var i = 0; i < fxElements.length; i++) {
-				observer.observe(fxElements[i]);
+				observer[i] = new IntersectionObserver(
+					function(entries, observer) { 
+						if(entries[0].isIntersecting) {
+							fxRevealItemObserver(entries[0].target);
+							observer.unobserve(entries[0].target);
+						}
+					}, 
+					{rootMargin: "0px 0px -"+fxElementDeltas[i]+"px 0px"}
+				);
+	
+				observer[i].observe(fxElements[i]);
 			}
 		};
 
@@ -768,7 +883,7 @@ Math.easeInOutQuad = function (t, b, c, d) {
 		function fxReveal() { // reveal visible elements
 			for(var i = 0; i < fxElements.length; i++) {(function(i){
 				if(fxRevealedItems.indexOf(i) != -1 ) return; //element has already been revelead
-				if(fxElementIsVisible(fxElements[i])) {
+				if(fxElementIsVisible(fxElements[i], i)) {
 					fxRevealItem(i);
 					fxRevealedItems.push(i);
 				}})(i); 
@@ -805,12 +920,20 @@ Math.easeInOutQuad = function (t, b, c, d) {
 			return delays;
 		};
 
+		function fxGetDeltas() { // get reveal delta
+			var deltas = [];
+			for(var i = 0; i < fxElements.length; i++) {
+				deltas.push( fxElements[i].getAttribute('data-reveal-fx-delta') ? parseInt(fxElements[i].getAttribute('data-reveal-fx-delta')) : fxRevealDelta);
+			}
+			return deltas;
+		};
+
 		function fxDisabled(element) { // check if elements need to be animated - no animation on small devices
 			return !(window.getComputedStyle(element, '::before').getPropertyValue('content').replace(/'|"/g, "") == 'reveal-fx');
 		};
 
-		function fxElementIsVisible(element) { // element is inside viewport
-			return (fxGetElementPosition(element) <= viewportHeight - fxRevealDelta);
+		function fxElementIsVisible(element, i) { // element is inside viewport
+			return (fxGetElementPosition(element) <= viewportHeight - fxElementDeltas[i]);
 		};
 
 		function fxGetElementPosition(element) { // get top position of element
@@ -828,13 +951,38 @@ Math.easeInOutQuad = function (t, b, c, d) {
 			// Reduced Motion on or Intersection Observer not supported
 			while(fxElements[0]) {
 				// remove all classes starting with 'reveal-fx--'
-				var classes = fxElements[0].className.split(" ").filter(function(c) {
+				var classes = fxElements[0].getAttribute('class').split(" ").filter(function(c) {
 					return c.lastIndexOf('reveal-fx--', 0) !== 0;
 				});
-				fxElements[0].className = classes.join(" ").trim();
+				fxElements[0].setAttribute('class', classes.join(" ").trim());
 				Util.removeClass(fxElements[0], 'reveal-fx');
 			}
 		};
+
+		function fxRestart() {
+      // restart the reveal effect -> hide all elements and re-init the observer
+      if (Util.osHasReducedMotion() || !intersectionObserverSupported || fxDisabled(fxElements[0])) {
+        return;
+      }
+      // check if we need to add the event listensers back
+      if(fxElements.length <= fxRevealedItems.length) {
+        window.addEventListener('load', fxReveal);
+        window.addEventListener('resize', fxResize);
+      }
+      // remove observer and reset the observer array
+      for(var i = 0; i < observer.length; i++) {
+        if(observer[i]) observer[i].disconnect();
+      }
+      observer = [];
+      // remove visible class
+      for(var i = 0; i < fxElements.length; i++) {
+        Util.removeClass(fxElements[i], 'reveal-fx--is-visible');
+      }
+      // reset fxRevealedItems array
+      fxRevealedItems = [];
+      // restart observer
+      initObserver();
+    };
 	}
 }());
 // File#: _1_smooth-scrolling
