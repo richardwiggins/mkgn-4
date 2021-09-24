@@ -28,7 +28,7 @@
 			{% if thisEventDate >= now|date('M j Y') %}
 			<ul class="hero__keywords padding-bottom-md padding-bottom-0@md color-white font-secondary flex@sm flex-wrap text-sm@md text-base@lg">
 				<li class="line-height-sm">In-person event</li>
-				<li class="line-height-sm">Talks start 19:30GMT</li>
+				<li class="line-height-sm">Talks start 19:30</li>
 				<li class="line-height-sm">Drinks, food and chat</li>
 			</ul>
 			{% endif %}
@@ -50,7 +50,7 @@
 	<div class="container max-width-xxl margin-top-lg" id="next-mkgn">
 
 		<h2 class="text-xl text-xxl@sm margin-bottom-xxxxs">Topics, speakers & schedule</h2>
-		<div class="margin-bottom-lg">Timings are approximate and in GMT</div>
+		<div class="margin-bottom-lg">Timings are approximate</div>
 		
 		{% if talks | length %}
 		{% for entry in talks %}
