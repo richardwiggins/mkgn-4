@@ -8,7 +8,7 @@ fieldLayouts:
             label: Title
             type: craft\fieldlayoutelements\EntryTitleField
           -
-            fieldUid: 4acd8113-e54d-4ca2-bf2d-983737014e55
+            fieldUid: 4acd8113-e54d-4ca2-bf2d-983737014e55 # Quote
             required: true
             type: craft\fieldlayoutelements\CustomField
         name: General

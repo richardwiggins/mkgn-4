@@ -28,7 +28,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 834ad2ee-cf30-45a8-b5a8-dbf6527fff70
+            fieldUid: 834ad2ee-cf30-45a8-b5a8-dbf6527fff70 # Partner Logo
             instructions: null
             label: null
             required: '0'
@@ -37,7 +37,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f40d0fd7-6cec-47fa-9535-ab15ed4732c5
+            fieldUid: f40d0fd7-6cec-47fa-9535-ab15ed4732c5 # Website
             instructions: null
             label: null
             required: '0'
@@ -46,7 +46,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1696957d-520e-430d-8d20-a81190496ac9
+            fieldUid: 1696957d-520e-430d-8d20-a81190496ac9 # Partner Level
             instructions: null
             label: null
             required: false
@@ -55,7 +55,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 3d10df47-f48c-4ae8-a6fd-1663ffe6db6e
+            fieldUid: 3d10df47-f48c-4ae8-a6fd-1663ffe6db6e # Body
             instructions: null
             label: null
             required: '0'

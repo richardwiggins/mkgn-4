@@ -28,7 +28,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 906f4fea-87c9-4022-84ba-4dcb41fa0e74
+            fieldUid: 906f4fea-87c9-4022-84ba-4dcb41fa0e74 # First Name
             instructions: null
             label: null
             required: '0'
@@ -37,7 +37,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b33387e8-9db5-45ed-976a-1b0d4372f22c
+            fieldUid: b33387e8-9db5-45ed-976a-1b0d4372f22c # Last Name
             instructions: null
             label: null
             required: '0'
@@ -46,7 +46,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 98f17359-9b77-492f-85b3-a731451de13d
+            fieldUid: 98f17359-9b77-492f-85b3-a731451de13d # Profile Photo
             instructions: null
             label: null
             required: '0'
@@ -55,7 +55,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 00d05235-8eef-4c30-a4bb-0569264b309d
+            fieldUid: 00d05235-8eef-4c30-a4bb-0569264b309d # Bio
             instructions: null
             label: null
             required: '0'
@@ -64,7 +64,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 10192265-6990-4588-a974-797d82034ccc
+            fieldUid: 10192265-6990-4588-a974-797d82034ccc # Twitter Handle
             instructions: null
             label: null
             required: '0'
@@ -73,7 +73,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 284cdcec-672c-4074-a89f-a0eed974fba3
+            fieldUid: 284cdcec-672c-4074-a89f-a0eed974fba3 # Instagram Handle
             instructions: null
             label: null
             required: '0'
@@ -82,7 +82,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f40d0fd7-6cec-47fa-9535-ab15ed4732c5
+            fieldUid: f40d0fd7-6cec-47fa-9535-ab15ed4732c5 # Website
             instructions: null
             label: null
             required: '0'
@@ -91,7 +91,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: da5f087f-0412-406e-8b83-405b664e33fe
+            fieldUid: da5f087f-0412-406e-8b83-405b664e33fe # Speaker Role
             instructions: null
             label: null
             required: false
@@ -100,7 +100,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ce6c438f-5e52-4d86-b133-a1d85aac17f7
+            fieldUid: ce6c438f-5e52-4d86-b133-a1d85aac17f7 # Talks
             instructions: null
             label: null
             required: '0'
@@ -113,7 +113,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 20af4766-fe55-42f8-9d36-2ab967f5d1e7
+            fieldUid: 20af4766-fe55-42f8-9d36-2ab967f5d1e7 # SEO Description
             instructions: null
             label: null
             required: '0'
@@ -122,7 +122,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ba29f542-5277-4f31-940d-1e7f36817ccf
+            fieldUid: ba29f542-5277-4f31-940d-1e7f36817ccf # SEO Keywords
             instructions: null
             label: null
             required: '0'
@@ -131,7 +131,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2f37e135-42dc-4728-9899-b1c8a1bd538d
+            fieldUid: 2f37e135-42dc-4728-9899-b1c8a1bd538d # SEO Robots
             instructions: null
             label: null
             required: '0'
@@ -140,7 +140,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 3e44c697-2501-4e56-af5a-b9ca5afff38b
+            fieldUid: 3e44c697-2501-4e56-af5a-b9ca5afff38b # SEO Title
             instructions: null
             label: null
             required: '0'

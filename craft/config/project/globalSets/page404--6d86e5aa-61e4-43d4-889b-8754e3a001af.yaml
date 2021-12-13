@@ -3,10 +3,10 @@ fieldLayouts:
     tabs:
       -
         fields:
-          3d10df47-f48c-4ae8-a6fd-1663ffe6db6e:
+          3d10df47-f48c-4ae8-a6fd-1663ffe6db6e: # Body
             required: false
             sortOrder: 2
-          037a5f54-21d8-4b39-b38d-0e7af880f8a2:
+          037a5f54-21d8-4b39-b38d-0e7af880f8a2: # Heading
             required: false
             sortOrder: 1
         name: Content

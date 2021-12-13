@@ -121,14 +121,17 @@
 		</div>
 
 		{% for entry in nextEvent %}
-		<div class="container max-width-xxl margin-bottom-xxl" id="next-mkgn">
+		{% set talks = entry.talks.all() %}
+		{% set eventLink = entry.url %}
+		
+		
 
-			{% set talks = entry.talks.all() %}
-			{% set eventLink = entry.url %}
-
-			<h2 class="text-xl text-xxl@sm margin-bottom-xs">#{{ entry.eventNo }} {{ entry.eventDate | date('M j Y') }}</h2>
 			
 			{% if talks %}
+			<div class="container max-width-xxl margin-bottom-xxl" id="next-mkgn">
+			<h2 class="text-xl text-xxl@sm margin-bottom-xs">#{{ entry.eventNo }} {{ entry.eventDate | date('M j Y') }}</h2>
+			
+			
 			<div class="grid gap-lg margin-bottom-xxxxs reveal-fx reveal-fx--translate-left" data-reveal-fx-delta="50">
 				{% for entry in talks %}
 
@@ -165,10 +168,15 @@
 
 			<h3 class="text-component color-contrast-high">View the <a href="{{ eventLink }}">event details and schedule</a>.</h3>
 			
+			</div>
+			
 			{% else %}
-				<h3 class="text-component color-contrast-high">Event details announced soon.</h3>
+				<div class="container max-width-adaptive-md margin-bottom-xxl" id="next-mkgn">
+					<h2 class="text-xl text-xxl@sm margin-bottom-xs">#{{ entry.eventNo }} {{ entry.eventDate | date('M j Y') }}</h2>
+					
+					<h3 class="text-component color-contrast-high">Event details announced soon - <a href="http://eepurl.com/dwtlBr" target="_blank">subscribe for updates.</a></h3>
+				</div>
 			{% endif %}
-		</div>
 		{% endfor %}
 
 		{% for entry in nextEvent %}

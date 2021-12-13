@@ -13,9 +13,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^9.8.7",
     "browser-sync": "^2.26.12",
-    "codyhouse-framework": "^2.7.6",
+    "codyhouse-framework": "^2.9.1",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^8.0.0",
@@ -28,7 +28,7 @@
     "gulp-version-number": "^0.1.7",
     "postcss-calc": "^7.0.3",
     "postcss-css-variables": "git+https://github.com/CodyHouse/postcss-css-variables.git",
-    "sass": "^1.39.0"
+    "sass": "^1.42.1"
   },
   "dependencies": {
     "check-node-version": "^4.1.0"
