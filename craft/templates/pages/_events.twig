@@ -71,6 +71,11 @@
 						<h2 class="color-contrast-high font-bold text-md margin-bottom-xxxxs">{{ entry.title }}</h2>
 					{% endfor %}
 					<h3 class="color-accent margin-bottom-xs text-md@lg text-lg@xl">{{ entry.heading }}</h3>
+					
+					{% if entry.speakerAudio %}
+					<a href="{{ entry.speakerAudio }}" class="font-bold margin-bottom-sm text-md block" target="_blank">Listen back on SoundCloud</a>
+					{% endif %}
+					
 					<span class="text-component">
 						{{ entry.body }}
 					{% for entry in speakeritem %}
