@@ -164,8 +164,8 @@
 					</div>
 					{% endfor %}
 				{% endfor %}
+				{% if entry.moreTba %}
 				<div class="card-v3 col-6@sm col-4@lg">
-					
 						<figure class="card-v3__img">
 							<img src="{{ siteUrl }}/uploads/speakers/_profile/1558/mkgn-more-tbc.jpg" alt="Coming soon...">
 						</figure>
@@ -176,6 +176,7 @@
 						</div>
 					</a>
 				</div>
+				{% endif %}
 			</div>
 
 			<h3 class="text-component color-contrast-high">View the <a href="{{ eventLink }}">event details and schedule</a>.</h3>

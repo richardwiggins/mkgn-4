@@ -3,16 +3,16 @@ fieldLayouts:
     tabs:
       -
         fields:
-          2f37e135-42dc-4728-9899-b1c8a1bd538d: # SEO Robots
+          2f37e135-42dc-4728-9899-b1c8a1bd538d:
             required: false
             sortOrder: 4
-          3e44c697-2501-4e56-af5a-b9ca5afff38b: # SEO Title
+          3e44c697-2501-4e56-af5a-b9ca5afff38b:
             required: false
             sortOrder: 1
-          20af4766-fe55-42f8-9d36-2ab967f5d1e7: # SEO Description
+          20af4766-fe55-42f8-9d36-2ab967f5d1e7:
             required: false
             sortOrder: 2
-          ba29f542-5277-4f31-940d-1e7f36817ccf: # SEO Keywords
+          ba29f542-5277-4f31-940d-1e7f36817ccf:
             required: false
             sortOrder: 3
         name: Content

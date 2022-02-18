@@ -1,11 +1,14 @@
+columnSuffix: utaoyyrt
 contentColumnType: boolean
 fieldGroup: bb1cc818-9a89-4344-82ca-4d6c1d8dbfa7
-handle: headlineTalk
+handle: moreTba
 instructions: ''
-name: 'Headline Talk'
-searchable: true
+name: 'More TBA'
+searchable: false
 settings:
-  default: ''
+  default: false
+  offLabel: null
+  onLabel: null
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Lightswitch

@@ -1,15 +1,18 @@
 contentColumnType: text
-fieldGroup: a9c8a941-15b1-466e-a1a3-6aa013e1d989
-handle: quote
+fieldGroup: bb1cc818-9a89-4344-82ca-4d6c1d8dbfa7
+handle: time
 instructions: ''
-name: Quote
-searchable: true
+name: Time
+searchable: false
 settings:
-  charLimit: ''
-  columnType: text
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
   initialRows: '4'
   multiline: ''
   placeholder: ''
+  uiMode: normal
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\PlainText

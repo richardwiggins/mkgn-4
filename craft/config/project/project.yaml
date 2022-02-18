@@ -1,4 +1,4 @@
-dateModified: 1639419169
+dateModified: 1645206165
 email:
   fromEmail: richard@mkgeeknight.co.uk
   fromName: MKGN
@@ -10,56 +10,18 @@ graphql:
     expiryDate: null
 meta:
   __names__:
-    00d05235-8eef-4c30-a4bb-0569264b309d: Bio # Bio
-    1d29ee74-f073-47bc-a310-67a6d36dd09c: 'Lead Partner' # Lead Partner
-    2f37e135-42dc-4728-9899-b1c8a1bd538d: 'SEO Robots' # SEO Robots
-    3d10df47-f48c-4ae8-a6fd-1663ffe6db6e: Body # Body
-    3e44c697-2501-4e56-af5a-b9ca5afff38b: 'SEO Title' # SEO Title
-    4acd8113-e54d-4ca2-bf2d-983737014e55: Quote # Quote
-    5ad1d58a-dda6-4fd9-9218-5d6f47353964: 'Talk Time' # Talk Time
-    5bfffa1a-57de-4627-be71-4d8d70958dae: 'MKGN (en-GB)' # MKGN (en-GB)
-    05fb3290-dc67-4027-b719-be4b594fee26: SEO # SEO
     6d86e5aa-61e4-43d4-889b-8754e3a001af: '404 - Page Not Found' # 404 - Page Not Found
-    8b26f9b4-c47a-4848-961f-7d67dc4dfb69: 'Event Page Intro' # Event Page Intro
-    20af4766-fe55-42f8-9d36-2ab967f5d1e7: 'SEO Description' # SEO Description
-    32dc7383-b5f5-4efc-ae15-4d8d6c5eca5a: 'Square Image Overlays' # Square Image Overlays
-    037a5f54-21d8-4b39-b38d-0e7af880f8a2: Heading # Heading
-    70fa333b-4878-4ea8-a725-6650bb44fdc7: 'Contact Copy' # Contact Copy
-    73c38894-ebbc-4d2e-960d-f1077a2ce423: 'MKGN (en-GB)' # MKGN (en-GB)
     75a000d7-49a0-4674-ada6-e4d64644eb1e: Footer # Footer
-    97d91ecb-9423-4abc-a607-89f45de15135: 'Tito Event Name' # Tito Event Name
-    98f17359-9b77-492f-85b3-a731451de13d: 'Profile Photo' # Profile Photo
-    206fa316-5bb1-4919-9fbd-6f45be819880: 'Event No.' # Event No.
-    284cdcec-672c-4074-a89f-a0eed974fba3: 'Instagram Handle' # Instagram Handle
-    473a37bd-5d1c-405a-b0f1-cde4670e2c8a: Events # Events
     757e8857-287c-45e9-840b-067c8b0d3b45: 'Global SEO' # Global SEO
-    834ad2ee-cf30-45a8-b5a8-dbf6527fff70: 'Partner Logo' # Partner Logo
-    906f4fea-87c9-4022-84ba-4dcb41fa0e74: 'First Name' # First Name
-    2270fb9e-8c42-4e4a-a83a-7eacc0f4aa7c: Venue # Venue
-    34392bde-93ff-43f9-918e-1a339046dd31: 'Audience Copy' # Audience Copy
     64999e77-856f-4c18-9a31-6fac18916468: Events # Events
     73510c09-a443-4e30-8712-f2565d8a10bd: Editor # Editor
-    421187d3-d8a1-4e53-8bdd-483006ef5566: Speakers # Speakers
-    1696957d-520e-430d-8d20-a81190496ac9: 'Partner Level' # Partner Level
-    10192265-6990-4588-a974-797d82034ccc: 'Twitter Handle' # Twitter Handle
-    a9c8a941-15b1-466e-a1a3-6aa013e1d989: General # General
-    a31ed9a9-14f0-4cd7-8904-7c2c7f555e63: 'Event Intro on homepage' # Event Intro on homepage
-    b33387e8-9db5-45ed-976a-1b0d4372f22c: 'Last Name' # Last Name
-    ba29f542-5277-4f31-940d-1e7f36817ccf: 'SEO Keywords' # SEO Keywords
-    bb1cc818-9a89-4344-82ca-4d6c1d8dbfa7: Events # Events
-    be1ea388-e829-48f9-ab9c-3c2e3a9a6a84: 'Speaker Audio' # Speaker Audio
+    37828365-d923-4d5f-ad6b-bdc8429b0a69: 'More TBA' # More TBA
     c2a527e2-c83d-4ac0-83a0-b082d0d42ee8: Partners # Partners
-    c6dd6cf5-0282-4404-912c-6e5944ce49e1: 'Ticket Intro' # Ticket Intro
-    ce6c438f-5e52-4d86-b133-a1d85aac17f7: Talks # Talks
-    d876c8ab-98c7-4feb-99b7-7c3177a1c659: Partners # Partners
-    da5f087f-0412-406e-8b83-405b664e33fe: 'Speaker Role' # Speaker Role
-    f40d0fd7-6cec-47fa-9535-ab15ed4732c5: Website # Website
     f30095e7-4a6f-4ada-b270-0151da705328: Tickets # Tickets
-    fd8509c2-d67e-4e8c-b9cb-2f8a65638d67: 'Event Date' # Event Date
-    ff0f68aa-7f23-460a-b429-526f9611389c: 'Headline Talk' # Headline Talk
 plugins:
   freeform:
-    enabled: '1'
+    edition: pro
+    enabled: true
     licenseKey: 5OYP5M02MRAFB7F8IOTHW1IO
     schemaVersion: 3.3.2
     settings:

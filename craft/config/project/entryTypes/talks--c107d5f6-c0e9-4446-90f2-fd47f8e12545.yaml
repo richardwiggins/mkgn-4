@@ -28,7 +28,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 037a5f54-21d8-4b39-b38d-0e7af880f8a2 # Heading
+            fieldUid: 037a5f54-21d8-4b39-b38d-0e7af880f8a2
             instructions: null
             label: null
             required: '1'
@@ -37,7 +37,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 3d10df47-f48c-4ae8-a6fd-1663ffe6db6e # Body
+            fieldUid: 3d10df47-f48c-4ae8-a6fd-1663ffe6db6e
             instructions: null
             label: null
             required: '0'
@@ -46,7 +46,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 5ad1d58a-dda6-4fd9-9218-5d6f47353964 # Talk Time
+            fieldUid: 5ad1d58a-dda6-4fd9-9218-5d6f47353964
             instructions: null
             label: null
             required: false
@@ -55,7 +55,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ff0f68aa-7f23-460a-b429-526f9611389c # Headline Talk
+            fieldUid: ff0f68aa-7f23-460a-b429-526f9611389c
             instructions: null
             label: null
             required: '0'
@@ -64,7 +64,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: be1ea388-e829-48f9-ab9c-3c2e3a9a6a84 # Speaker Audio
+            fieldUid: be1ea388-e829-48f9-ab9c-3c2e3a9a6a84
             instructions: null
             label: null
             required: '0'
