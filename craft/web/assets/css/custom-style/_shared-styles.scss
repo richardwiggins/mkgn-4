@@ -90,3 +90,11 @@ html {
 .partner--lead {
 	height: var(--space-md);
 }
+
+.partner--flex {
+	flex-wrap: wrap;
+	
+	@include breakpoint(sm) {
+		flex-wrap: nowrap;
+	}
+}

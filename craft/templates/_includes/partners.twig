@@ -19,7 +19,7 @@
 	<ul class="flex gap-xl flex-wrap margin-bottom-xxxxs">
 		{% for entry in eventPartnerLead %}
 			{% for image in entry.partnerLogo.all %}				
-				<li><a href="{% for row in entry.website %}{{ row.websiteURL }}{% endfor %}" target="_blank"><img src="{{ image.getUrl() }}" alt="{{ entry.title }}" class="height-xl"/></a></li>
+				<li><a href="{% for row in entry.website %}{{ row.websiteURL }}{% endfor %}" target="_blank"><img src="{{ image.getUrl() }}" alt="{{ entry.title }}" class="height-xxl"/></a></li>
 			{% endfor %}
 		{% endfor %}
 	</ul>
@@ -40,7 +40,7 @@
 	{% if eventPartnerCommunity | length %}
 	<h5 class="font-primary font-bold color-accent margin-bottom-sm">Community partners</h5>
 
-	<ul class="flex gap-xl margin-bottom-xxxxs">
+	<ul class="flex gap-xl margin-bottom-xxxxs partner--flex">
 		{% for entry in eventPartnerCommunity %}
 			{% for image in entry.partnerLogo.all %}				
 				<li><a href="{% for row in entry.website %}{{ row.websiteURL }}{% endfor %}" target="_blank"><img src="{{ image.getUrl() }}" alt="{{ entry.title }}" class="height-lg"/></a></li>
@@ -52,7 +52,7 @@
 	{% if eventPartnerInkind | length %}
 	<h5 class="font-primary font-bold color-accent margin-bottom-sm">In-kind partners</h5>
 
-	<ul class="flex gap-xl margin-bottom-md">
+	<ul class="flex gap-xl margin-bottom-md partner--flex">
 		{% for entry in eventPartnerInkind %}
 			{% for image in entry.partnerLogo.all %}				
 				<li><a href="{% for row in entry.website %}{{ row.websiteURL }}{% endfor %}" target="_blank"><img src="{{ image.getUrl() }}" alt="{{ entry.title }}" class="height-lg"/></a></li>

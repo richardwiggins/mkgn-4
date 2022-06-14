@@ -32,11 +32,9 @@
 	<script>document.getElementsByTagName("html")[0].className += " js";</script>
 	<link rel="stylesheet" href="https://use.typekit.net/wox0srz.css">
 
-	 <link id="codyframe" rel="stylesheet" href="{{ siteUrl }}assets/css/style.css">
-	<!-- browsers not supporting CSS variables -->
-	<script>
-		if(!('CSS' in window) || !CSS.supports('color', 'var(--color-var)')) {var cfStyle = document.getElementById('codyframe');if(cfStyle) {var href = cfStyle.getAttribute('href');href = href.replace('style.css', 'style-fallback.css');cfStyle.setAttribute('href', href);}}
-	</script>
+	 <link id="codyframe" rel="stylesheet" href="{{ siteUrl }}assets/css/style.css?545s1">
+	{# <script src="https://js.tito.io/v2" async></script> #}
+	{# <script src='https://js.tito.io/v2/with/inline/without/widget-css,checkout-css' async></script> #}
 	<title>{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }}{% else %}{{ seoTitleGlobal }}{% endif %}</title>
 	<meta name="title" content="{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }}{% else %}{{ seoTitleGlobal }}{% endif %}">
 	<meta name="description" content="An event for the digital and creative communities combining talks from some of the best speakers in the UK and beyond, with the opportunity watch new and up and coming presenters.">
