@@ -118,12 +118,11 @@
 
 				<div class="sidebar__footer display@md">
 					<div class="padding-x-md padding-y-xs color-white text-sm">
-						All Flows Festival - Sep 29 & 30
-						{# {% for entry in nextEvent %}
+						{% for entry in nextEvent %}
 							#{{ entry.eventNo }} {{ entry.eventDate | date('M j Y') }}
-						{% endfor %} #}
+						{% endfor %}
 					</div>
-					<a href="https://allflows.live/tickets" class="js-sidebar__close-btn bg-primary block padding-x-md padding-y-sm btn btn--primary font-secondary color-white"><span class="link__badge link__badge--white">Tickets</span></a>
+					<a href="{{ siteUrl }}#tickets" class="js-sidebar__close-btn bg-primary block padding-x-md padding-y-sm btn btn--primary font-secondary color-white"><span class="link__badge link__badge--white">Tickets</span></a>
 				</div>
 			</div>
 		</aside>
@@ -139,7 +138,7 @@
 
 			<footer class="container max-width-adaptive-md padding-y-sm@xl margin-bottom-xxl margin-bottom-lg@md">
 				<div class="text-component text-sm">
-					<p>	MK Geek Night is a collaborative project from <a href="https://pixelcreation.co.uk/" target="_blank" rel="noreferrer noopener">Richard Wiggins</a> and <a href="https://www.davidhughes.org" target="_blank" rel="noreferrer noopener">David Hughes</a>.
+					<p>	MK Geek Night is a collaborative project from <a href="https://pixelcreation.co.uk/" target="_blank" rel="noreferrer noopener">Richard Wiggins</a> and <a href="https://www.nodalconsulting.com" target="_blank" rel="noreferrer noopener">David Hughes</a>.
 						<br>The MKGN brand, design and website created by <a href="http://pixelcreation.co.uk/" target="_blank" rel="noreferrer noopener">Pixel Creation</a>. Website proudly hosted by <a href="https://www.guru.co.uk/" target="_blank" rel="noreferrer noopener">GURU</a>.
 						<br><a href="{{ siteUrl }}data-promise">Data Promise - Cookies, Privacy</a> <span class="inline-block margin-xxxxs">|</span> <a href="{{ siteUrl }}terms">Terms & Conditions</a>
 					</p>

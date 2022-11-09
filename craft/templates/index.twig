@@ -36,14 +36,14 @@
 		{% for entry in nextEvent %}
 			<div class="container max-width-xxl text-component">
 				<div class="font-secondary color-white text-md">Next event</div>
-				<div class="font-secondary text-xl  text-uppercase margin-top-0"><a href="https://allflows.live/" class="js-smooth-scroll color-white" data-duration="300">We're Hosting All Flows — A New 2 Day Creative, Design & Tech Festival</a></div>
-				{% if entry.heading %}
-				<div class="font-secondary text-xxl  text-uppercase line-height-0 margin-top-0 color-tertiary-lighter">{{ entry.heading }}</div>
-				{% endif %}
-				{# <div class="font-secondary text-xl  text-uppercase margin-top-0"><a href="#next-mkgn" class="js-smooth-scroll color-white" data-duration="300">#{{ entry.eventNo }} {{ entry.eventDate | date('M j Y') }}</a></div>
+				{# <div class="font-secondary text-xl  text-uppercase margin-top-0"><a href="https://allflows.live/" class="js-smooth-scroll color-white" data-duration="300">We're Hosting All Flows — A New 2 Day Creative, Design & Tech Festival</a></div>
 				{% if entry.heading %}
 				<div class="font-secondary text-xxl  text-uppercase line-height-0 margin-top-0 color-tertiary-lighter">{{ entry.heading }}</div>
 				{% endif %} #}
+				<div class="font-secondary text-xl  text-uppercase margin-top-0"><a href="#next-mkgn" class="js-smooth-scroll color-white" data-duration="300">#{{ entry.eventNo }} {{ entry.eventDate | date('M j Y') }}</a></div>
+				{% if entry.heading %}
+				<div class="font-secondary text-xxl  text-uppercase line-height-0 margin-top-0 color-tertiary-lighter">{{ entry.heading }}</div>
+				{% endif %}
 			</div>
 		{% endfor %}
 	</div>
