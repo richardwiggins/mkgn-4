@@ -1,0 +1,101 @@
+field: e92e92ec-d003-4abc-8ea4-ad8d3ff237a7 # Quick Link
+fieldLayouts:
+  09016a76-e351-4fed-ab04-025d5a604a6c:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 8c22be26-2a7e-4a93-b2dc-67d998e1ba60 # Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a1a0f76a-ff67-417a-8099-a6ade9addf05 # Internal Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 684a2583-c5ed-43e5-83fb-33e3d3a61a71 # External Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  8c22be26-2a7e-4a93-b2dc-67d998e1ba60: # Text
+    columnSuffix: pxtyvthi
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  684a2583-c5ed-43e5-83fb-33e3d3a61a71: # External Link
+    columnSuffix: cpizbvry
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: externalLink
+    instructions: ''
+    name: 'External Link'
+    searchable: false
+    settings:
+      maxLength: '255'
+      placeholder: null
+      types:
+        - url
+        - email
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  a1a0f76a-ff67-417a-8099-a6ade9addf05: # Internal Link
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: internalLink
+    instructions: ''
+    name: 'Internal Link'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:bceb27df-8ebe-4877-bab9-be7e1e52acb9'
+        - 'section:aae72c8b-90f4-4d47-bbc4-f60aae3fb3b4'
+        - singles
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: button
+name: Button
+sortOrder: 1

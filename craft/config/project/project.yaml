@@ -1,4 +1,4 @@
-dateModified: 1651248185
+dateModified: 1668007201
 email:
   fromEmail: richard@mkgeeknight.co.uk
   fromName: MKGN
@@ -11,12 +11,19 @@ graphql:
 meta:
   __names__:
     6d86e5aa-61e4-43d4-889b-8754e3a001af: '404 - Page Not Found' # 404 - Page Not Found
+    7bf70dd8-992f-497c-b4ef-c326b0207a78: 'Quick Links' # Quick Links
+    8c22be26-2a7e-4a93-b2dc-67d998e1ba60: Text # Text
     75a000d7-49a0-4674-ada6-e4d64644eb1e: Footer # Footer
+    684a2583-c5ed-43e5-83fb-33e3d3a61a71: 'External Link' # External Link
     757e8857-287c-45e9-840b-067c8b0d3b45: 'Global SEO' # Global SEO
+    0017227f-3a0d-41bf-b2b8-73bdabdd8a25: 'Quick Links' # Quick Links
     64999e77-856f-4c18-9a31-6fac18916468: Events # Events
     73510c09-a443-4e30-8712-f2565d8a10bd: Editor # Editor
     37828365-d923-4d5f-ad6b-bdc8429b0a69: 'More TBA' # More TBA
+    a1a0f76a-ff67-417a-8099-a6ade9addf05: 'Internal Link' # Internal Link
     c2a527e2-c83d-4ac0-83a0-b082d0d42ee8: Partners # Partners
+    cf5a8a7f-6697-483a-b576-41081a8cd2df: Button # Button
+    e92e92ec-d003-4abc-8ea4-ad8d3ff237a7: 'Quick Link' # Quick Link
     f30095e7-4a6f-4ada-b270-0151da705328: Tickets # Tickets
 plugins:
   freeform:
