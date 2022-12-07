@@ -2,7 +2,13 @@
 <section class="gradient margin-bottom-xl" id="tickets">
 	<div class="container max-width-adaptive-md color-white svg-inherit text-component">
 
-		<h2 class="text-xl text-xxl@sm margin-bottom-xs color-white">Pay What You Can Afford Tickets</h2>
+		<h2 class="text-xl text-xxl@sm margin-bottom-xs color-white">
+			{% if entry.eventDate|date('U') < '2022-12-09'|date('U') %}
+			Pay What You Can Afford Tickets
+			{% else %}
+			Tickets
+			{% endif %}
+		</h2>
 		<div class="font-secondary text-md color-tertiary-lighter margin-bottom-sm">#{{ entry.eventNo }} {{ entry.eventDate | date('M j Y') }}</div>
 
 		{{ entry.ticketIntro }}
