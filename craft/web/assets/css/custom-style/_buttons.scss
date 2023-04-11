@@ -16,7 +16,8 @@
 
 .btn,
 .tito-submit,
-.btn-waitlist {
+.btn-waitlist,
+.tito-choose-waiting-list-button {
   font-family: var(--font-secondary);
   cursor: pointer;
   border: 3px solid var(--color-tertiary);
@@ -45,7 +46,8 @@
 
 // themes
 .btn--primary,
-.tito-submit {
+.tito-submit,
+.tito-choose-waiting-list-button {
   background-color: var(--color-primary);
   color: var(--color-white);
   @include fontSmooth;

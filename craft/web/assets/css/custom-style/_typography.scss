@@ -170,7 +170,7 @@ mark {
 		}
 	}
 
-	a:not(.card-v3__link):not(.sidebar__link--primary):not(.sidebar__link--tertiary) {
+	a:not(.card-v3__link):not(.sidebar__link--primary):not(.sidebar__link--tertiary):not(.tito-submit):not(.tito-release--decrement-quantity--link):not(.tito-release--increment-quantity--link):not(.tito-choose-waiting-list-button) {
 		background-image: linear-gradient(transparent 50%, alpha(var(--color-primary), 0.2) 50%);
 		background-repeat: no-repeat;
 		background-size: 0% 100%;
