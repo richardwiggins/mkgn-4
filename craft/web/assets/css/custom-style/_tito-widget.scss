@@ -34,10 +34,16 @@
   }
   .tito-release-description {
 	min-width: 100%;
+	
+	@include breakpoint(sm) {
+	  min-width: auto;
+	  flex: 3;
+	}
   }
   .tito-release--title {
 	// font-size: var(--text-md);
 	font-weight: 500;
+	font-size: 24px;
   }
   .tito-release-description--description {
 	margin: 10px 0 20px;
@@ -53,6 +59,7 @@
   .tito-price-details-regular {
 	
   }
+  .tito-release--status,
   .tito-price {
 	color: #fff;
 	font-size: 24px;
@@ -103,6 +110,7 @@
 	padding: 6px 10px;
 	text-align: center;
 	width: 60px;
+	margin: 0 4px;
   }
   input[type=number].tito-quantity-input::-webkit-inner-spin-button, 
   input[type=number].tito-quantity-input::-webkit-outer-spin-button { 
@@ -236,4 +244,20 @@
 	}
   }
   
+  .tito-release--status,
+  .tito-quantity {
+  	align-items: center;
+  	display: flex;
+  	justify-content: center;
+  }
+  
+  .tito-release--status {
+	  margin-left: 10px;
+	  color: var(--color-tertiary-lighter);
+	  text-transform: uppercase;
+	  
+	  span {
+		  display: none;
+	  }
+  }
 }
