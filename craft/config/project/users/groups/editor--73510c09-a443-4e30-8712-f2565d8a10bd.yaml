@@ -107,17 +107,17 @@ permissions:
   - 'editpeerimagesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8'
   - 'viewpeerfilesinvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8'
   - 'viewvolume:95b71215-725c-454f-8f8d-4ab133b7f9f8'
-  - 'saveassetinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'createfoldersinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'deletefilesandfoldersinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'replacefilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'editimagesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'editpeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'replacepeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'deletepeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'editpeerimagesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'viewpeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
-  - 'viewvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
+  - 'saveassetinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'createfoldersinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'deletefilesandfoldersinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'replacefilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'editimagesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'editpeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'replacepeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'deletepeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'editpeerimagesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'viewpeerfilesinvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  - 'viewvolume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
   - 'freeform-submissionsmanage:1'
   - freeform-submissionsmanageindividual
   - freeform-submissionsaccess

@@ -16,7 +16,7 @@ previewTargets:
         - '1'
 propagationMethod: all
 siteSettings:
-  73c38894-ebbc-4d2e-960d-f1077a2ce423:
+  73c38894-ebbc-4d2e-960d-f1077a2ce423: # MKGN (en-GB)
     enabledByDefault: true
     hasUrls: true
     template: quick-links

@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 037a5f54-21d8-4b39-b38d-0e7af880f8a2
+            fieldUid: 037a5f54-21d8-4b39-b38d-0e7af880f8a2 # Heading
             instructions: null
             label: null
             required: false
@@ -36,7 +36,16 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 206fa316-5bb1-4919-9fbd-6f45be819880
+            fieldUid: 0c002b49-8dec-4eb6-8671-a56b57b5be85 # Cover Photo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 206fa316-5bb1-4919-9fbd-6f45be819880 # Event No.
             instructions: null
             label: null
             required: '1'
@@ -45,7 +54,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: fd8509c2-d67e-4e8c-b9cb-2f8a65638d67
+            fieldUid: fd8509c2-d67e-4e8c-b9cb-2f8a65638d67 # Event Date
             instructions: null
             label: null
             required: '1'
@@ -54,7 +63,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 267b90ef-9739-4496-881b-b92ee77f908d
+            fieldUid: 267b90ef-9739-4496-881b-b92ee77f908d # Time
             instructions: null
             label: null
             required: false
@@ -63,7 +72,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 97d91ecb-9423-4abc-a607-89f45de15135
+            fieldUid: 97d91ecb-9423-4abc-a607-89f45de15135 # Tito Event Name
             instructions: null
             label: null
             required: '0'
@@ -72,7 +81,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c6dd6cf5-0282-4404-912c-6e5944ce49e1
+            fieldUid: c6dd6cf5-0282-4404-912c-6e5944ce49e1 # Ticket Intro
             instructions: null
             label: null
             required: '0'
@@ -81,7 +90,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a31ed9a9-14f0-4cd7-8904-7c2c7f555e63
+            fieldUid: a31ed9a9-14f0-4cd7-8904-7c2c7f555e63 # Event Intro on homepage
             instructions: null
             label: null
             required: false
@@ -90,7 +99,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 8b26f9b4-c47a-4848-961f-7d67dc4dfb69
+            fieldUid: 8b26f9b4-c47a-4848-961f-7d67dc4dfb69 # Event Page Intro
             instructions: null
             label: null
             required: '0'
@@ -99,7 +108,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ce6c438f-5e52-4d86-b133-a1d85aac17f7
+            fieldUid: ce6c438f-5e52-4d86-b133-a1d85aac17f7 # Talks
             instructions: null
             label: null
             required: '0'
@@ -117,7 +126,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d876c8ab-98c7-4feb-99b7-7c3177a1c659
+            fieldUid: d876c8ab-98c7-4feb-99b7-7c3177a1c659 # Partners
             instructions: null
             label: null
             required: '0'
@@ -130,7 +139,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 3e44c697-2501-4e56-af5a-b9ca5afff38b
+            fieldUid: 3e44c697-2501-4e56-af5a-b9ca5afff38b # SEO Title
             instructions: null
             label: null
             required: '0'
@@ -139,7 +148,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 20af4766-fe55-42f8-9d36-2ab967f5d1e7
+            fieldUid: 20af4766-fe55-42f8-9d36-2ab967f5d1e7 # SEO Description
             instructions: null
             label: null
             required: '0'
@@ -148,7 +157,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ba29f542-5277-4f31-940d-1e7f36817ccf
+            fieldUid: ba29f542-5277-4f31-940d-1e7f36817ccf # SEO Keywords
             instructions: null
             label: null
             required: '0'
@@ -157,7 +166,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2f37e135-42dc-4728-9899-b1c8a1bd538d
+            fieldUid: 2f37e135-42dc-4728-9899-b1c8a1bd538d # SEO Robots
             instructions: null
             label: null
             required: '0'

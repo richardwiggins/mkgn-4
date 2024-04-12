@@ -1,0 +1,34 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: bb1cc818-9a89-4344-82ca-4d6c1d8dbfa7 # Events
+handle: coverPhoto
+instructions: ''
+name: 'Cover Photo'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowUploads: true
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: '1'
+  selectionLabel: ''
+  showSiteMenu: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:50fb2e47-fb7e-4214-9e47-e4285eff585a'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources:
+    - 'volume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

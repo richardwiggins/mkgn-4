@@ -32,7 +32,9 @@ handle: photos
 hasUrls: true
 name: 'General Photos'
 settings:
-  path: uploads/photos
+  path: '@basePath/uploads/photos'
 sortOrder: 3
+titleTranslationKeyFormat: null
+titleTranslationMethod: null
 type: craft\volumes\Local
-url: uploads/photos
+url: '@baseURL/uploads/photos'

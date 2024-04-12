@@ -1,0 +1,9 @@
+format: null
+handle: cover
+height: 1000
+interlace: none
+mode: crop
+name: Cover
+position: center-center
+quality: 30
+width: 2500

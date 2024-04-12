@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: a9c8a941-15b1-466e-a1a3-6aa013e1d989
+fieldGroup: a9c8a941-15b1-466e-a1a3-6aa013e1d989 # General
 handle: squareImageOverlays
 instructions: ''
 name: 'Square Image Overlays'
@@ -13,7 +13,7 @@ settings:
   localizeRelations: false
   restrictFiles: '1'
   selectionLabel: ''
-  singleUploadLocationSource: 'volume:77fe10b2-e220-4768-8ca3-7d4b3a714d33'
+  singleUploadLocationSource: 'volume:77fe10b2-e220-4768-8ca3-7d4b3a714d33' # General Photos
   singleUploadLocationSubpath: ''
   sources: '*'
   useSingleFolder: '1'
