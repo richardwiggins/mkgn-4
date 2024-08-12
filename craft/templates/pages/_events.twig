@@ -105,17 +105,17 @@
 					{% endfor %}
 
 					<figcaption aria-hidden="true" class="event__socials text-component display@sm">
-						<ul class="no-bullets font-bold">
+						<ul class="no-bullets font-bold text-sm">
 							{% for row in entry.website %}
 								{% if row.websiteURL %}
-								<li class="margin-right-sm"><a href="{{ row.websiteURL }}">Website</a></li>
+								<li class="margin-right-sm ellipsis"><a href="{{ row.websiteURL }}">{{ row.prettyUrl }}</a></li>
 								{% endif %}
 							{% endfor %}
 							{% if entry.twitterHandle %}
-								<li class="margin-right-sm"><a href="https://twitter.com/{{ entry.twitterHandle }}">Twitter</a></li>
+								<li class="margin-right-sm ellipsis"><a href="https://twitter.com/{{ entry.twitterHandle }}">Twitter</a></li>
 							{% endif %}
 							{% if entry.instagramHandle %}
-								<li class="margin-right-sm"><a href="https://www.instagram.com/{{ entry.instagramHandle }}">Instagram</a></li>
+								<li class="margin-right-sm ellipsis"><a href="https://www.instagram.com/{{ entry.instagramHandle }}">Instagram</a></li>
 							{% endif %}
 						</ul>
 					</figcaption>

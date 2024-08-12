@@ -141,6 +141,12 @@ mark {
 	color: inherit;
 }
 
+.ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
 .text-component {
 	--line-height-multiplier: 1;
 	--text-vspace-multiplier: 1;
