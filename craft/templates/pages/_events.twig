@@ -75,7 +75,7 @@
 			<div class="grid gap-lg@sm margin-bottom-lg" id="{% for entry in speakeritem %}{{ entry.firstName }}{% endfor %}">
 
 				<div class="col-12 col-1@xl margin-bottom-xs margin-bottom-0@md order-1">
-					<time class="speaker__time  font-bold color-secondary text-md@sm font-secondary">{{ entry.talkTime }}</time>
+					<div class="speaker__time  font-bold color-secondary text-md@sm font-secondary">{{ entry.talkTime }}</div>
 				</div>
 				<div class="col-8@sm col-7@xl order-3 order-2@sm">
 					{% for entry in speakeritem %}

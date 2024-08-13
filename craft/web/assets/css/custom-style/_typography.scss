@@ -147,6 +147,10 @@ mark {
 	text-overflow: ellipsis;
 }
 
+time {
+	display: inline-block;
+}
+
 .text-component {
 	--line-height-multiplier: 1;
 	--text-vspace-multiplier: 1;
